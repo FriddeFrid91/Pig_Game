@@ -30,9 +30,9 @@ class Menu:
 
         elif user_choice == 3:
             return "Rules"
-       
+
         elif user_choice == 4:
             return "Highscore"
-       
+
         elif user_choice == 5:
-            return "Goodbye!"
+            return "Exit"
