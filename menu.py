@@ -16,23 +16,7 @@ class Menu:
         print("* 2. Player Vs Player   *")
         print("* 3. Rules              *")
         print("* 4. Highscore          *")
+        print("* 5. Change name        *")
         print("*************************")
-        print("* 5. Exit               *")
+        print("* 6. Exit               *")
         print("*************************")
-
-    def menu_choices(self, user_choice):
-        """Menu choices."""
-        if user_choice == 1:
-            return "Player Vs Computer"
-
-        elif user_choice == 2:
-            return "Player Vs Player"
-
-        elif user_choice == 3:
-            return "Rules"
-       
-        elif user_choice == 4:
-            return "Highscore"
-       
-        elif user_choice == 5:
-            return "Goodbye!"
