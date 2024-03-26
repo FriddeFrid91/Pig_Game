@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-
-"""Main module of the program."""
-=======
 """Main function for the program."""
->>>>>>> FriddeFrid_branch
 from menu import Menu
 from Rules import Rules
 
@@ -54,9 +49,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-<<<<<<< HEAD
-
-
- 
-=======
->>>>>>> FriddeFrid_branch
