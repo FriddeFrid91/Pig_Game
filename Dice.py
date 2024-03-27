@@ -4,8 +4,8 @@ import random
 class Dice:
     """Class for the dice."""
     def __init__(self, numbers): # Constructor
-        rollTheDice = 0 
-        self.numbers = numbers
+        rollTheDice = 0  # Variable to store the result of the dice roll
+        self.numbers = numbers # Number of sides of the dice
 
     def rollTheDice(self, result): # Method to roll the dice
         return random.randint(1, self.numbers)  # Return a random number between 1 and the number of sides of the dice
@@ -22,11 +22,11 @@ class Dice:
             print(f"You got a {result}!") 
             return result
         
-    def getDice(self):
+    def getDice(self): # Getter
         return self.numbers
     
-    def setDice(self, numbers):
+    def setDice(self, numbers): # Setter
         self.numbers = numbers
     
-    def __str__(self):
-        return f"The dice has {self.numbers} sides."
+    def __str__(self): # Method to print the dice
+        return f"The dice has {self.numbers} sides." # Return the number of sides of the dice
