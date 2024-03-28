@@ -12,5 +12,7 @@ class Test_Menu(unittest.TestCase):
         the_menu = Menu()
         the_menu.show_menu()
         self.assertIsNotNone(the_menu.menu_options)
-    if __name__ == 'main':
-        unittest.main()
+
+
+if __name__ == 'main':
+    unittest.main()

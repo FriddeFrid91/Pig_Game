@@ -12,5 +12,7 @@ class Test_playervsplayer(unittest.TestCase):
         new_game = playervsplayer()
         result = new_game.two_player_game()
         self.assertIsNotNone(result)
-    if __name__ == 'main':
-        unittest.main()
+
+
+if __name__ == 'main':
+    unittest.main()
