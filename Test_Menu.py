@@ -1,5 +1,6 @@
 """Test for Menu class."""
 from menu import Menu
+from colors import colors
 import unittest
 """Test for Menu class."""
 
