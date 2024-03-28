@@ -15,11 +15,11 @@ class Player:
         round_score = 0
         total_score = []
         while True:
-           
+
             roll = self.dice.roll_the_dice()
             print(f"{self.name} rolled a {roll}.")
             if roll == 1:
-                print(f"{self.name} rolled a 1. Round score: 0.\n")
+                print("Oink, oink! You lost all your points for this round!\n")
                 self.deduct_score(round_score)
                 current_score = self.score
                 break
@@ -32,10 +32,6 @@ class Player:
             print("*********************************************")
             decision = input("Roll again? (y/n): ")
             if decision != "y":
-
-                for a in total_score:
-                    total_score += round_score
-                print(total_score)           
                 print(self.get_score())
                 print(f"{self.name} total score: {self.score}.\n")
                 self.add_score(round_score)

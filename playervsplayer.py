@@ -7,15 +7,6 @@ class playervsplayer:
         self.Player1 = Player("")
         self.Player2 = Player("")
 
-    def total_rounds():
-        pass
-
-    def round_score():
-        pass
-
-    def total_score():
-        pass
-             
     def two_player_game(self):
         print(">> Welcome to a game of Pig! <<")
 
@@ -30,17 +21,22 @@ class playervsplayer:
 
             current_player = player_1
 
-            while current_player.get_score() < 100:
-                print(f"{current_player.name}'s turn:\n")
+            while current_player.get_score() < 50:
+                print("*********************************")
+                print(f"* {current_player.name}'s turn: *\n")
+                print("**********************************")
                 current_player.player_move()
 
-                if current_player.get_score() >= 100:
+                if current_player.get_score() >= 50:
                     print(f"{current_player.name} wins!\n")
                     return current_player.name
 
                 if current_player == player_1:
+                    print(current_player.get_score())
+                    print(f"{current_player.name} got  {current_player.get_score()}")
                     current_player = player_2
                 else:
+                    print(f"{current_player.name} got  {current_player.get_score()}")
                     current_player = player_1
 
 

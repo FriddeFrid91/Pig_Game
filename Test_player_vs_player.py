@@ -1,5 +1,6 @@
 from playervsplayer import playervsplayer
-from Player import Player
+"""Test for Player vs Player class."""
+
 import unittest
 """Test for Player vs Player class."""
 
@@ -13,6 +14,4 @@ class Test_playervsplayer(unittest.TestCase):
         result = new_game.two_player_game()
         self.assertIsNotNone(result)
 
-
-if __name__ == '__main__':
     unittest.main()
