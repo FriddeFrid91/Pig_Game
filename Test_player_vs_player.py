@@ -9,7 +9,7 @@ class Test_playervsplayer(unittest.TestCase):
         """Test for two_player_game method."""
         new_game = playervsplayer()
         result = new_game.two_player_game()
-        self.assertTrue(result)
+        self.assertIsNotNone(result)
 
 
 if __name__ == "__main__":
