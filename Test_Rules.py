@@ -1,5 +1,4 @@
 from Rules import Rules
-from colors import colors
 
 import unittest
 
