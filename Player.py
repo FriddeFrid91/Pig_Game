@@ -1,8 +1,11 @@
+from Dice import Dice
+
+
 class Player:
     def __init__(self, name, score=0):
         self.name = name
         self.score = score
-        self.dice = self.dice(6)
+        self.dice = Dice(6)
 
     def __str__(self):
         return f"{self.name} has {self.score} points."
@@ -10,18 +13,33 @@ class Player:
     def player_move(self):
         """Simulate a player's move."""
         round_score = 0
+        total_score = []
         while True:
             roll = self.dice.roll_the_dice()
             print(f"{self.name} rolled a {roll}.")
             if roll == 1:
-                print(f"{self.name} rolled a 1. Round score: 0.")
+                print(f"{self.name} rolled a 1. Round score: 0.\n")
+                self.deduct_score(round_score)
+                current_score = self.score
                 break
             round_score += roll
-            print(f"{self.name} round score: {round_score}.")
+            current_score = round_score + self.score
+            print("*********************************************")
+            print(f"* {self.name} round score: {round_score}. \n")
+
+            print(f"* {self.name} total score: {current_score}. \n")
+            print("*********************************************")
             decision = input("Roll again? (y/n): ")
             if decision != "y":
+                total_score.append(round_score)
+                for a in total_score:
+                    total_score += a
+              
+                print(self.get_score())
+                print(f"{self.name} total score: {self.score}.\n")
+                self.add_score(round_score)
+
                 break
-            self.add_score(round_score)
 
     def change_name(self, name):
         """Change the name of the player."""
@@ -48,3 +66,4 @@ class Player:
         self.score -= score
         if self.score < 0:
             self.score = 0
+        return self.score
