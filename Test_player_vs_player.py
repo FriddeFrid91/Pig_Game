@@ -14,5 +14,5 @@ class Test_playervsplayer(unittest.TestCase):
         self.assertIsNotNone(result)
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     unittest.main()
