@@ -38,14 +38,3 @@ class playervsplayer:
                 else:
                     print(f"{current_player.name} got  {current_player.get_score()}")
                     current_player = player_1
-
-
-
-
-
-
-
-
-
-
-

@@ -5,53 +5,54 @@ from playervsplayer import playervsplayer
 
 def main():
     """Main function for the program."""
-    if __name__ == "__main__":
-        print("Welcome to a Game of Pig!")
-        press_enter = input("Press enter to continue.\n")
-        if press_enter == "":
-            while True:
-                the_menu = Menu()
-                menu = the_menu.show_menu()
-                print(menu)
 
-                try:
-                    user_choice = int(input("Enter your choice: "))
+    print("Welcome to a Game of Pig!")
+    press_enter = input("Press enter to continue.\n")
+    if press_enter == "":
+        while True:
+            the_menu = Menu()
+            menu = the_menu.show_menu()
+            print(menu)
 
-                    if user_choice == 1:
-                        print("Player Vs Computer")
+            try:
+                user_choice = int(input("Enter your choice: "))
 
-                    if user_choice == 2:
-                        print("Player Vs Player")
+                if user_choice == 1:
+                    print("Player Vs Computer")
 
-                        new_game = playervsplayer()
-                        result = new_game.two_player_game()
-                        print(result)
+                if user_choice == 2:
+                    print("Player Vs Player")
 
-                    if user_choice == 3:
-                        the_rules = Rules()
-                        print(the_rules)
+                    new_game = playervsplayer()
+                    result = new_game.two_player_game()
+                    print(result)
 
-                        back = input("Press enter to go back to the menu: ")
-                        if back == "":
-                            continue
-                        else:
-                            print("Invalid input. Please press any key to go back to the menu.")
+                if user_choice == 3:
+                    the_rules = Rules()
+                    print(the_rules)
 
-                    if user_choice == 4:
-                        print("Highscore")
+                    back = input("Press enter to go back to the menu: ")
+                    if back == "":
+                        continue
+                    else:
+                        print("Invalid input. Please press any key to go back to the menu.")
 
-                    if user_choice == 5:
-                        print("Change name")
+                if user_choice == 4:
+                    print("Highscore")
 
-                    if user_choice == 6:
-                        print("Exit")
-                        break
+                if user_choice == 5:
+                    print("Change name")
 
-                    if user_choice not in [1, 2, 3, 4, 5, 6]:
-                        print("Invalid input. Please enter a number between 1 and 7.")
+                if user_choice == 6:
+                    print("Exit")
+                    break
 
-                except ValueError:
+                if user_choice not in [1, 2, 3, 4, 5, 6]:
                     print("Invalid input. Please enter a number between 1 and 7.")
 
+            except ValueError:
+                print("Invalid input. Please enter a number between 1 and 7.")
 
-main()
+
+if __name__ == "__main__":
+    main()
