@@ -13,6 +13,7 @@ class Player:
     def player_move(self):
         """Simulate a player's move."""
         round_score = 0
+        total_score = []
         while True:
             roll = self.dice.roll_the_dice()
             print(f"{self.name} rolled a {roll}.")
@@ -30,6 +31,10 @@ class Player:
             print("*********************************************")
             decision = input("Roll again? (y/n): ")
             if decision != "y":
+                total_score.append(round_score)
+                for a in total_score:
+                    total_score += a
+              
                 print(self.get_score())
                 print(f"{self.name} total score: {self.score}.\n")
                 self.add_score(round_score)
