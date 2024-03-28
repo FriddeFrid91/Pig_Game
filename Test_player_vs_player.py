@@ -12,6 +12,6 @@ class Test_playervsplayer(unittest.TestCase):
         """Test for two_player_game method."""
         new_game = playervsplayer()
         result = new_game.two_player_game()
-        self.assertIsNotNone(result)
+        self.assertFalse(result)
 
     unittest.main()
