@@ -4,7 +4,7 @@ from menu import Menu
 """Test for Menu class."""
 
 
-class TestMyMenu(unittest.TestCase):
+class MenuTestCase(unittest.TestCase):
     """Test for Menu class."""
 
     def test_show_menu(self):

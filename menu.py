@@ -1,6 +1,7 @@
 """This is a module for the menu of the game."""
 
 class colors:
+    """This is a class for the colors of the menu."""
     RED = '\033[91m'
     GREEN = '\033[92m'
     YELLOW = '\033[93m'

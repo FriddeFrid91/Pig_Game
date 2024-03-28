@@ -27,8 +27,6 @@ def main():
                 back = input("Press any key to go back to the menu: ")
                 if back == "":
                     continue
-                else:
-                    print("Invalid input. Please press any key to go back to the menu.")
 
             if user_choice == 4:
                 print("Highscore")
