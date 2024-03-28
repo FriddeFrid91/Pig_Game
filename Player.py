@@ -11,10 +11,12 @@ class Player:
         """Simulate a player's move."""
         round_score = 0
         while True:
+            tot_score = self.get_score()
             roll = self.dice.roll_the_dice()
             print(f"{self.name} rolled a {roll}.")
             if roll == 1:
-                print(f"{self.name} rolled a 1. Round score: 0.")
+                print(f"{self.name} rolled a 1. You get 0 points from this round.")
+                print(f"{self.name} total score: {tot_score}.")
                 break
             round_score += roll
             print(f"{self.name} round score: {round_score}.")
@@ -22,6 +24,11 @@ class Player:
             if decision != "y":
                 break
             self.add_score(round_score)
+            print(tot_score)
+    
+    def add_to_the_score(self, score):
+        """Add to the score of the player."""
+        self.score += score
 
     def change_name(self, name):
         """Change the name of the player."""
