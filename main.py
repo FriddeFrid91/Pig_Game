@@ -1,6 +1,6 @@
 from menu import Menu
 from Rules import Rules
-from playervsplayer import playervsplayer
+from player_vs_player import player_vs_player
 
 
 def main():
@@ -23,7 +23,7 @@ def main():
                 if user_choice == 2:
                     print("Player Vs Player")
 
-                    new_game = playervsplayer()
+                    new_game = player_vs_player()
                     result = new_game.two_player_game()
                     print(result)
 
@@ -35,7 +35,8 @@ def main():
                     if back == "":
                         continue
                     else:
-                        print("Invalid input. Please press any key to go back to the menu.")
+                        print("Invalid input. Please press enter to "
+                              + "go back to the menu.")
 
                 if user_choice == 4:
                     print("Highscore")
