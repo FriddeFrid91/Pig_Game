@@ -10,6 +10,7 @@ def main():
     while True:
         the_menu = Menu()
         the_menu.show_menu()
+        
 
         try:
             user_choice = int(input("Enter your choice: "))
