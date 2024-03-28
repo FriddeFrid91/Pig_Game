@@ -36,7 +36,7 @@ class playervsplayer:
 
                 if current_player.get_score() >= 100:
                     print(f"{current_player.name} wins!\n")
-                    break
+                    return current_player.name
 
                 if current_player == player_1:
                     current_player = player_2

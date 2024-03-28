@@ -30,7 +30,7 @@ def main():
                         the_rules = Rules()
                         print(the_rules)
 
-                        back = input("Press any key to go back to the menu: ")
+                        back = input("Press enter to go back to the menu: ")
                         if back == "":
                             continue
                         else:

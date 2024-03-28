@@ -31,9 +31,10 @@ class Player:
             print("*********************************************")
             decision = input("Roll again? (y/n): ")
             if decision != "y":
-                total_score.append(round_score)
+
                 for a in total_score:
-                    total_score += a
+                    total_score += round_score
+                print(total_score)
               
                 print(self.get_score())
                 print(f"{self.name} total score: {self.score}.\n")
