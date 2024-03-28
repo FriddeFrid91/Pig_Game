@@ -1,7 +1,5 @@
-from playervsplayer import playervsplayer
-"""Test for Player vs Player class."""
-
 import unittest
+from playervsplayer import playervsplayer
 """Test for Player vs Player class."""
 
 
