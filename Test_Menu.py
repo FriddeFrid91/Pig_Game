@@ -1,6 +1,6 @@
 import unittest
 from menu import Menu
-"""Test for Menu class."""
+"""Testing the Menu class"""    
 
 
 class Test_Menu(unittest.TestCase):
@@ -9,8 +9,8 @@ class Test_Menu(unittest.TestCase):
     def test_show_menu(self):
         """Test for show_menu method."""
         the_menu = Menu()
-        menu = the_menu.show_menu()
-        self.assertIsNotNone(menu)
+        the_menu.show_menu()
+        self.assertIsNotNone(the_menu.menu_options)
 
 
 if __name__ == "__main__":
