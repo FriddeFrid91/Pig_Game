@@ -1,6 +1,7 @@
 """Main function for the program."""
 from menu import Menu
 from Rules import Rules
+from playervsplayer import playervsplayer
 
 
 def main():
@@ -19,6 +20,10 @@ def main():
 
             if user_choice == 2:
                 print("Player Vs Player")
+
+                new_game = playervsplayer()
+                result = new_game.two_player_game()
+                print(result)
 
             if user_choice == 3:
                 the_rules = Rules()
