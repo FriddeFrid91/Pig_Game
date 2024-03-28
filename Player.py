@@ -15,6 +15,7 @@ class Player:
         round_score = 0
         total_score = []
         while True:
+           
             roll = self.dice.roll_the_dice()
             print(f"{self.name} rolled a {roll}.")
             if roll == 1:
@@ -34,8 +35,7 @@ class Player:
 
                 for a in total_score:
                     total_score += round_score
-                print(total_score)
-              
+                print(total_score)           
                 print(self.get_score())
                 print(f"{self.name} total score: {self.score}.\n")
                 self.add_score(round_score)
