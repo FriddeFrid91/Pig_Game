@@ -19,6 +19,7 @@ class Player:
             if roll == 1:
                 print(f"{self.name} rolled a 1. Round score: 0.\n")
                 self.deduct_score(round_score)
+                current_score = self.score
                 break
             round_score += roll
             current_score = round_score + self.score

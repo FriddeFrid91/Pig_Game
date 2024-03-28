@@ -22,13 +22,13 @@ class playervsplayer:
         self.Player1 = input("Enter the name of player 1: ")
         self.Player2 = input("Enter the name of player 2: ")
 
-        player1 = Player(self.Player1, 0)
-        player2 = Player(self.Player2, 0)
+        player_1 = Player(self.Player1, 0)
+        player_2 = Player(self.Player2, 0)
 
         while True:
-            print(f">> {player1.name} vs {player2.name} <<\n")
+            print(f">> {player_1.name} vs {player_2.name} <<\n")
 
-            current_player = player1
+            current_player = player_1
 
             while current_player.get_score() < 100:
                 print(f"{current_player.name}'s turn:\n")
@@ -38,10 +38,10 @@ class playervsplayer:
                     print(f"{current_player.name} wins!\n")
                     break
 
-                if current_player == player1:
-                    current_player = player2
+                if current_player == player_1:
+                    current_player = player_2
                 else:
-                    current_player = player1
+                    current_player = player_1
 
 
 
