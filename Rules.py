@@ -6,12 +6,7 @@ class colors:
         YELLOW = '\033[93m'
         BLUE = '\033[94m'
         PINK = '\033[95m'
-        CYAN = '\033[96m'
-        WHITE = '\033[97m'
-        RESET = '\033[0m'  # Reset to default color
-
-    
-
+        RESET = '\033[0m'  
 
 class Rules:
     def __init__(self): #constructor
@@ -27,11 +22,3 @@ class Rules:
 
     def get_rules(self): #returns the rules
         return self.rules 
-    
-    
-    
-
-        
-    
-
-    

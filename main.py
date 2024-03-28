@@ -3,10 +3,8 @@ from menu import Menu
 from Rules import Rules
 
 
-
 def main():
     """Functionality for menu in menu."""
-    print("Hello World!")
 
     while True:
         the_menu = Menu()
@@ -43,10 +41,10 @@ def main():
                 break
 
             if user_choice != 1 or 2 or 3 or 4 or 5 or 6:
-                print("Invalid input. Please enter a number between 1 and 7.")
+                print("Invalid input. Please enter a number between 1 and 6.")
 
         except ValueError:
-            print("Invalid input. Please enter a number between 1 and 7.")
+            print("Invalid input. Please enter a number between 1 and 6.")
 
 
 if __name__ == "__main__":

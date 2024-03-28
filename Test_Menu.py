@@ -1,6 +1,6 @@
 """Test for Menu class."""
-from menu import Menu
 import unittest
+from menu import Menu
 """Test for Menu class."""
 
 

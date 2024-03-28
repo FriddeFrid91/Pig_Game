@@ -1,6 +1,6 @@
+import unittest
 from Rules import Rules
 
-import unittest
 
 class Test_Rules(unittest.TestCase):
     def test_get_rules(self):

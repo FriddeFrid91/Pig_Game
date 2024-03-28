@@ -9,8 +9,6 @@ class colors:
     CYAN = '\033[96m'
     RESET = '\033[0m'  # Reset to default color
 
-
-
 class Menu:
     """This is a class for the menu of the game."""
 
