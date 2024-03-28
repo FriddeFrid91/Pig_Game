@@ -7,7 +7,7 @@ def main():
     """Main function for the program."""
     if __name__ == "__main__":
         print("Welcome to a Game of Pig!")
-        press_enter = input("Press enter to continue.")
+        press_enter = input("Press enter to continue.\n")
         if press_enter == "":
             while True:
                 the_menu = Menu()

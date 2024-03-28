@@ -9,15 +9,15 @@ class Menu:
     def __init__(self):
         """Menu constructor."""
         self.menu_options = [
-            (colors.BLUE, "Player Vs Computer"),
-            (colors.BLUE, "Player Vs Player"),
-            (colors.BLUE, "Rules"),
-            (colors.BLUE, "Highscore"),
-            (colors.BLUE, "Change name"),
-            (colors.GREEN, "Exit")
+            (colors.BLUE, "1. Player Vs Computer"),
+            (colors.BLUE, "2. Player Vs Player"),
+            (colors.BLUE, "3. Rules"),
+            (colors.BLUE, "4. Highscore"),
+            (colors.BLUE, "5. Change name"),
+            (colors.GREEN, "6. Exit")
         ]
 
     def show_menu(self):
         """Show the menu."""
         for color, option in self.menu_options:
-            print(color + option + colors.RESET)
+            print(colors.YELLOW, color + option + colors.RESET)
