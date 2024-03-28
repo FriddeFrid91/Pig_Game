@@ -1,8 +1,8 @@
-from playervsplayer import playervsplayer
-from Player import Player
-import unittest
 """Test for Player vs Player class."""
 
+import unittest
+from playervsplayer import playervsplayer
+from player import Player
 
 class Test_playervsplayer(unittest.TestCase):
     """Test for Player vs Player class."""

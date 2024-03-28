@@ -1,5 +1,5 @@
 """Player vs Player class."""
-from Player import Player
+from player import Player
 
 
 class playervsplayer:

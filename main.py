@@ -1,5 +1,6 @@
+"""Main module for the program."""
 from menu import Menu
-from Rules import Rules
+from rules import Rules
 from playervsplayer import playervsplayer
 
 
@@ -12,6 +13,7 @@ def main():
             while True:
                 the_menu = Menu()
                 the_menu.show_menu()
+
 
                 try:
                     user_choice = int(input("Enter your choice: "))

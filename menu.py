@@ -1,16 +1,14 @@
-"""This is a module for the menu of the game."""
+"""This module contains the Menu class."""
 
 class colors:
-    """This is a class for the colors of the menu."""
     GREEN = '\033[92m'
     YELLOW = '\033[93m'
     BLUE = '\033[94m'
     PINK = '\033[95m'
-    RESET = '\033[0m'  # Reset to default color
+    RESET = '\033[0m'  
 
 class Menu:
-    """This is a class for the menu of the game."""
-
+    """Menu class."""
     def __init__(self):
         """Menu constructor."""
         self.menu_options = 0
