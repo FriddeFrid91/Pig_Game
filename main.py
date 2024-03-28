@@ -11,7 +11,8 @@ def main():
         if press_enter == "":
             while True:
                 the_menu = Menu()
-                the_menu.show_menu()
+                menu = the_menu.show_menu()
+                print(menu)
 
                 try:
                     user_choice = int(input("Enter your choice: "))
