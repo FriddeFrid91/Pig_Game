@@ -46,7 +46,7 @@ def main():
                         print("Exit")
                         break
 
-                    if user_choice != 1 or 2 or 3 or 4 or 5 or 6:
+                    if user_choice not in [1, 2, 3, 4, 5, 6]:
                         print("Invalid input. Please enter a number between 1 and 7.")
 
                 except ValueError:
