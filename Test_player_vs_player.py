@@ -2,7 +2,7 @@ import unittest
 from playervsplayer import playervsplayer
 
 
-class Test_playervsplayer(unittest.TestCase):
+class test_playervsplayer(unittest.TestCase):
     """Test for Player vs Player class."""
 
     def test_two_player_game(self):

@@ -18,5 +18,5 @@ class Menu:
         menu_text += colors.YELLOW + "*************************" + colors.RESET + "\n"
         menu_text += colors.GREEN + "* 6. Exit               *" + colors.RESET + "\n"
         menu_text += colors.YELLOW + "*************************" + colors.RESET + "\n"
-      
+
         return menu_text

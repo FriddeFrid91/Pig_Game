@@ -13,7 +13,6 @@ class Player:
     def player_move(self):
         """Simulate a player's move."""
         round_score = 0
-        total_score = []
         while True:
 
             roll = self.dice.roll_the_dice()
