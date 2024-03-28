@@ -9,8 +9,8 @@ class Test_Menu(unittest.TestCase):
     def test_show_menu(self):
         """Test for show_menu method."""
         the_menu = Menu()
-        the_menu.show_menu()
-        self.assertIsNotNone(the_menu.menu_options)
+        menu = the_menu.show_menu()
+        self.assertIsNotNone(menu)
 
 
 if __name__ == "__main__":
