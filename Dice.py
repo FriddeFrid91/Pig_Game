@@ -10,7 +10,7 @@ class Dice:
 
     def roll_the_dice(self):  # Method to roll the dice
         """Roll the dice."""
-        return random.randint(1, self.numbers)  
+        return random.randint(1, self.numbers)
     # Return a random number between 1 and the number of sides of the dice
 
     def showTheDice(self, result, listOfPoints):  # Method to show the dice
