@@ -30,7 +30,10 @@ class Dice:
 
     def get_dice(self):  # Getter
         """Get the dice."""
-        return self.numbers
+        if self.numbers > 1:
+            return self.numbers
+        else:
+            return 0
 
     def set_dice(self, numbers):  # Setter
         """Set the dice."""

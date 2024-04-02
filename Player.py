@@ -1,8 +1,9 @@
 from Dice import Dice
+from colors import colors
 
 
 class Player:
-    def __init__(self, name, score=0):
+    def __init__(self, name, score):
         self.name = name
         self.score = score
         self.dice = Dice(6)
@@ -14,27 +15,35 @@ class Player:
         """Simulate a player's move."""
         round_score = 0
         while True:
+
             roll = self.dice.roll_the_dice()
             round_score += roll
             current_score = round_score + self.score
             print(f"{self.name} rolled a {roll}.\n")
+            print(current_score)
             if roll == 1:
                 print("Oink, oink! You lost all your points for this round!\n")
-                self.deduct_score(round_score)
-                print(self.get_score)
+                tot = current_score - round_score
+                deduct = self.deduct_score(tot)
+                print(deduct)
                 break
 
-            print("*********************************************")
-            print(f"* {self.name} round score: {round_score}. \n")
-            print(f"* {self.name} total score: {current_score}. \n")
-            print("*********************************************")
+            if roll > 1:
+                print(colors.YELLOW + "*******************************" + colors.RESET)
+                print(f"{self.name} round score: {round_score}. ")
+                print(f"{self.name} total score: {current_score}. ")
+                print(colors.YELLOW + "*******************************" + colors.RESET)
 
-            decision = input("Roll again? (y/n): \n")
-            if decision != "y":
-                print(self.get_score())
-                print(f"{self.name} total score: {current_score}.\n")
-                self.add_score(round_score)
-                break
+                decision = input("Roll again? (yes/no): \n")
+                if decision.lower() == "no":
+                    print(colors.YELLOW + "***************************" + colors.RESET)
+                    print(f"{self.name} round score: {round_score}. ")
+                    print(f"{self.name} total score: {current_score}. ")
+                    print(colors.YELLOW + "***************************" + colors.RESET)
+                    self.add_score(round_score)
+                    break
+                else:
+                    continue
 
     def change_name(self, name):
         """Change the name of the player."""
@@ -48,18 +57,13 @@ class Player:
         """Get the score of the player."""
         return self.score
 
-    def set_score(self, score):
-        """Set the score of the player."""
-        self.score = score
-
     def add_score(self, score):
         """Add the score of the player."""
         self.score += score
 
     def deduct_score(self, score):
         """Deduct the score of the player."""
-        self.score -= score
+        self.score = score
         if self.score < 0:
             self.score = 0
         return self.score
-
