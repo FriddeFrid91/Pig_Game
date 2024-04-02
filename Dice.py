@@ -17,9 +17,6 @@ class Dice:
         """Show the dice."""
         if result == 1:
             # If the result is 1, the player loses all the points and the turn is over
-            print("--------------------")
-            print("Sorry, you got a 1. Your turn is over.")
-            print("--------------------")
             return 0
         else:
             # If the result is not 1, the player gets
