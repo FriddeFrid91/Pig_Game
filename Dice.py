@@ -13,14 +13,13 @@ class Dice:
         return random.randint(1, self.numbers)
     # Return a random number between 1 and the number of sides of the dice
 
-    def show_the_dice(self, result, list_of_points):  # Method to show the dice
+    def show_the_dice(self, result):  # Method to show the dice
         """Show the dice."""
         if result == 1:
             # If the result is 1, the player loses all the points and the turn is over
             print("--------------------")
             print("Sorry, you got a 1. Your turn is over.")
             print("--------------------")
-            list_of_points.clear()  # Clear the list of points
             return 0
         else:
             # If the result is not 1, the player gets
