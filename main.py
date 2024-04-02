@@ -15,7 +15,7 @@ def main():
             print(menu)
 
             try:
-                user_choice = int(input("Enter your choice: "))
+                user_choice = int(input("Enter your choice: \n"))
 
                 if user_choice == 1:
                     print("Player Vs Computer")
@@ -53,6 +53,8 @@ def main():
 
             except ValueError:
                 print("Invalid input. Please enter a number between 1 and 7.")
+    else:
+        print("Invalid input. Please press enter to continue.")
 
 
 if __name__ == "__main__":
