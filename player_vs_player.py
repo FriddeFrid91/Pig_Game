@@ -8,14 +8,32 @@ class player_vs_player:
     def __init__(self):
         """Initialize the player vs player game."""
         self.player_1 = Player("", 0)
-        self.player2 = Player("", 0)
+        self.player_2 = Player("", 0)
 
     def two_player_game(self):
         """Simulate a two player game of Pig."""
         print(">> Welcome to a game of Pig! <<\n")
 
-        self.player_1 = input("Enter the name of player 1: \n")
-        self.player_2 = input("Enter the name of player 2: \n")
+        boolean = True
+        while boolean:
+            self.player_1 = (input("Enter the name of player 1: "))
+            if self.player_1 == "":
+                print("Please enter a name: ")
+                continue
+            else:
+                boolean = False
+
+        boolean = True
+        while boolean:
+            self.player_2 = (input("Enter the name of player 2: "))
+            if self.player_2 == "":
+                print("Please enter a name: ")
+                continue
+            elif self.player_2 == self.player_1:
+                print("Oink, oink! You can't have the same name as player 1!")
+                continue
+            else:
+                boolean = False
 
         player_1 = Player(self.player_1, 0)
         player_2 = Player(self.player_2, 0)
