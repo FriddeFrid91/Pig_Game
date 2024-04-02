@@ -39,6 +39,9 @@ class Player:
                 print(colors.YELLOW + "*******************************" + colors.RESET)
 
                 decision = input("Roll again? (yes/no): \n")
+                while decision.lower() != "yes" and decision.lower() != "no":
+                    print("Invalid input. Please enter yes or no.\n")
+                    decision = input("Roll again? (yes/no): \n")
                 if decision.lower() == "no":
                     print(colors.YELLOW + "***************************" + colors.RESET)
                     print(f"{self.name} round score: {round_score}. ")
@@ -46,8 +49,10 @@ class Player:
                     print(colors.YELLOW + "***************************" + colors.RESET)
                     self.add_score(round_score)
                     break
-                else:
+                elif decision.lower() == "yes":
                     continue
+                else:
+                    print("Invalid input. Please enter yes or no.\n")
 
     def change_name(self, name):
         """Change the name of the player."""
