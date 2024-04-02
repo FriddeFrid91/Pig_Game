@@ -27,7 +27,7 @@ class player_vs_player:
 
             while current_player.get_score() < 50:
                 print("*********************************")
-                print(f">>> {current_player.name}s turn <<<")
+                print(f" >>> {current_player.name}s turn <<<")
                 print("*********************************")
 
                 current_player.player_move()
