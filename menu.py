@@ -25,7 +25,7 @@ class Menu:
         while True:
             back = input("Press enter to go back to the menu.")
             if back == "":
-                return
+                return True
             else:
                 print("Invalid input. Please press enter to go back to the menu. ")
             continue
