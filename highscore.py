@@ -1,4 +1,5 @@
 import pickle
+from colors import colors
 
 
 class highscore:
@@ -10,6 +11,8 @@ class highscore:
 
     def add_highscore(self, name):
         """Add a highscore."""
+
+        print(colors.YELLOW + "*********************************" + colors.RESET)
 
         if name in self.highscore_dict:
             self.highscore_dict[name] += 1
@@ -28,7 +31,7 @@ class highscore:
         with open("highscore.txt", "rb") as file:
             self.highscore_dict = pickle.load(file)
         for key, value in self.highscore_dict.items():
-            print(f"{key}: {value}")
+            print(f"WHAT {key}: {value}")
 
     def recent_winner(self, name):
         """Set the recent winner."""

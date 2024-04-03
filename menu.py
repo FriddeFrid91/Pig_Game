@@ -8,7 +8,7 @@ class Menu:
     def show_menu(self):
         """Generate the menu text."""
         menu_text = ""
-        menu_text += colors.PINK + "Welcome to a game of Pig!" + colors.RESET + "\n"
+        menu_text += colors.PINK + "A Game Of Pig" + colors.RESET + "\n"
         menu_text += colors.YELLOW + "*************************" + colors.RESET + "\n"
         menu_text += colors.BLUE + "* 1. Player Vs Computer *" + colors.RESET + "\n"
         menu_text += colors.BLUE + "* 2. Player Vs Player   *" + colors.RESET + "\n"
@@ -18,5 +18,10 @@ class Menu:
         menu_text += colors.YELLOW + "*************************" + colors.RESET + "\n"
         menu_text += colors.GREEN + "* 6. Exit               *" + colors.RESET + "\n"
         menu_text += colors.YELLOW + "*************************" + colors.RESET + "\n"
-
         return menu_text
+
+    def back_to_menu(self):
+        """Generate the back to menu text."""
+        back_to_menu = ""
+        back_to_menu += colors.PINK + "Press enter to go back to the menu." + colors.RESET + "\n"
+        return back_to_menu
