@@ -19,7 +19,8 @@ class Rules:
         print(colors.BLUE + "First player to get 100 points wins" + colors.RESET)
         print(colors.GREEN + "If you roll a 1, you lose all your points for that turn" + colors.RESET)
         print(colors.BLUE + "If you hold, you keep your points for that turn" + colors.RESET)
-        print(colors.YELLOW + "*******************************************************" + colors.RESET)
+        print(colors.YELLOW + "*******************************************************" 
+              + colors.RESET)
 
     def get_rules(self):  # returns the rules
         return self.rules
