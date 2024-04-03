@@ -22,7 +22,9 @@ class Menu:
 
     def back_to_menu(self):
         """Generate the back to menu text."""
-        back_to_menu = ""
-        back_to_menu += colors.PINK + "Press enter to go back to the menu."
-        + colors.RESET + "\n"
-        return back_to_menu
+        back = input("Press enter to go back to the menu: ")
+        if back == "":
+            return
+        else:
+            print("Invalid input. Please press enter to "
+                  + "go back to the menu.")

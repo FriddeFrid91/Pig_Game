@@ -24,7 +24,7 @@ class highscore:
         print(colors.YELLOW + "*********************************" + colors.RESET)
         print(colors.YELLOW + "********* HALL OF FAME **********" + colors.RESET)
         print(colors.YELLOW + "*********************************" + colors.RESET)
-        
+     
         highscore_table.update
 
         if winner in highscore_dict:

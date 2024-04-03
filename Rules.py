@@ -18,6 +18,7 @@ class Rules:
         # prints the rules of the game
 
     def show_rules(self):
+        """Prints the rules of the game."""
         print(colors.PINK + "**RULES OF PIG GAME**" + colors.RESET)
         print(colors.YELLOW + "********************************************" +
               colors.RESET)

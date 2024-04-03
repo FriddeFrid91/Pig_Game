@@ -8,6 +8,11 @@ from colors import colors
 
 def main():
     """Main function for the program."""
+    start_game()    # Start the game
+
+
+def start_game():
+    """Main function for the program."""
     stupid_dict = {}
     chart = highscore()
 
@@ -44,27 +49,23 @@ def main():
             if user_choice == 3:
                 the_rules = Rules()
                 the_rules.show_rules()
-
-                back = input("Press enter to go back to the menu: ")
-                if back == "":
-                    continue
-                else:
-                    print("Invalid input. Please press enter to "
-                          + "go back to the menu.")
+                the_menu.back_to_menu()
 
             if user_choice == 4:
                 print("Highscore")
                 try:
                     chart.add_highscore(winner, stupid_dict)
+                    the_menu.back_to_menu()
                 except UnboundLocalError:
                     print("No winner yet!")
                     continue
 
             if user_choice == 5:
                 print("Change name")
+                the_menu.back_to_menu()
 
             if user_choice == 6:
-                print("Exit")
+                print("Goodbye! Oink, oink!")
                 break
 
             if user_choice not in [1, 2, 3, 4, 5, 6]:
