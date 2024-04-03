@@ -1,37 +1,18 @@
-<<<<<<< HEAD
-"""class for rules of the game"""
-
-class colors:
-    """class for colors"""
-=======
 # a class for the game Rules
 
 class colors:
     RED = '\033[91m'
->>>>>>> main
     GREEN = '\033[92m'
     YELLOW = '\033[93m'
     BLUE = '\033[94m'
     PINK = '\033[95m'
     RESET = '\033[0m'
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 
     
 class Rules:
-<<<<<<< HEAD
-    """class for the game Rules"""
-    def __init__(self): #constructor
-        self.rules = f"Play 1 player with the computer\nPlay 2 players\nFirst player to get 100 points wins\nIf you roll a 1,you lose all your points for that turn\nIf you hold, you keep your points for that turn"
-        
-        print(colors.PINK + "**RULES OF PIG GAME**" + colors.RESET) #prints the rules of the game
-=======
     def __init__(self):  # constructor
         self.rules = "You can play the game with 1 players with the computer\nYou can play the game with 2 players\nFirst player to get 100 points wins\nIf you roll a 1, you lose all your points for that turn\nIf you hold, you keep your points for that turn"
         print(colors.PINK + "**RULES OF PIG GAME**" + colors.RESET)  # prints the rules of the game
->>>>>>> main
         print(colors.YELLOW + "*******************************************************" + colors.RESET)
         print(colors.BLUE + "Play 1 player with the computer" + colors.RESET)
         print(colors.BLUE + "Play 2 players" + colors.RESET)
@@ -41,10 +22,5 @@ class Rules:
         print(colors.YELLOW + "*******************************************************" 
               + colors.RESET)
 
-<<<<<<< HEAD
-    def get_rules(self):
-        return self.rules
-=======
     def get_rules(self):  # returns the rules
         return self.rules
->>>>>>> main
