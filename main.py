@@ -9,12 +9,12 @@ def main():
     """Main function for the program."""
 
     print("Welcome to a Game of Pig!")
-    print(colors.RED + "         __,---.__")
-    print("    __,-'         `-.")
-    print("   /_ /_,'           \\&")
-    print("   _,''               \\")
-    print("  (\")            .    |")
-    print("    ``--|__|--..-'`.__|\n" + colors.RESET)
+    print(colors.PINK + "         __,---.__" + colors.RESET)
+    print(colors.PINK + "    __,-'         `-." + colors.RESET)
+    print(colors.PINK + "   /_ /_,'           \\&" + colors.RESET)
+    print(colors.PINK + "   _,''               \\" + colors.RESET)
+    print(colors.PINK + "  (\")            .    |" + colors.RESET)
+    print(colors.PINK + "    ``--|__|--..-'`.__|\n" + colors.RESET)
 
     print("Press any key to start the game.")
     input()
