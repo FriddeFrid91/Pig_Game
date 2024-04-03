@@ -10,7 +10,7 @@ class highscore:
 
     def add_highscore(self, name):
         """Add a highscore."""
-        highscore_list = []
+        highscore_list = [""]
         highscore_list.append(name)
         print(highscore_list)
 
