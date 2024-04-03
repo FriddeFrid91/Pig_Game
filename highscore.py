@@ -7,19 +7,26 @@ class highscore:
     def __init__(self):
         """Initialize the highscore."""
         self.highscore_dict = {}
-        self.highscore_name = ""
 
     def add_highscore(self, name):
         """Add a highscore."""
+        highscore_list = []
+        highscore_list.append(name)
+        print(highscore_list)
 
+        print(colors.YELLOW + "*********************************" + colors.RESET)
+        print(colors.YELLOW + "*********** HIGHSCORE ***********" + colors.RESET)
+        print(colors.YELLOW + "*********************************" + colors.RESET)
+        print(colors.YELLOW + "*********************************" + colors.RESET)
+        print(colors.YELLOW + "********* HALL OF FAME **********" + colors.RESET)
         print(colors.YELLOW + "*********************************" + colors.RESET)
 
         if name in self.highscore_dict:
             self.highscore_dict[name] += 1
-            self.highscore_dict.update({name: self.highscore_dict[name]})
+            self.highscore_dict.update(self.highscore_dict)
         else:
             self.highscore_dict[name] = 1
-            self.highscore_dict.update({name: self.highscore_dict[name]})
+            self.highscore_dict.update(self.highscore_dict)
 
         with open("highscore.txt", "wb") as file:
             pickle.dump(self.highscore_dict, file)
@@ -30,6 +37,7 @@ class highscore:
         """Get the highscore."""
         with open("highscore.txt", "rb") as file:
             self.highscore_dict = pickle.load(file)
+
         for key, value in self.highscore_dict.items():
             print(f"WHAT {key}: {value}")
 

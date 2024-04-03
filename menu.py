@@ -23,5 +23,6 @@ class Menu:
     def back_to_menu(self):
         """Generate the back to menu text."""
         back_to_menu = ""
-        back_to_menu += colors.PINK + "Press enter to go back to the menu." + colors.RESET + "\n"
+        back_to_menu += colors.PINK + "Press enter to go back to the menu."
+        + colors.RESET + "\n"
         return back_to_menu

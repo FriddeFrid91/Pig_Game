@@ -50,8 +50,6 @@ def main():
                 print("Highscore")
                 try:
                     chart = highscore()
-                    chart.recent_winner(result)
-                    print(chart)
 
                     wut = chart.add_highscore(result)
                     print(wut)
