@@ -1,5 +1,6 @@
 """This is a module for the menu of the game."""
 
+
 class colors:
     RED = '\033[91m'
     GREEN = '\033[92m'
@@ -8,6 +9,7 @@ class colors:
     PINK = '\033[95m'
     CYAN = '\033[96m'
     RESET = '\033[0m'  # Reset to default color
+
 
 class Menu:
     """This is a class for the menu of the game."""
