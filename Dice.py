@@ -10,17 +10,13 @@ class Dice:
 
     def roll_the_dice(self):  # Method to roll the dice
         """Roll the dice."""
-        return random.randint(1, self.numbers)  
+        return random.randint(1, self.numbers)
     # Return a random number between 1 and the number of sides of the dice
 
-    def showTheDice(self, result, listOfPoints):  # Method to show the dice
+    def show_the_dice(self, result):  # Method to show the dice
         """Show the dice."""
         if result == 1:
             # If the result is 1, the player loses all the points and the turn is over
-            print("--------------------")
-            print("Sorry, you got a 1. Your turn is over.")
-            print("--------------------")
-            listOfPoints.clear()  # Clear the list of points
             return 0
         else:
             # If the result is not 1, the player gets
@@ -28,11 +24,14 @@ class Dice:
             print(f"You got a {result}!")
             return result
 
-    def getDice(self):  # Getter
+    def get_dice(self):  # Getter
         """Get the dice."""
-        return self.numbers
+        if self.numbers > 1:
+            return self.numbers
+        else:
+            return 0
 
-    def setDice(self, numbers):  # Setter
+    def set_dice(self, numbers):  # Setter
         """Set the dice."""
         self.numbers = numbers
 

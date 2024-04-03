@@ -1,17 +1,20 @@
-"""Test for Menu class."""
 import unittest
 from menu import Menu
+<<<<<<< HEAD
+=======
+"""Testing the Menu class"""    
+>>>>>>> main
 
 
-class Test_Menu(unittest.TestCase):
+class test_menu(unittest.TestCase):
     """Test for Menu class."""
 
     def test_show_menu(self):
         """Test for show_menu method."""
         the_menu = Menu()
-        the_menu.show_menu()
-        self.assertIsNotNone(the_menu.menu_options)
+        result = the_menu.show_menu()
+        self.assertIsNotNone(result)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
