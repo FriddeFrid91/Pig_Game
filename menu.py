@@ -20,12 +20,12 @@ class Menu:
         menu_text += colors.YELLOW + "*************************" + colors.RESET + "\n"
         return menu_text
 
-    def back_to_menu(self):
+    def back_to_menu(self, back):
         """Generate the back to menu text."""
         while True:
-            back = input("Press enter to go back to the menu.")
             if back == "":
-                return True
+                break
             else:
-                print("Invalid input. Please press enter to go back to the menu. ")
-            continue
+                back = input("Press enter to go back to the menu.")
+                continue
+

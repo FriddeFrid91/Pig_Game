@@ -44,7 +44,8 @@ def main():
             if user_choice == 3:
                 the_rules = Rules()
                 the_rules.show_rules()
-                the_menu.back_to_menu()
+                back = input("Press enter to go back to the menu.")
+                the_menu.back_to_menu(back)
 
             if user_choice == 4:
                 print("Highscore")
@@ -56,7 +57,8 @@ def main():
 
             if user_choice == 5:
                 print("Change name")
-                the_menu.back_to_menu()
+                back = input("Press enter to go back to the menu.")
+                the_menu.back_to_menu(back)
 
             if user_choice == 6:
                 print("Goodbye!")
