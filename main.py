@@ -52,6 +52,11 @@ def main():
                     chart = highscore()
                     chart.recent_winner(result)
                     print(chart)
+
+                    wut = chart.add_highscore(result)
+                    print(wut)
+                    what = chart.get_highscore()
+                    print(what)
                 except UnboundLocalError:
                     print("No winner yet!")
                     continue

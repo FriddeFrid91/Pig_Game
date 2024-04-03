@@ -13,17 +13,22 @@ class highscore:
 
         if name in self.highscore_dict:
             self.highscore_dict[name] += 1
+            self.highscore_dict.update({name: self.highscore_dict[name]})
         else:
             self.highscore_dict[name] = 1
+            self.highscore_dict.update({name: self.highscore_dict[name]})
 
         with open("highscore.txt", "wb") as file:
             pickle.dump(self.highscore_dict, file)
+
+        return self.highscore_dict
 
     def get_highscore(self):
         """Get the highscore."""
         with open("highscore.txt", "rb") as file:
             self.highscore_dict = pickle.load(file)
-        return self.highscore_dict
+        for key, value in self.highscore_dict.items():
+            print(f"{key}: {value}")
 
     def recent_winner(self, name):
         """Set the recent winner."""
