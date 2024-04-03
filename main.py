@@ -14,7 +14,7 @@ def main():
     print("   /_ /_,'           \\&")
     print("   _,''               \\")
     print("  (\")            .    |")
-    print("     ``--|__|--..-'`.__|\n" + colors.RESET)
+    print("    ``--|__|--..-'`.__|\n" + colors.RESET)
 
     print("Press any key to start the game.")
     input()
@@ -31,7 +31,6 @@ def main():
 
             if user_choice == 2:
                 print("Player Vs Player")
-
                 new_game = player_vs_player()
                 result = new_game.two_player_game()
                 print(result)
@@ -49,9 +48,13 @@ def main():
 
             if user_choice == 4:
                 print("Highscore")
-                chart = highscore()
-                chart.recent_winner(result)
-                print(chart)
+                try:
+                    chart = highscore()
+                    chart.recent_winner(result)
+                    print(chart)
+                except UnboundLocalError:
+                    print("No winner yet!")
+                    continue
             if user_choice == 5:
                 print("Change name")
 
@@ -68,4 +71,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

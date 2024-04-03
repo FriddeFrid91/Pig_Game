@@ -38,6 +38,11 @@ class player_vs_player:
         player_1 = Player(self.player_1, 0)
         player_2 = Player(self.player_2, 0)
 
+        with open("player1.txt", "w") as f:
+            f.write(player_1.name)      
+        with open("player2.txt", "w") as f:
+            f.write(player_2.name)
+
         while True:
             print(f">>>> {player_1.name} vs {player_2.name} <<<<\n")
 
