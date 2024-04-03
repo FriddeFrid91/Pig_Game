@@ -12,6 +12,12 @@ class test_menu(unittest.TestCase):
         result = the_menu.show_menu()
         self.assertIsNotNone(result)
 
+    def test_back_to_menu(self):
+        """Test for back_to_menu method."""
+        the_menu = Menu()
+        result = the_menu.back_to_menu()
+        self.assertIsNotNone(result)
+
 
 if __name__ == "__main__":
     unittest.main()
