@@ -1,5 +1,6 @@
 import pickle
 from colors import colors
+from Player import Player
 
 
 class highscore:
@@ -7,12 +8,15 @@ class highscore:
     def __init__(self):
         """Initialize the highscore."""
         self.highscore_dict = {}
+        self.winner = Player("", 0)
 
-    def add_highscore(self, name):
+    def add_highscore(self, winner, highscore_dict):
         """Add a highscore."""
-        highscore_list = [""]
-        highscore_list.append(name)
-        print(highscore_list)
+        try:
+            with open("highscore.txt", "rb") as file:
+                highscore_table = pickle.load(file)
+        except FileNotFoundError:
+            highscore_table = {}
 
         print(colors.YELLOW + "*********************************" + colors.RESET)
         print(colors.YELLOW + "*********** HIGHSCORE ***********" + colors.RESET)
@@ -20,31 +24,24 @@ class highscore:
         print(colors.YELLOW + "*********************************" + colors.RESET)
         print(colors.YELLOW + "********* HALL OF FAME **********" + colors.RESET)
         print(colors.YELLOW + "*********************************" + colors.RESET)
+        
+        highscore_table.update
 
-        if name in self.highscore_dict:
-            self.highscore_dict[name] += 1
-            self.highscore_dict.update(self.highscore_dict)
+        if winner in highscore_dict:
+            highscore_dict[winner] += 1
         else:
-            self.highscore_dict[name] = 1
-            self.highscore_dict.update(self.highscore_dict)
+            highscore_dict[winner] = 1
 
         with open("highscore.txt", "wb") as file:
-            pickle.dump(self.highscore_dict, file)
+            pickle.dump(highscore_dict, file)
 
-        return self.highscore_dict
-
-    def get_highscore(self):
-        """Get the highscore."""
         with open("highscore.txt", "rb") as file:
-            self.highscore_dict = pickle.load(file)
-
-        for key, value in self.highscore_dict.items():
-            print(f"WHAT {key}: {value}")
-
-    def recent_winner(self, name):
-        """Set the recent winner."""
-        self.highscore_name = name
-        print(name)
-
-    def __str__(self):
-        return f"Most recent winner is: {self.highscore_name}."
+            highscore_table = pickle.load(file)
+        print(colors.YELLOW + "*********************************" + colors.RESET)
+        print(colors.YELLOW + "*********** HIGHSCORE ***********" + colors.RESET)
+        print(colors.YELLOW + "*********************************" + colors.RESET)
+        print(colors.YELLOW + "*********************************" + colors.RESET)
+        print(colors.YELLOW + "********* HALL OF FAME **********" + colors.RESET)
+        print(colors.YELLOW + "*********************************" + colors.RESET)
+        for name, wins in highscore_table.items():
+            print(f"{name}: {wins}")

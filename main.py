@@ -8,6 +8,8 @@ from colors import colors
 
 def main():
     """Main function for the program."""
+    stupid_dict = {}
+    chart = highscore()
 
     print("Welcome to a Game of Pig!")
     print(colors.RED + "         __,---.__")
@@ -22,6 +24,7 @@ def main():
     while True:
         the_menu = Menu()
         menu = the_menu.show_menu()
+
         print(menu)
 
         try:
@@ -30,13 +33,13 @@ def main():
             if user_choice == 1:
                 print("Player Vs Computer")
                 game = player_vs_computer()
-                game.player_vs_computer_game()
+                wut = game.player_vs_computer_game()
+                print(wut)
 
             if user_choice == 2:
                 print("Player Vs Player")
                 new_game = player_vs_player()
-                result = new_game.two_player_game()
-                print(result)
+                winner = new_game.two_player_game()
 
             if user_choice == 3:
                 the_rules = Rules()
@@ -52,15 +55,11 @@ def main():
             if user_choice == 4:
                 print("Highscore")
                 try:
-                    chart = highscore()
-
-                    wut = chart.add_highscore(result)
-                    print(wut)
-                    what = chart.get_highscore()
-                    print(what)
+                    chart.add_highscore(winner, stupid_dict)
                 except UnboundLocalError:
                     print("No winner yet!")
                     continue
+
             if user_choice == 5:
                 print("Change name")
 
