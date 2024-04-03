@@ -37,9 +37,29 @@ def main():
 
             if user_choice == 2:
                 print("Player Vs Player")
-                new_game = player_vs_player()
-                winner = new_game.two_player_game()
+                boolean = True
+                while boolean:
+                    player_1 = input("Enter the name of player 1: ")
+                    if player_1 == "":
+                        print("Please enter a name: ")
+                        continue
+                    else:
+                        boolean = False
 
+                boolean = True
+                while boolean:
+                    player_2 = input("Enter the name of player 2: ")
+                    if player_2 == "":
+                        print("Please enter a name: ")
+                        continue
+                    elif player_2 == player_1:
+                        print("Oink, oink! You can't have the same name as player 1!")
+                        continue
+                    else:
+                        boolean = False
+                    new_game = player_vs_player()
+                    winner = new_game.two_player_game(player_1, player_2)
+                
             if user_choice == 3:
                 the_rules = Rules()
                 the_rules.show_rules()
