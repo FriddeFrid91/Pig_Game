@@ -9,7 +9,7 @@ class test_player_vs_player(unittest.TestCase):
     def test_two_player_game(self, mock_input):
         """Test for player_vs_player method."""
         new_game = player_vs_player()
-        result = new_game.two_player_game(mock_input, mock_input)
+        result = new_game.two_player_game(mock_input)
         self.assertIsNotNone(result)
 
 
