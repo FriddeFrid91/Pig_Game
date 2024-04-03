@@ -22,5 +22,10 @@ class Menu:
 
     def back_to_menu(self):
         """Generate the back to menu text."""
-        print("Press any key to go back to the menu.")
-        input()
+        while True:
+            back = input("Press enter to go back to the menu.")
+            if back == "":
+                return
+            else:
+                print("Invalid input. Please press enter to go back to the menu. ")
+            continue
