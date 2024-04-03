@@ -43,7 +43,7 @@ def main():
 
             if user_choice == 3:
                 the_rules = Rules()
-                print(the_rules)
+                the_rules.show_rules()
 
                 back = input("Press enter to go back to the menu: ")
                 if back == "":

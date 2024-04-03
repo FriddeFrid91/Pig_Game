@@ -16,6 +16,8 @@ class Rules:
             "You roll a 1, you lose all your points for that turn\nIf you hold," \
             "you keep your points for that turn"
         # prints the rules of the game
+
+    def show_rules(self):
         print(colors.PINK + "**RULES OF PIG GAME**" + colors.RESET)
         print(colors.YELLOW + "********************************************" +
               colors.RESET)
