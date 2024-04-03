@@ -2,6 +2,7 @@
 from player import Player
 
 
+
 class playervsplayer:
     def __init__(self):
         self.Player1 = Player("")
