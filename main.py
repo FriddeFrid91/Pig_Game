@@ -1,6 +1,7 @@
 from menu import Menu
 from Rules import Rules
 from player_vs_player import player_vs_player
+from player_vs_computer import player_vs_computer
 from highscore import highscore
 from colors import colors
 
@@ -28,6 +29,8 @@ def main():
 
             if user_choice == 1:
                 print("Player Vs Computer")
+                game = player_vs_computer()
+                game.player_vs_computer_game()
 
             if user_choice == 2:
                 print("Player Vs Player")
