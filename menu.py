@@ -2,7 +2,6 @@
 from colors import colors
 
 
-
 class Menu:
     """This is a class for the menu of the game."""
 
