@@ -24,7 +24,6 @@ def main():
     while True:
         the_menu = Menu()
         menu = the_menu.show_menu()
-
         print(menu)
 
         try:

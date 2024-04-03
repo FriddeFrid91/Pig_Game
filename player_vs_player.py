@@ -10,7 +10,7 @@ class player_vs_player:
         self.player_1 = Player("", 0)
         self.player_2 = Player("", 0)
 
-    def two_player_game(self):
+    def player_vs_player(self):
         """Simulate a two player game of Pig."""
         print(">> Welcome to a game of Pig! <<\n")
 
