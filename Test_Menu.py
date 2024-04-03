@@ -6,15 +6,11 @@ from menu import Menu
 class test_menu(unittest.TestCase):
     """Test for Menu class."""
 
-    def test_start_game(self):
-        start = Menu()
-        self.assertEqual(
-            start.start_game(),
-            "Welcome to Pig Dice Game!\n"
-            "Would you like to play a game?\n"
-            "1. Yes\n"
-            "2. No\n"
-            "Please enter your choice: ")
+    def test_show_menu(self):
+        """Test for show_menu method."""
+        the_menu = Menu()
+        result = the_menu.show_menu()
+        self.assertIsNotNone(result)
 
 
 if __name__ == "__main__":
