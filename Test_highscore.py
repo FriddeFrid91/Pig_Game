@@ -1,7 +1,7 @@
 import unittest
-import pickle
 from highscore import highscore
 from unittest.mock import patch, mock_open
+from io import StringIO
 
 
 class TestHighscore(unittest.TestCase):
