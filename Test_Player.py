@@ -30,11 +30,6 @@ class Test_Player(unittest.TestCase):
         result = player.get_score()
         self.assertEqual(result, 100)
 
-    def test_player_name(self):
-        """Test for player_name method."""
-        Player("TestPlayer", 0)
-        self.assertEqual("TestPlayer", "TestPlayer")
-
 
 if __name__ == "__main__":
     unittest.main()
