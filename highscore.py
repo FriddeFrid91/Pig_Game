@@ -38,6 +38,8 @@ class highscore:
                 self.highscore_dict = pickle.load(file)
         except FileNotFoundError:
             self.highscore_dict = {}
+        except EOFError:
+            self.highscore_dict = {}
         return self.highscore_dict
 
     def get_highscore(self):
