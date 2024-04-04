@@ -39,7 +39,7 @@ class highscore:
         except FileNotFoundError:
             self.highscore_dict = {}
         return self.highscore_dict
-    
+
     def get_highscore(self):
         """Get the highscore."""
         return self.highscore_dict
