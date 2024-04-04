@@ -1,12 +1,11 @@
 import unittest
-from unittest.mock import patch
+from unittest
 from player_vs_player import player_vs_player
 
 
 class TestPlayerVsPlayer(unittest.TestCase):
     """Test case for Player vs Player class."""
 
-    @patch('builtins.input', side_effect=['Player 1', 'Player 2', 'yes'])
     def test_two_player_game(self):
         """Test the two_player_game method."""
         game = player_vs_player()
