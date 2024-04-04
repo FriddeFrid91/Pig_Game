@@ -8,7 +8,7 @@ class TestPlayerVsPlayer(unittest.TestCase):
     def test_two_player_game(self):
         """Test the two_player_game method."""
         game = player_vs_player()
-        winner = game.two_player_game('Player 1')
+        winner = game.two_player_game('Player 1', 'Player 2')
         self.assertIsNotNone(winner)
 
 
