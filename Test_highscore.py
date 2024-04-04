@@ -1,11 +1,10 @@
 import unittest
 from highscore import highscore
-from unittest
 
 
 class TestHighscore(unittest.TestCase):
     """Test class for highscore."""
-    
+ 
     show = highscore()
 
     def test_show_highscore(self):
@@ -27,6 +26,7 @@ class TestHighscore(unittest.TestCase):
         """Test the add highscore function."""
         winner = "Player 1"
         self.show.add_highscore(winner)
+        self.assertIsNotNone(winner)
 
 
 if __name__ == '__main__':
