@@ -11,34 +11,33 @@ from Dice import Dice
 class Test_Player(unittest.TestCase):
     """Test for Player class."""
 
-    def setUp(self):
-        """Set up method to create an instance of Player."""
-        self.player = Player("TestPlayer")
 
     @patch('player.Player.dice')  # Mock the Dice object
     def test_player_move(self, mock_dice):
         """Test the player_move method."""
+        player = Player("TestPlayer", 100)
         # Mock the roll_the_dice method of the Dice object
+        mock_dice = Dice(6)
         mock_dice.roll_the_dice.side_effect = [4, 3, 1]
 
         # Capture printed output
         with patch('sys.stdout', new_callable=StringIO):
-            self.player.player_move()
+            player.player_move()
 
         # Test input handling for "no"
         with patch('builtins.input', side_effect=["no"]):
-            self.player.player_move()
-            self.assertEqual(self.player.get_score(), 0)
+            player.player_move()
+            self.assertEqual(player.get_score(), 0)
 
         # Test input handling for "yes"
         with patch('builtins.input', side_effect=["yes", "yes", "no"]):
-            self.player.player_move()
-            self.assertEqual(self.player.get_score(), 7)
+            player.player_move()
+            self.assertEqual(player.get_score(), 7)
 
         # Test input handling for "cheat"
         with patch('builtins.input', side_effect=["cheat"]):
-            self.player.player_move()
-            self.assertEqual(self.player.get_score(), 100)
+            player.player_move()
+            self.assertEqual(player.get_score(), 100)
 
     def test_add_score(self):
         """Test for add_score method."""
