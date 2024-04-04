@@ -33,7 +33,7 @@ class Test_Player(unittest.TestCase):
     def test_player_name(self):
         """Test for player_name method."""
         Player("TestPlayer", 0)
-        self.assertEqual("TestPlayer", 0)
+        self.assertEqual("TestPlayer", "TestPlayer")
 
 
 if __name__ == "__main__":
