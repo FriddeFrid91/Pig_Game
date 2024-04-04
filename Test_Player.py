@@ -21,7 +21,7 @@ class Test_Player(unittest.TestCase):
     def test_deduct_score(self):
         """Test for deduct_score method."""
         player = Player("TestPlayer", 100)
-        player.deduct_score(50)  
+        player.deduct_score(50)
         self.assertEqual(player.get_score(), 50)
 
     def test_get_score(self):
@@ -33,7 +33,7 @@ class Test_Player(unittest.TestCase):
     def test_player_name(self):
         """Test for player_name method."""
         player = Player("TestPlayer", 0)
-        result = player.player_name()
+        result = player()
         self.assertEqual(result, "TestPlayer")
 
 
