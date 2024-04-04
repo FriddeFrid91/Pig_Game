@@ -21,14 +21,14 @@ class player_vs_player:
 
             current_player = player_1
 
-            while current_player.get_score() < 50:
+            while current_player.get_score() < 100:
                 print("*********************************")
                 print(f" >>> {current_player.name}s turn <<<")
                 print("*********************************")
 
                 current_player.player_move()
 
-                if current_player.get_score() >= 50:
+                if current_player.get_score() >= 100:
                     print(colors.YELLOW + "*********************************"
                           + colors.RESET)
                     print(f"{current_player.name} wins!\n")

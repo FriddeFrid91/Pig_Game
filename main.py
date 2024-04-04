@@ -8,7 +8,7 @@ from colors import colors
 
 def main():
     """Main function for the program."""
-    stupid_dict = {}
+
     chart = highscore()
 
     print("Welcome to a Game of Pig!")
@@ -67,12 +67,18 @@ def main():
                 input()
 
             if user_choice == 4:
-                print("Highscore")
                 try:
-                    chart.add_highscore(winner, stupid_dict)
+                    chart.add_highscore(winner)
+                    chart.load_highscore()
+                    chart.show_highscore()
+                    winner = ""
+                    print("Press any key to go back to the menu.")
+                    input()
                 except UnboundLocalError:
-                    print("No winner yet!")
-                    continue
+                    chart.load_highscore()
+                    chart.show_highscore()
+                    print("Press any key to go back to the menu.")
+                    input()
 
             if user_choice == 5:
                 print("Change name")

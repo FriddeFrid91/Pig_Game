@@ -56,7 +56,7 @@ class Player:
                     continue
                 elif decision.lower() == "cheat":
                     print("You are a cheater!")
-                    self.add_score(50)
+                    self.add_score(100)
                     break
                 else:
                     print("Invalid input. Please enter yes or no.\n")
