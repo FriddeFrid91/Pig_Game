@@ -16,7 +16,7 @@ class TestHighscore(unittest.TestCase):
         # Mock the print function
         with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
             self.highscore_instance.show_highscore()
-            self.assertEqual(mock_stdout.getvalue(), "****************\n", "* HALL OF FAME *\n", "****************\n")
+            self.assertEqual(mock_stdout.getvalue(), "****************\n" + "* HALL OF FAME *\n" + "****************\n")
 
     def test_add_highscore(self):
         """Test the add_highscore function."""
