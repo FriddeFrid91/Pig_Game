@@ -8,7 +8,7 @@ class Test_Player(unittest.TestCase):
     """Test for Player class."""
     def test_player_move(self):
         """Test for player_move method."""
-        player = Player()
+        player = Player("TestPlayer", 0)
         result = player.player_move()
         self.assertIsNotNone(result)
 
@@ -33,8 +33,7 @@ class Test_Player(unittest.TestCase):
     def test_player_name(self):
         """Test for player_name method."""
         player = Player("TestPlayer", 0)
-        result = player()
-        self.assertEqual(result, "TestPlayer")
+        self.assertEqual("TestPlayer", player)
 
 
 if __name__ == "__main__":
