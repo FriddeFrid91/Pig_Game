@@ -1,23 +1,12 @@
-"""unittest for Rules.py"""
+"""unittest for Rules"""
 
 import unittest
-<<<<<<< HEAD
-from rules import Rules
-
-"""Test for Rules class."""
-class RulesTestCase(unittest.TestCase):
-    def test_get_rules(self):
-        the_rules = Rules()
-        result = the_rules.get_rules()
-        self.assertIsNotNone(result)
-
-if __name__ == '__main__':
-=======
 from Rules import Rules
 """Testing the Rules class"""
 
 
 class Test_Rules(unittest.TestCase):
+    
     """Test for Rules class."""
     def test_get_rules(self):
         the_rules = Rules()
@@ -25,5 +14,4 @@ class Test_Rules(unittest.TestCase):
 
 
 if __name__ == "__main__":
->>>>>>> main
     unittest.main()
