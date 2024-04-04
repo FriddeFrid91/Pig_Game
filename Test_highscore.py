@@ -1,37 +1,33 @@
 import unittest
 from highscore import highscore
-from unittest.mock import patch, Mock
+from unittest
 
 
-class test_highscore(unittest.TestCase):
+class TestHighscore(unittest.TestCase):
     """Test class for highscore."""
+    
+    show = highscore()
+
+    def test_show_highscore(self):
+        """Test the show highscore function."""
+        self.show.show_highscore()
+        expected_output = [
+            "****************",
+            "* HALL OF FAME *",
+            "****************"
+        ]
+        self.assertEqual(expected_output)
+
+    def test_load_highscore(self):
+        """Test the load highscore function."""
+        self.show.load_highscore()
+        self.assertEqual(self.show.load_highscore(), {})
+
+    def test_add_highscore(self):
+        """Test the add highscore function."""
+        winner = "Player 1"
+        self.show.add_highscore(winner)
 
 
-show = highscore()
-
-
-@patch('builtins.print')
-def test_show_highscore(self, mocked_print):
-    """Test the show highscore function."""
-
-    show.show_highscore()
-
-    expected_output = ["****************",
-                       "* HALL OF FAME *",
-                       "****************"]
-    calls = [Mock(call=output) for output in expected_output]
-    mocked_print.assert_has_calls(calls, any_order=False)
-
-
-def test_load_highscore(self):
-    """Test the load highscore function."""
-    show.load_highscore()
-
-
-def test_add_highscore(self, winner):
-    """Test the add highscore function."""
-    show.add_highscore(winner)
-
-
-if __name__ == "main":
+if __name__ == '__main__':
     unittest.main()
