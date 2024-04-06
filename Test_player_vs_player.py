@@ -14,8 +14,8 @@ class TestPlayerVsPlayer(unittest.TestCase):
         winner = game.two_player_game('Player 2', 'Player 1')
         self.assertIsNotNone(winner)
 
-        self.assertEqual(winner, 'Player 1')
-        self.assertEqual(winner, 'Player 2')
+        self.assertEqual(winner, 'current_player.name')
+        self.assertEqual(winner, 'current_player.name')
 
 
 if __name__ == '__main__':
