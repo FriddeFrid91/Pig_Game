@@ -36,11 +36,12 @@ class player_vs_player:
                     print(colors.YELLOW + "*********************************"
                           + colors.RESET)
                     return current_player.name
-                
-                if current_player.get_score() >= 200:
-                    self.score = 0
-                    self.name = ""
-                    return 
+
+                #if current_player.get_score() >= 200:
+                    # Not so elegeant way to handle quitting the game. But it works.
+                 #   self.score = 0
+                  #  self.name = ""
+                   # return*/
 
                 if current_player == player_1:
                     print(colors.PINK + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"

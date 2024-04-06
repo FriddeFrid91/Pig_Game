@@ -10,6 +10,7 @@ def main():
     """Main function for the program."""
 
     chart = highscore()
+    winner = ""
 
     print("Welcome to a Game of Pig!")
     print(colors.RED + "         __,---.__")
@@ -70,7 +71,6 @@ def main():
                     chart.add_highscore(winner)
                     chart.load_highscore()
                     chart.show_highscore()
-                    winner = ""
                     print("Press any key to go back to the menu.")
                     input()
                 except UnboundLocalError:

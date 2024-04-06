@@ -13,9 +13,12 @@ class highscore:
         print(colors.YELLOW + "****************" + colors.RESET)
         print(colors.YELLOW + "* HALL OF FAME *" + colors.RESET)
         print(colors.YELLOW + "****************" + colors.RESET)
-        for sorted_key in sorted(self.highscore_dict, key=self.highscore_dict.get,
-                                 reverse=True):
-            print(f"{sorted_key:8}: {self.highscore_dict[sorted_key]:>6}")
+        print(f"{'Name':8}: {'Wins':>6}")
+        for sorted_scores in sorted(self.highscore_dict,
+                                    key=self.highscore_dict.get,
+                                    reverse=True):
+        
+            print(f"{sorted_scores:8}: {self.highscore_dict[sorted_scores]:>6}")
 
     def add_highscore(self, winner):
         """Add the winner to the highscore."""
