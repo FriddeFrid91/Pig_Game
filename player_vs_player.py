@@ -26,7 +26,7 @@ class player_vs_player:
         except FileExistsError:
             print("Error")
         print(loaded)
-
+  
     def two_player_game(self, name_1, name_2):
         """Simulate a two player game of Pig."""
         print(">> Welcome to a game of Pig! <<\n")
@@ -63,8 +63,6 @@ class player_vs_player:
                           + f"{current_player.get_score()}AAAAAAAAAAAAAAAAAA")
                     print(colors.PINK + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                           + colors.RESET)
-                    player_dict = player_info[current_player.name] = current_player.get_score()
-                    player_vs_player.save_game(player_dict)
                     current_player = player_2
                 else:
                     print(colors.PINK + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -74,3 +72,5 @@ class player_vs_player:
                     print(colors.PINK + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                           + colors.RESET)
                     current_player = player_1
+            player_dict = player_info[current_player.name] = current_player.get_score()
+            player_vs_player.save_game(player_dict)

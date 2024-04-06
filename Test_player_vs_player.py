@@ -11,6 +11,9 @@ class TestPlayerVsPlayer(unittest.TestCase):
         winner = game.two_player_game('Player 1', 'Player 2')
         self.assertIsNotNone(winner)
 
+        winner = game.two_player_game('Player 2', 'Player 1')
+        self.assertIsNotNone(winner)
+
 
 if __name__ == '__main__':
     unittest.main()
