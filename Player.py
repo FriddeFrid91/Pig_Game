@@ -14,8 +14,6 @@ class Player:
     def player_move(self):
         """Simulate a player's move."""
         round_score = 0
-        save_player = {self.name, self.score}
-        print(f"WHAT {save_player}")
 
         while True:
             roll = self.dice.roll_the_dice()
@@ -33,8 +31,6 @@ class Player:
                 print("Oink, oink! You lost all your points for this round!\n")
                 tot = current_score - round_score
                 self.deduct_score(tot)
-                save_player.update(save_player)
-
                 break
 
             if roll > 1:
@@ -43,12 +39,11 @@ class Player:
                 print(f"{self.name} total score: {current_score}. ")
                 print(colors.YELLOW + "*******************************" + colors.RESET)
 
-                decision = input("Roll again? (yes/no): \n")
-                while decision.lower() != "yes" and \
-                    decision.lower() != "no" and \
-                        decision.lower() != "cheat":
-                    print("Invalid input. Please enter yes or no.\n")
-                    decision = input("Roll again? (yes/no): \n")
+                while True:
+                    decision = input("Roll again? (yes/no): ").lower()
+                    if decision in ["yes", "no", "cheat", "quit"]:
+                        break
+                    print("Invalid input. Please enter yes, no, or quit.")
 
                 if decision.lower() == "no":
                     print(colors.YELLOW + "***************************" + colors.RESET)
@@ -56,7 +51,6 @@ class Player:
                     print(f"{self.name} total score: {current_score}. ")
                     print(colors.YELLOW + "***************************" + colors.RESET)
                     self.add_score(round_score)
-                  
                     break
                 elif decision.lower() == "yes":
                     continue
@@ -64,6 +58,10 @@ class Player:
                     print("You are a cheater!")
                     self.add_score(100)
                     break
+                elif decision.lower() == "quit":
+                    self.add_score(200)
+                    print(f"{self.name} have quit the game.")        
+                    return
                 else:
                     print("Invalid input. Please enter yes or no.\n")
 
