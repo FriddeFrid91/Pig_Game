@@ -39,9 +39,11 @@ class Player:
                 print(colors.YELLOW + "*******************************" + colors.RESET)
 
                 decision = input("Roll again? (yes/no): \n")
-                while decision.lower() != "yes" and decision.lower() != "no" and decision.lower() != "cheat":
+                while decision.lower() != "yes" and \
+                    decision.lower() != "no" and \
+                        decision.lower() != "cheat":
                     print("Invalid input. Please enter yes or no.\n")
-                    decision = input("Roll again? (yes/no): \n")
+                decision = input("Roll again? (yes/no): \n")
                 if decision.lower() == "no":
                     print(colors.YELLOW + "***************************" + colors.RESET)
                     print(f"{self.name} round score: {round_score}. ")
