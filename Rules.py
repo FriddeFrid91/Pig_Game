@@ -8,6 +8,8 @@ class colors:
     PINK = '\033[95m'
     RESET = '\033[0m'
 
+    # pragma: no cover
+
     
 class Rules:
     def __init__(self):  # constructor

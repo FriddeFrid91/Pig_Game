@@ -4,7 +4,6 @@ from Rules import Rules
 from player_vs_player import player_vs_player
 from highscore import highscore
 from colors import colors
-from intelligence import Intelligence
 
 
 def main():
@@ -18,7 +17,6 @@ def main():
     print("  (\")            .    |")
     print("    ``--|__|--..-'`.__|\n" + colors.RESET)
 
-    # pragma: no cover
 
     print(colors.BLUE + "Press any key to start the game." + colors.RESET)
     input()
@@ -32,8 +30,6 @@ def main():
 
             if user_choice == 1:
                 print("Player Vs Computer")
-                new_game = Intelligence()
-                computer_intelligence = Intelligence()
 
 
             if user_choice == 2:

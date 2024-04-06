@@ -3,10 +3,11 @@ import pickle
 
 class highscore:
     """Class for highscore."""
+
     def __init__(self):
         """Initialize the highscore."""
         self.highscore_dict = {}
-        self.highscore_name = ""
+        self.highscore_name = ""        
 
     def add_highscore(self, name):
         """Add a highscore."""
