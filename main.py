@@ -1,6 +1,7 @@
 from menu import Menu
 from Rules import Rules
 from player_vs_player import player_vs_player
+from Player import Player
 from player_vs_computer import player_vs_computer
 from highscore import highscore
 from colors import colors
@@ -59,7 +60,7 @@ def main():
                         boolean = False
                     new_game = player_vs_player()
                     winner = new_game.two_player_game(player_1, player_2)
-                
+
             if user_choice == 3:
                 the_rules = Rules()
                 the_rules.show_rules()
