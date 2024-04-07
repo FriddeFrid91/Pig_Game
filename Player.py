@@ -60,7 +60,7 @@ class Player:
                     break
                 elif decision.lower() == "quit":
                     self.add_score(200)
-                    print(f"{self.name} have quit the game.") 
+                    print(f"{self.name} have quit the game.")
                     return
                 else:
                     print("Invalid input. Please enter yes or no.\n")

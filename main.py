@@ -57,9 +57,12 @@ def main():
                         continue
                     else:
                         boolean = False
+
                     new_game = player_vs_player()
                     winner = new_game.two_player_game(player_1, player_2)
                     loser = new_game.get_loser()
+                    print(f"{winner} wins!")
+                    print(f"{loser} loses!")
 
             if user_choice == 3:
                 the_rules = Rules()
@@ -70,20 +73,14 @@ def main():
             if user_choice == 4:
                 try:
                     chart.add_highscore(winner)
-                    chart.load_highscore()
-                    chart.show_highscore()
                     chart.add_losses(loser)
-                    chart.load_losses()
-                    chart.show_losses()
+                    chart.scoreboard()
                     winner = ""
                     loser = ""
                     print("Press any key to go back to the menu.")
                     input()
                 except UnboundLocalError:
-                    chart.load_highscore()
-                    chart.show_highscore()
-                    chart.load_losses()
-                    chart.show_losses()
+                    chart.scoreboard()
                     print("Press any key to go back to the menu.")
                     input()
 
@@ -96,7 +93,10 @@ def main():
                 print("Goodbye!")
                 break
 
-            if user_choice not in [1, 2, 3, 4, 5, 6]:
+            if user_choice == 7:
+                chart.scoreboard()
+
+            if user_choice not in [1, 2, 3, 4, 5, 6, 7]:
                 print("Invalid input. Please enter a number between 1 and 7.")
 
         except ValueError:

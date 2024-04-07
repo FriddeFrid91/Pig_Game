@@ -12,9 +12,11 @@ class highscore:
 
     def show_losses(self):
         """Show the losses."""
-        print(colors.YELLOW + "****************" + colors.RESET)
-        print(colors.YELLOW + "* LOSER BOARD *" + colors.RESET)
-        print(colors.YELLOW + "****************" + colors.RESET)
+        hall_of_fame = [
+            colors.BLUE + "*****************" + colors.RESET + "\n" +
+            colors.BLUE + "* HALL OF SHAME *" + colors.RESET + "\n" +
+            colors.BLUE + "*****************" + colors.RESET]
+        print("\n".join(hall_of_fame))
         print(f"{'Name':8}: {'Losses':>6}")
         for sorted_losses in sorted(self.losses,
                                     key=self.losses.get,
@@ -23,7 +25,7 @@ class highscore:
 
     def add_losses(self, loser):
         """Update the losses."""
-        self.show_losses()
+        self.load_losses()
         if loser == "":
             return
         if loser in self.losses:
@@ -37,6 +39,7 @@ class highscore:
             self.losses = {}
         except EOFError:
             self.losses = {}
+            loser = ""
         return loser is None
 
     def load_losses(self):
@@ -52,9 +55,13 @@ class highscore:
 
     def show_highscore(self):
         """Show the highscore."""
-        print(colors.YELLOW + "****************" + colors.RESET)
-        print(colors.YELLOW + "* HALL OF FAME *" + colors.RESET)
-        print(colors.YELLOW + "****************" + colors.RESET)
+        hall_of_fame = [
+            colors.YELLOW + "****************" + colors.RESET + "\n" +
+            colors.YELLOW + "* HALL OF FAME *" + colors.RESET + "\n" +
+            colors.YELLOW + "****************" + colors.RESET]
+
+        print("\n".join(hall_of_fame))
+
         print(f"{'Name':8}: {'Wins':>6}")
         for sorted_scores in sorted(self.highscore_dict,
                                     key=self.highscore_dict.get,
@@ -91,6 +98,17 @@ class highscore:
             self.highscore_dict = {}
         return self.highscore_dict
 
+    def scoreboard(self):
+        """Show the scoreboard."""
+        self.load_highscore()
+        self.load_losses()
+        self.show_highscore()
+        self.show_losses()
+
     def get_highscore(self):
         """Get the highscore."""
         return self.highscore_dict
+
+    def get_losses(self):
+        """Get the losses."""
+        return self.losses

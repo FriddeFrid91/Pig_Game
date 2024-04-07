@@ -38,11 +38,9 @@ class player_vs_player:
                           + colors.RESET)
                     if current_player == player_1:
                         self.loser = player_2.name
-                        return self.loser
+
                     elif current_player == player_2:
                         self.loser = player_1.name
-                        print(current_player.name)
-                        return self.loser
 
                     return current_player.name
 
