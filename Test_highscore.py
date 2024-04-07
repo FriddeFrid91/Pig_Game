@@ -1,7 +1,6 @@
 import unittest
 from highscore import highscore
 from unittest.mock import patch, mock_open
-from io import StringIO
 
 
 class TestHighscore(unittest.TestCase):
@@ -29,6 +28,32 @@ class TestHighscore(unittest.TestCase):
         with patch('pickle.load', return_value={"Player1": 3, "Player2": 2}) as mock_load:
             self.highscore_instance.load_highscore()
             self.assertEqual(self.highscore_instance.get_highscore(), {"Player1": 3, "Player2": 2})
+
+    def test_load_highscore_file_not_found(self):
+        """Test the load_highscore function when the file is not found."""
+        # Mock the pickle.load function to raise FileNotFoundError
+        with patch('pickle.load', side_effect=FileNotFoundError) as mock_load:
+            self.highscore_instance.load_highscore()
+            self.assertEqual(self.highscore_instance.get_highscore(), {})   
+
+    def test_show_losses(self):
+        """Test the show_losses function."""
+        # Mock the print function
+        self.assertIsNone(self.highscore_instance.show_losses())
+
+    def test_add_losses(self):
+        """Test the add_losses function."""
+        # Mock the pickle.dump function
+        with patch('pickle.dump') as mock_dump:
+            self.highscore_instance.add_losses("Player1")
+            mock_dump.assert_called_once()
+        
+    def test_load_losses(self):
+        """Test the load_losses function."""
+        # Mock the pickle.load function to return sample data
+        with patch('pickle.load', return_value={"Player1": 3, "Player2": 2}) as mock_load:
+            self.highscore_instance.load_losses()
+            self.assertEqual(self.highscore_instance.get_losses(), {"Player1": 3, "Player2": 2})
 
 
 if __name__ == '__main__':
