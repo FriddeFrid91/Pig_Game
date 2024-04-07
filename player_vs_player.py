@@ -8,7 +8,8 @@ class player_vs_player:
 
     def __init__(self):
         """Initialize the player vs player game."""
-        pass
+        self.loser = ""
+        self.winner = ""
 
     def two_player_game(self, name_1, name_2):
         """Simulate a two player game of Pig."""
@@ -35,13 +36,20 @@ class player_vs_player:
                     print(f"{current_player.name} wins!\n")
                     print(colors.YELLOW + "*********************************"
                           + colors.RESET)
+                    if current_player == player_1:
+                        self.loser = player_2.name
+                        return self.loser
+                    elif current_player == player_2:
+                        self.loser = player_1.name
+                        print(current_player.name)
+                        return self.loser
+
                     return current_player.name
 
-                #if current_player.get_score() >= 200:
-                    # Not so elegeant way to handle quitting the game. But it works.
-                 #   self.score = 0
-                  #  self.name = ""
-                   # return*/
+                if current_player.get_score() >= 200:
+                    self.score = 0
+                    self.name = ""
+                    return
 
                 if current_player == player_1:
                     print(colors.PINK + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -59,3 +67,7 @@ class player_vs_player:
                     print(colors.PINK + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                           + colors.RESET)
                     current_player = player_1
+
+    def get_loser(self):
+        """Get the loser."""
+        return self.loser

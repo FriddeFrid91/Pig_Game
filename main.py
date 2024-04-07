@@ -59,6 +59,7 @@ def main():
                         boolean = False
                     new_game = player_vs_player()
                     winner = new_game.two_player_game(player_1, player_2)
+                    loser = new_game.get_loser()
 
             if user_choice == 3:
                 the_rules = Rules()
@@ -71,11 +72,18 @@ def main():
                     chart.add_highscore(winner)
                     chart.load_highscore()
                     chart.show_highscore()
+                    chart.add_losses(loser)
+                    chart.load_losses()
+                    chart.show_losses()
+                    winner = ""
+                    loser = ""
                     print("Press any key to go back to the menu.")
                     input()
                 except UnboundLocalError:
                     chart.load_highscore()
                     chart.show_highscore()
+                    chart.load_losses()
+                    chart.show_losses()
                     print("Press any key to go back to the menu.")
                     input()
 

@@ -16,6 +16,15 @@ class TestPlayerVsPlayer(unittest.TestCase):
 
         self.assertIsInstance(winner, str)  # Check if the winner is a string
 
+    def test_get_loser(self):
+        """Test the get_loser method."""
+        game = player_vs_player()
+        game.two_player_game('Player 1', 'Player 2')
+        loser = game.get_loser()
+        self.assertIsNotNone(loser)
+
+        self.assertIsInstance(loser, str)
+
 
 if __name__ == '__main__':
     unittest.main()
