@@ -15,6 +15,11 @@ class TestPlayerVsPlayer(unittest.TestCase):
         winner = game.two_player_game('Player 2', 'Player 1')
         self.assertIsNotNone(winner)
         self.assertIsInstance(winner, str)  # Check if the winner is a string
+        self.name = winner
+        if self.name == 'Player 1':
+            self.assertEqual(winner, 'Player 1')
+        else:  # Check if the winner is the second player
+            self.assertEqual(winner, 'Player 2')
 
         current_winner = game.winner
         self.assertIsNotNone(current_winner)
