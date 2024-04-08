@@ -14,6 +14,13 @@ class TestHighscore(unittest.TestCase):
         """Test the show_highscore function."""
         # Mock the print function
         self.assertIsNone(self.highscore_instance.show_highscore())
+    
+    def test_add_winner_to_highscore(self):
+        """Test the add_winner_to_highscore function."""
+        # Mock the load_highscore function
+        with patch('highscore.highscore.load_highscore') as mock_load:
+            self.highscore_instance.add_winner_to_highscore("Player1")
+            mock_load.assert_called_once()
 
     def test_add_highscore(self):
         """Test the add_highscore function."""
