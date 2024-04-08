@@ -24,6 +24,8 @@ class TestPlayerVsPlayer(unittest.TestCase):
         current_winner = game.winner
         self.assertIsNotNone(current_winner)
 
+        # pragma: no cover
+
     def test_get_loser(self):
         """Test the get_loser method."""
         game = player_vs_player()
