@@ -58,10 +58,17 @@ def main():
                     else:
                         boolean = False
 
-                    new_game = player_vs_player()
-                    winner = new_game.two_player_game(player_1, player_2)
-                    loser = new_game.get_loser()
-
+                new_game = player_vs_player()
+                winner = new_game.two_player_game(player_1, player_2)
+                loser = new_game.get_loser()
+                try:
+                    chart.add_highscore(winner)
+                    chart.add_losses(loser)
+                except UnboundLocalError:
+                    pass
+                print(f"{winner} wins!")
+                print(f"{loser} loses!")
+      
             if user_choice == 3:
                 the_rules = Rules()
                 the_rules.show_rules()
@@ -70,15 +77,21 @@ def main():
 
             if user_choice == 4:
                 try:
-                    chart.add_highscore(winner)
-                    chart.add_losses(loser)
-                    chart.scoreboard()
+                    chart.load_highscore()
+                    chart.load_losses()
+                    chart.show_highscore()
+                    chart.show_losses()
                     winner = ""
                     loser = ""
                     print("Press any key to go back to the menu.")
                     input()
                 except UnboundLocalError:
-                    chart.scoreboard()
+                    chart.load_highscore()
+                    chart.load_losses()
+                    chart.show_highscore()
+                    chart.show_losses()
+                    winner = ""
+                    loser = ""
                     print("Press any key to go back to the menu.")
                     input()
 
@@ -92,14 +105,16 @@ def main():
                 break
 
             if user_choice == 7:
-                winner_win = player_vs_player.get_winner()
-                print(winner_win)
+                result1 = chart.get_losses()
+                print(result1)
+                result2 = chart.get_highscore()
+                print(result2)
 
             if user_choice not in [1, 2, 3, 4, 5, 6, 7]:
-                print("Invalid input. Please enter a number between 1 and 7.")
+                print("Invalid input. Please enter a number between 1 and 6.")
 
         except ValueError:
-            print("Invalid input. Please enter a number between 1 and 7.")
+            print("Invalid input. Please enter a number between 1 and 6.")
 
 
 if __name__ == "__main__":

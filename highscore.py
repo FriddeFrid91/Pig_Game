@@ -36,9 +36,7 @@ class highscore:
             with open("losses.pkl", "wb") as file:
                 pickle.dump(self.losses, file)
         except FileNotFoundError:
-            self.losses = {}
-        except EOFError:
-            self.losses = {}
+            print("No lowscores at the moment.")
             loser = ""
         return loser is None
 
@@ -48,9 +46,7 @@ class highscore:
             with open("losses.pkl", "rb") as file:
                 self.losses = pickle.load(file)
         except FileNotFoundError:
-            self.losses = {}
-        except EOFError:
-            self.losses = {}
+            print("No highscore at the moment")
         return self.losses
 
     def show_highscore(self):
@@ -66,12 +62,15 @@ class highscore:
         for sorted_scores in sorted(self.highscore_dict,
                                     key=self.highscore_dict.get,
                                     reverse=True):
-            print(f"{sorted_scores:8}: {self.highscore_dict[sorted_scores]:>6}")
+            if sorted_scores is not None:
+                print(f"{sorted_scores:8}: {self.highscore_dict[sorted_scores]:>6}")
+            else:
+                print("No highscore.")
 
     def add_highscore(self, winner):
         """Add the winner to the highscore."""
         self.load_highscore()
-        if winner == "":
+        if winner == "" or winner is None:
             return
         if winner in self.highscore_dict:
             self.highscore_dict[winner] += 1
@@ -97,13 +96,6 @@ class highscore:
         except EOFError:
             self.highscore_dict = {}
         return self.highscore_dict
-
-    def scoreboard(self):
-        """Show the scoreboard."""
-        self.load_highscore()
-        self.load_losses()
-        self.show_highscore()
-        self.show_losses()
 
     def get_highscore(self):
         """Get the highscore."""

@@ -11,6 +11,10 @@ class player_vs_player:
         self.loser = ""
         self.winner = ""
 
+    def set_loser(self, loser):
+        """Set the loser."""
+        self.loser = loser
+
     def two_player_game(self, name_1, name_2):
         """Simulate a two player game of Pig."""
         print(">> Welcome to a game of Pig! <<\n")
@@ -38,9 +42,11 @@ class player_vs_player:
                           + colors.RESET)
                     if current_player == player_1:
                         self.loser = player_2.name
+                        self.set_loser(player_2.name)
 
                     elif current_player == player_2:
                         self.loser = player_1.name
+                        self.set_loser(player_1.name)
 
                     self.winner = current_player.name
 

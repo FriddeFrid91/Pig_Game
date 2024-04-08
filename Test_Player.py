@@ -10,7 +10,6 @@ from Dice import Dice
 class Test_Player(unittest.TestCase):
     """Test for Player class."""
 
-   
     def test_add_score(self):
         """Test for add_score method."""
         player = Player("TestPlayer", 0)
