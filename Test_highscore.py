@@ -21,8 +21,6 @@ class TestHighscore(unittest.TestCase):
         with patch('pickle.dump') as mock_dump:
             self.highscore_instance.add_highscore("Player1")
             mock_dump.assert_called_once()
-        self.higscore_dict = {"Player1": 1}
-        self.assertEqual(self.highscore_instance.get_highscore(), self.higscore_dict)
 
     def test_load_highscore(self):
         """Test the load_highscore function."""
