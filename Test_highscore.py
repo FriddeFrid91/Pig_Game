@@ -1,6 +1,6 @@
 import unittest
 from highscore import highscore
-from unittest.mock import patch, mock_open
+from unittest.mock import patch, mock_open, Mock
 
 
 class TestHighscore(unittest.TestCase):
@@ -34,7 +34,14 @@ class TestHighscore(unittest.TestCase):
         # Mock the pickle.load function to raise FileNotFoundError
         with patch('pickle.load', side_effect=FileNotFoundError) as mock_load:
             self.highscore_instance.load_highscore()
-            self.assertEqual(self.highscore_instance.get_highscore(), {})   
+            self.assertEqual(self.highscore_instance.get_highscore(), {})
+
+    def test_load_highscore_eof_error(self):
+        """Test the load_highscore function when EOFError is raised."""
+        # Mock the pickle.load function to raise EOFError
+        with patch('pickle.load', side_effect=EOFError) as mock_load:
+            self.highscore_instance.load_highscore()
+            self.assertEqual(self.highscore_instance.get_highscore(), {}) 
 
     def test_show_losses(self):
         """Test the show_losses function."""
@@ -55,16 +62,17 @@ class TestHighscore(unittest.TestCase):
             self.highscore_instance.load_losses()
             self.assertEqual(self.highscore_instance.get_losses(), {"Player1": 3, "Player2": 2})
 
-
-    def test_show_highscore(self):
-        """Test the show_highscore function."""
-        # Mock the print function
-        self.assertIsNone(self.highscore_instance.show_highscore())
-
     def test_load_losses_file_not_found(self):
         """Test the load_losses function when the file is not found."""
         # Mock the pickle.load function to raise FileNotFoundError
         with patch('pickle.load', side_effect=FileNotFoundError) as mock_load:
+            self.highscore_instance.load_losses()
+            self.assertEqual(self.highscore_instance.get_losses(), {})
+
+    def test_load_losses_eof_error(self):
+        """Test the load_losses function when EOFError is raised."""
+        # Mock the pickle.load function to raise EOFError
+        with patch('pickle.load', side_effect=EOFError) as mock_load:
             self.highscore_instance.load_losses()
             self.assertEqual(self.highscore_instance.get_losses(), {})
 

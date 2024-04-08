@@ -92,7 +92,8 @@ def main():
                 break
 
             if user_choice == 7:
-                chart.scoreboard()
+                winner_win = player_vs_player.get_winner()
+                print(winner_win)
 
             if user_choice not in [1, 2, 3, 4, 5, 6, 7]:
                 print("Invalid input. Please enter a number between 1 and 7.")

@@ -42,6 +42,8 @@ class player_vs_player:
                     elif current_player == player_2:
                         self.loser = player_1.name
 
+                    self.winner = current_player.name
+
                     return current_player.name
 
                 if current_player.get_score() >= 200:
@@ -65,6 +67,10 @@ class player_vs_player:
                     print(colors.PINK + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                           + colors.RESET)
                     current_player = player_1
+
+    def get_winner(self):
+        """Get the winner."""
+        return self.winner
 
     def get_loser(self):
         """Get the loser."""
