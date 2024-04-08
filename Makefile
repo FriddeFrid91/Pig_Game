@@ -114,7 +114,7 @@ pydoc:
 
 pdoc:
 	@$(call MESSAGE,$@)
-	pdoc --overwrite --html --output-dir doc/pdoc Pig_Game/*.py
+	pdoc --html --output-dir doc/pdoc Pig_Game/*.py
 
 pyreverse:
 	@$(call MESSAGE,$@)
