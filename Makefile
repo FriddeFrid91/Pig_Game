@@ -113,8 +113,9 @@ pydoc:
 	mv *.html doc/pydoc
 
 pdoc:
-	@$(call MESSAGE,$@)
-	pdoc --output-dir doc/pdoc /c/Users/frida/python_template/guess/Pig_Game/*.py
+    @$(call MESSAGE,$@)
+    PYTHONPATH=C:/Users/frida/python_template/guess/Pig_Game pdoc --force --html --output-dir doc/pdoc guess/*.py
+
 
 pyreverse:
 	@$(call MESSAGE,$@)
