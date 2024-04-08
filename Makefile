@@ -114,7 +114,7 @@ pydoc:
 
 pdoc:
 	@$(call MESSAGE,$@)
-	pdoc --html --output-dir doc/pdoc Pig_Game.Player Pig_Game.Dice Pig_Game.Rules Pig_Game.Computer Pig_Game.Test_Menu Pig_Game.Test_Player Pig_Game.Test_Rules Pig_Game.Test_highscore Pig_Game.Test_player_vs_player Pig_Game.colors Pig_Game.highscore Pig_Game.main Pig_Game.menu Pig_Game.player_vs_computer Pig_Game.player_vs_player Pig_Game.test_dice_class
+	pdoc --force --html --output-dir doc/pdoc guess/*.py
 
 pyreverse:
 	@$(call MESSAGE,$@)
