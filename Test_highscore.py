@@ -28,6 +28,12 @@ class TestHighscore(unittest.TestCase):
         with patch('pickle.dump', side_effect=EOFError) as mock_dump:
             self.highscore_instance.add_highscore("Player1")
             self.assertEqual(self.highscore_instance.get_highscore(), {})
+    
+    def test_scoreboard(self):
+        """Test the scoreboard function."""
+        # Mock the load_highscore function
+        with patch('highscore.highscore.load_highscore', return_value={"Player1": 3, "Player2": 2}) as mock_load:
+            self.assertIsNone(self.highscore_instance.scoreboard())
 
     def test_load_highscore(self):
         """Test the load_highscore function."""
