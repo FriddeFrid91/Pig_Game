@@ -3,7 +3,6 @@ from Rules import Rules
 from player_vs_player import player_vs_player
 from player_vs_computer import player_vs_computer
 from highscore import highscore
-from colors import colors
 
 
 def main():
@@ -12,13 +11,9 @@ def main():
     chart = highscore()
     winner = ""
 
-    print("Welcome to a Game of Pig!")
-    print(colors.RED + "         __,---.__")
-    print("    __,-'         `-.")
-    print("   /_ /_,'           \\&")
-    print("   _,''               \\")
-    print("  (\")            .    |")
-    print("    ``--|__|--..-'`.__|\n" + colors.RESET)
+    piggy = Menu()
+    pig = piggy.show_pig()
+    print(pig)
 
     print("Press any key to start the game.")
     input()
@@ -90,13 +85,7 @@ def main():
                 print("Goodbye!")
                 break
 
-            if user_choice == 7:
-                chart.load_highscore()
-                chart.load_losses()
-                chart.show_highscore()
-                chart.show_losses()
-
-            if user_choice not in [1, 2, 3, 4, 5, 6, 7]:
+            if user_choice not in [1, 2, 3, 4, 5, 6]:
                 print("Invalid input. Please enter a number between 1 and 6.")
 
         except ValueError:

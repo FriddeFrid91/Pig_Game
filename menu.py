@@ -5,6 +5,18 @@ from colors import colors
 class Menu:
     """This is a class for the menu of the game."""
 
+    def show_pig(self):
+        """Show the pig."""
+        ascii_pig = ""
+        ascii_pig += colors.YELLOW + ">> A GAME OF PIG <<\n" + colors.RESET
+        ascii_pig += colors.RED + "       __,---.__" + "\n"
+        ascii_pig += "  __,-'         `-." + "\n"
+        ascii_pig += " /_ /_,'           \\&" + "\n"
+        ascii_pig += " _,''               \\" + "\n"
+        ascii_pig += "(\")            .    |" + "\n"
+        ascii_pig += "  ``--|__|--..-'`.__|\n" + colors.RESET + "\n"
+        return ascii_pig
+
     def show_menu(self):
         """Generate the menu text."""
         menu_text = ""
