@@ -34,6 +34,8 @@ class TestPlayerVsPlayer(unittest.TestCase):
         self.assertIsNotNone(loser)
         self.assertIsInstance(loser, str)
 
+        # pragma: no cover
+
 
 if __name__ == '__main__':
     unittest.main()
