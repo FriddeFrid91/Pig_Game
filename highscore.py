@@ -37,6 +37,8 @@ class highscore:
                 pickle.dump(self.losses, file)
         except FileNotFoundError:
             print("No lowscores at the moment.")
+        except EOFError:
+            print("No lowscores at the moment.")
             loser = ""
         return loser is None
 
@@ -46,6 +48,8 @@ class highscore:
             with open("losses.pkl", "rb") as file:
                 self.losses = pickle.load(file)
         except FileNotFoundError:
+            print("No highscore at the moment")
+        except EOFError:
             print("No highscore at the moment")
         return self.losses
 

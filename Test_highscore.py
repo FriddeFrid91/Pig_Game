@@ -38,6 +38,13 @@ class TestHighscore(unittest.TestCase):
             self.highscore_instance.load_highscore()
             self.assertEqual(self.highscore_instance.get_highscore(), {})
 
+    def test_load_highscore_eof_error(self):
+        """Test the load_highscore function when EOFError is raised."""
+        # Mock the pickle.load function to raise EOFError
+        with patch('pickle.load', side_effect=EOFError) as mock_load:
+            self.highscore_instance.load_highscore()
+            self.assertEqual(self.highscore_instance.get_highscore(), {})
+
     def test_show_losses(self):
         """Test the show_losses function."""
         # Mock the print function
@@ -61,6 +68,13 @@ class TestHighscore(unittest.TestCase):
         """Test the load_losses function when the file is not found."""
         # Mock the pickle.load function to raise FileNotFoundError
         with patch('pickle.load', side_effect=FileNotFoundError) as mock_load:
+            self.highscore_instance.load_losses()
+            self.assertEqual(self.highscore_instance.get_losses(), {})
+    
+    def test_load_losses_eof_error(self):
+        """Test the load_losses function when EOFError is raised."""
+        # Mock the pickle.load function to raise EOFError
+        with patch('pickle.load', side_effect=EOFError) as mock_load:
             self.highscore_instance.load_losses()
             self.assertEqual(self.highscore_instance.get_losses(), {})
 
