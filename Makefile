@@ -114,7 +114,7 @@ pydoc:
 
 pdoc:
 	@$(call MESSAGE,$@)
-	pdoc --output-dir doc/pdoc Pig_Game
+	pdoc --force --html --output-dir doc/pdoc guess/*.py
 
 pyreverse:
 	@$(call MESSAGE,$@)
@@ -124,7 +124,14 @@ pyreverse:
 	dot -Tpng packages.dot -o doc/pyreverse/packages.png
 	rm -f classes.dot packages.dot
 
-doc: pdoc pyreverse #pydoc sphinx
+uml:
+	@$(call MESSAGE,$@)
+	install -d doc/uml
+	pyreverse guess/*.py -o png -p Pig_Game -a 1 -s 1 -f ALL
+	mv classes_Pig_Game.png doc/uml
+	mv packages_Pig_Game.png doc/uml
+
+doc: pdoc pyreverse uml #pydoc sphinx
 
 
 
