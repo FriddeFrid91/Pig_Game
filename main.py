@@ -61,8 +61,6 @@ def main():
                     new_game = player_vs_player()
                     winner = new_game.two_player_game(player_1, player_2)
                     loser = new_game.get_loser()
-                    print(f"{winner} wins!")
-                    print(f"{loser} loses!")
 
             if user_choice == 3:
                 the_rules = Rules()

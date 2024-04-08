@@ -47,7 +47,7 @@ class TestHighscore(unittest.TestCase):
         with patch('pickle.dump') as mock_dump:
             self.highscore_instance.add_losses("Player1")
             mock_dump.assert_called_once()
-        
+
     def test_load_losses(self):
         """Test the load_losses function."""
         # Mock the pickle.load function to return sample data

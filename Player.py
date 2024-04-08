@@ -40,7 +40,7 @@ class Player:
                 print(colors.YELLOW + "*******************************" + colors.RESET)
 
                 while True:
-                    decision = input("Roll again? (yes/no): ").lower()
+                    decision = input("Roll again? (yes/no/quit): ").lower()
                     if decision in ["yes", "no", "cheat", "quit"]:
                         break
                     print("Invalid input. Please enter yes, no, or quit.")
@@ -60,7 +60,7 @@ class Player:
                     break
                 elif decision.lower() == "quit":
                     self.add_score(200)
-                    print(f"{self.name} have quit the game.")
+                    print(f"{self.name} has quit the game.")
                     return
                 else:
                     print("Invalid input. Please enter yes or no.\n")
