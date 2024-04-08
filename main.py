@@ -66,9 +66,7 @@ def main():
                     chart.add_losses(loser)
                 except UnboundLocalError:
                     pass
-                print(f"{winner} wins!")
-                print(f"{loser} loses!")
-      
+
             if user_choice == 3:
                 the_rules = Rules()
                 the_rules.show_rules()
@@ -76,24 +74,12 @@ def main():
                 input()
 
             if user_choice == 4:
-                try:
-                    chart.load_highscore()
-                    chart.load_losses()
-                    chart.show_highscore()
-                    chart.show_losses()
-                    winner = ""
-                    loser = ""
-                    print("Press any key to go back to the menu.")
-                    input()
-                except UnboundLocalError:
-                    chart.load_highscore()
-                    chart.load_losses()
-                    chart.show_highscore()
-                    chart.show_losses()
-                    winner = ""
-                    loser = ""
-                    print("Press any key to go back to the menu.")
-                    input()
+                chart.load_highscore()
+                chart.load_losses()
+                chart.show_highscore()
+                chart.show_losses()
+                print("Press any key to go back to the menu.")
+                input()
 
             if user_choice == 5:
                 print("Change name")
@@ -105,10 +91,10 @@ def main():
                 break
 
             if user_choice == 7:
-                result1 = chart.get_losses()
-                print(result1)
-                result2 = chart.get_highscore()
-                print(result2)
+                chart.load_highscore()
+                chart.load_losses()
+                chart.show_highscore()
+                chart.show_losses()
 
             if user_choice not in [1, 2, 3, 4, 5, 6, 7]:
                 print("Invalid input. Please enter a number between 1 and 6.")
