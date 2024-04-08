@@ -116,7 +116,6 @@ pdoc:
     @$(call MESSAGE,$@)
     PYTHONPATH=C:/Users/frida/python_template/guess/Pig_Game pdoc --force --html --output-dir doc/pdoc guess/*.py
 
-
 pyreverse:
 	@$(call MESSAGE,$@)
 	install -d doc/pyreverse
