@@ -14,6 +14,7 @@ def main():
     piggy = Menu()
     pig = piggy.show_pig()
     print(pig)
+    
 
     print("Press any key to start the game.")
     input()
