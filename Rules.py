@@ -34,6 +34,7 @@ class Rules:
               colors.RESET)
         print(colors.YELLOW + "*********************************************"
               + colors.RESET)
+        # pragma: no cover
 
     def get_rules(self):  # returns the rules
         return self.rules
