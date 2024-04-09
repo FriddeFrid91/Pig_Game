@@ -22,6 +22,27 @@ class TestHighscore(unittest.TestCase):
             self.highscore_instance.add_highscore("Player1")
             mock_dump.assert_called_once()
 
+    def test_add_highscore_no_winner(self):
+        """Test the add_highscore function when there is no winner."""
+        # Mock the pickle.dump function
+        with patch('pickle.dump') as mock_dump:
+            self.highscore_instance.add_highscore("")
+            mock_dump.assert_not_called()
+
+    def test_add_highscore_eof_error(self):
+        """Test the add_highscore function when EOFError is raised."""
+        # Mock the pickle.dump function to raise EOFError
+        with patch('pickle.dump', side_effect=EOFError) as mock_dump:
+            self.highscore_instance.add_highscore("Player1")
+            self.assertEqual(self.highscore_instance.get_highscore(), {})
+    
+    def test_add_highscore_file_not_found(self):
+        """Test the add_highscore function when the file is not found."""
+        # Mock the pickle.dump function to raise FileNotFoundError
+        with patch('pickle.dump', side_effect=FileNotFoundError) as mock_dump:
+            self.highscore_instance.add_highscore("Player1")
+            self.assertEqual(self.highscore_instance.get_highscore(), {})
+
     def test_load_highscore(self):
         """Test the load_highscore function."""
         # Mock the pickle.load function to return sample data
