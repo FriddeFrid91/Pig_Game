@@ -13,6 +13,8 @@ class Test_Rules(unittest.TestCase):
             "play the game with 2 players\nFirst player to get 100 points wins\nIf "
             "You roll a 1, you lose all your points for that turn\nIf you hold,"
             "you keep your points for that turn")
+        
+        # pragma: no cover
 
 
 if __name__ == '__main__':
