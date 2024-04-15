@@ -69,7 +69,7 @@ class highscore:
             if sorted_scores is not None:
                 print(f"{sorted_scores:8}: {self.highscore_dict[sorted_scores]:>6}")
             else:
-                print("No highscore.")
+                return
 
     def add_highscore(self, winner):
         """Add the winner to the highscore."""
