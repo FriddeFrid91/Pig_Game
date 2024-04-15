@@ -1,5 +1,5 @@
 digraph "classes" {
 rankdir=BT
 charset="utf-8"
-"Pig_Game.highscore.highscore" [color="black", fontcolor="black", label=<{highscore|highscore_dict : dict<br ALIGN="LEFT"/>losses : dict<br ALIGN="LEFT"/>wins : dict<br ALIGN="LEFT"/>|add_highscore(winner)<br ALIGN="LEFT"/>add_losses(loser)<br ALIGN="LEFT"/>get_highscore()<br ALIGN="LEFT"/>get_losses()<br ALIGN="LEFT"/>load_highscore()<br ALIGN="LEFT"/>load_losses()<br ALIGN="LEFT"/>show_highscore()<br ALIGN="LEFT"/>show_losses()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"Pig_Game.player_vs_player.player_vs_player" [color="black", fontcolor="black", label=<{player_vs_player|loser : str<br ALIGN="LEFT"/>name : str<br ALIGN="LEFT"/>score : int<br ALIGN="LEFT"/>winner : str<br ALIGN="LEFT"/>|get_loser()<br ALIGN="LEFT"/>get_winner()<br ALIGN="LEFT"/>set_loser(loser)<br ALIGN="LEFT"/>two_player_game(name_1, name_2)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
 }
