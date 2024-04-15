@@ -119,7 +119,7 @@ pdoc:
 pyreverse:
 	@$(call MESSAGE,$@)
 	install -d doc/pyreverse
-	pyreverse guess/*.py
+	pyreverse Pig_Game/*.py
 	dot -Tpng classes.dot -o doc/pyreverse/classes.png
 	dot -Tpng packages.dot -o doc/pyreverse/packages.png
 	rm -f classes.dot packages.dot
