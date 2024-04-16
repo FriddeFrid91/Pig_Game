@@ -56,6 +56,12 @@ class Test_Player(unittest.TestCase):
         result = player.get_score()
         self.assertEqual(result, 100)
 
+    def test_set_score(self):
+        """Test for set_score method."""
+        player = Player("TestPlayer", 0)
+        player.set_score(100)
+        self.assertEqual(player.get_score(), 100)
+
 
 if __name__ == "__main__":
     unittest.main()
