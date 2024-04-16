@@ -65,10 +65,6 @@ class Player:
                 else:
                     print("Invalid input. Please enter yes or no.\n")
 
-    def change_name(self, name):
-        """Change the name of the player."""
-        self.name = name
-
     def get_name(self):
         """Get the name of the player."""
         return self.name

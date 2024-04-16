@@ -10,6 +10,30 @@ class highscore:
         self.losses = {}
         self.wins = {}
 
+    def change_name(self, old_name):
+        print("Change the name of the player.")
+        print(old_name)
+
+        if old_name in self.highscore_dict[old_name]:
+            new_name = input("Enter the new name: ")
+            self.highscore_dict[new_name] = self.highscore_dict.pop(old_name)
+            try:
+                with open("highscore.pkl", "wb") as file:
+                    pickle.dump(self.highscore_dict, file)
+            except FileNotFoundError:
+                self.highscore_dict = {}
+            except EOFError:
+                self.highscore_dict = {}
+            try:
+                with open("highscore.pkl", "rb") as file:
+                    self.highscore_dict = pickle.load(file)
+            except FileNotFoundError:
+                self.highscore_dict = {}
+            except EOFError:
+                self.highscore_dict = {}
+            print(self.highscore_dict)
+            return f"{old_name} has been changed to {new_name}."
+
     def show_losses(self):
         """Show the losses."""
         hall_of_fame = [

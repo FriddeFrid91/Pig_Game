@@ -1,5 +1,6 @@
 from menu import Menu
 from Rules import Rules
+from Player import Player
 from player_vs_player import player_vs_player
 from player_vs_computer import player_vs_computer
 from highscore import highscore
@@ -78,6 +79,14 @@ def main():
 
             if user_choice == 5:
                 print("Change name")
+                name_to_change = input("Enter the name you want to change: ")
+                if name_to_change == "":
+                    print("Please enter a name.")
+                    continue
+                else:
+                    result = highscore()
+                    what = result.change_name(name_to_change)
+                    print(what)
                 print("Press any key to go back to the menu.")
                 input()
 
