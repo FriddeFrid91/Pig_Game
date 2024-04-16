@@ -10,6 +10,12 @@ from Dice import Dice
 class Test_Player(unittest.TestCase):
     """Test for Player class."""
 
+    def test_player_name(self):
+        """Test for player_name method."""
+        player = Player("TestPlayer", 0)
+        result = player.player_name()
+        self.assertEqual(result, "TestPlayer")
+
     def test_add_score(self):
         """Test for add_score method."""
         player = Player("TestPlayer", 0)
