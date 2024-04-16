@@ -18,24 +18,6 @@ class Test_Player(unittest.TestCase):
         self.assertEqual(player1.get_name(), "TestPlayer1")
         self.assertEqual(player2.get_name(), "TestPlayer2") 
 
-    def two_player_game(self):
-        """Test for two_player_game method."""
-        player1 = Player("TestPlayer1", 0)
-        player2 = Player("TestPlayer2", 0)
-        player1.player_move = MagicMock(return_value=0)
-        player2.player_move = MagicMock(return_value=0)
-
-        player1.two_player_game(player1, player2)
-        player1.player_move.assert_called_once()
-        player2.player_move.assert_called_once()
-
-        dice = Dice()
-        dice.roll = MagicMock(return_value=1)
-
-        if dice.roll() == 1:
-            self.assertEqual(player1.get_score(), 0)
-            self.assertEqual(player2.get_score(), 0)
-
     def test_add_score(self):
         """Test for add_score method."""
         player = Player("TestPlayer", 0)
@@ -61,7 +43,33 @@ class Test_Player(unittest.TestCase):
         player = Player("TestPlayer", 0)
         player.set_score(100)
         self.assertEqual(player.get_score(), 100)
+    
+    def test_player_move(self):
+        """Test for player_move method."""
+        player = Player("TestPlayer", 0)
+        player.dice.roll_the_dice = MagicMock(return_value=1)
+        player.player_move()
+        player.dice.roll_the_dice.assert_called_once()
 
+        player.dice.roll_the_dice = MagicMock(return_value=2)
+        player.player_move()
+        player.dice.roll_the_dice.assert_called_once()
+
+        player.dice.roll_the_dice = MagicMock(return_value=3)
+        player.player_move()
+        player.dice.roll_the_dice.assert_called_once()
+
+        player.dice.roll_the_dice = MagicMock(return_value=4)
+        player.player_move()
+        player.dice.roll_the_dice.assert_called_once()
+
+        player.dice.roll_the_dice = MagicMock(return_value=5)
+        player.player_move()
+        player.dice.roll_the_dice.assert_called_once()
+
+        player.dice.roll_the_dice = MagicMock(return_value=6)
+        player.player_move()
+        player.dice.roll_the_dice.assert_called_once()
 
 if __name__ == "__main__":
     unittest.main()
