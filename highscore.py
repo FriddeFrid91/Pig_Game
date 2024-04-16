@@ -12,13 +12,37 @@ class highscore:
 
     def change_name(self, old_name):
         print("Change the name of the player.")
-        print(old_name)
-        new_name = input("Enter the new name: ")
-        print(new_name)
-        print(self.highscore_dict)
-
+        print(f"{old_name} wishes to change name.")
+        boolean = True
+        while boolean:
+            new_name = input("Enter the new name: ")
+            if new_name == old_name:
+                print("The name is the same.")
+                continue
+            else:
+                print(f"{new_name} is the new name.")
+                boolean = False
         if old_name in self.highscore_dict:
-            print("Old name in highscore_dict")
+            self.highscore_dict[new_name] = self.highscore_dict.pop(old_name)
+        if old_name in self.losses:
+            self.losses[new_name] = self.losses.pop(old_name)
+
+        for name, score in self.highscore_dict.items():
+            print(name, score)
+        for name, score in self.losses.items():
+            print(name, score)
+
+        try:
+            with open("highscore.pkl", "wb") as file:
+                pickle.dump(self.highscore_dict, file)
+        except (FileNotFoundError, EOFError):
+            print("No highscore at the moment.")
+
+        try:
+            with open("losses.pkl", "wb") as file:
+                pickle.dump(self.losses, file)
+        except (FileNotFoundError, EOFError):
+            print("No highscore at the moment.")
 
     def show_losses(self):
         """Show the losses."""

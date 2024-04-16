@@ -11,6 +11,14 @@ class TestHighscore(unittest.TestCase):
         self.highscore_instance = highscore()
         self.test_highscore_data = {"Player1": 3, "Player2": 2}
 
+    def change_name(self):
+        """Test the change_name function."""
+        # Mock the input function to return a new name
+        with patch('builtins.input', return_value="NewName"):
+            self.highscore_instance.change_name("OldName")
+            self.assertEqual(self.highscore_instance.get_highscore(),
+                             {"NewName": 3, "Player2": 2})
+
     def test_load_highscore(self):
         """Test the load_highscore function."""
         # Mock the pickle.load function to return sample data

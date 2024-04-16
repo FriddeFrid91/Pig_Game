@@ -1,6 +1,5 @@
 from menu import Menu
 from Rules import Rules
-from Player import Player
 from player_vs_player import player_vs_player
 from player_vs_computer import player_vs_computer
 from highscore import highscore
