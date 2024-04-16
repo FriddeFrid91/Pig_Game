@@ -1,9 +1,6 @@
 import unittest
 from menu import Menu
-<<<<<<< HEAD
-=======
 """Testing the Menu class"""    
->>>>>>> main
 
 
 class test_menu(unittest.TestCase):
@@ -18,3 +15,4 @@ class test_menu(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+    

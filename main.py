@@ -5,6 +5,7 @@ from player_vs_player import player_vs_player
 from player_vs_computer import player_vs_computer
 from highscore import highscore
 from colors import colors
+from Computer import Computer
 
 
 def main():
@@ -19,6 +20,7 @@ def main():
     print("    ``--|__|--..-'`.__|\n" + colors.RESET)
 
 
+
     print(colors.BLUE + "Press any key to start the game." + colors.RESET)
     input()
     while True:
@@ -31,8 +33,13 @@ def main():
 
             if user_choice == 1:
                 print("Player Vs Computer")
+                difficulty = input("Enter the difficulty level (easy, medium, hard): ")
                 game = player_vs_computer()
-                game.player_vs_computer_game()
+                game.player_vs_computer_game(difficulty)
+            
+
+                
+
 
 
             if user_choice == 2:
