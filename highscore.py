@@ -11,6 +11,7 @@ class highscore:
         self.wins = {}
 
     def change_name(self):
+        """Change the name of the player."""
         print("Change the name of the player. \n")
         what = True
         while what:
