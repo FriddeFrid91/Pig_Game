@@ -12,9 +12,16 @@ class Test_Player(unittest.TestCase):
 
     def test_player_name(self):
         """Test for player_name method."""
-        player = Player("TestPlayer", 0)
-        result = player.player_name()
-        self.assertEqual(result, "TestPlayer")
+        player1 = Player("TestPlayer1", 0)
+        player2 = Player("TestPlayer2", 0)
+
+        self.assertEqual(player1.get_name(), "TestPlayer1")
+        self.assertEqual(player2.get_name(), "TestPlayer2")
+        
+
+    def two_player_game(self):
+        """Test for two_player_game method."""
+
 
     def test_add_score(self):
         """Test for add_score method."""
