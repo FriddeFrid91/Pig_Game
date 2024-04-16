@@ -39,6 +39,8 @@ class Test_Player(unittest.TestCase):
         """Test for deduct_score method."""
         player = Player("TestPlayer", 100)
         player.deduct_score(50)
+        if player.get_score() < 0:
+            self.assertEqual(player.get_score(), 0)
         self.assertEqual(player.get_score(), 50)
 
     def test_get_score(self):
