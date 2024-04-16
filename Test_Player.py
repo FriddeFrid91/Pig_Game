@@ -29,6 +29,13 @@ class Test_Player(unittest.TestCase):
         player1.player_move.assert_called_once()
         player2.player_move.assert_called_once()
 
+        dice = Dice()
+        dice.roll = MagicMock(return_value=1)
+
+        if dice.roll() == 1:
+            self.assertEqual(player1.get_score(), 0)
+            self.assertEqual(player2.get_score(), 0)
+
     def test_add_score(self):
         """Test for add_score method."""
         player = Player("TestPlayer", 0)
