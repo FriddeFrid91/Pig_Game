@@ -17,6 +17,14 @@ class TestHighscore(unittest.TestCase):
         with patch('builtins.print') as mock_print:
             self.assertIsNone(self.highscore_instance.change_name())
             mock_print.assert_called()
+        if input == "":
+            self.assertEqual(input(), "Please enter a name from the scoreboard. \n")
+        if input == "q":
+            self.assertEqual(input(), "Quitting the name change. \n")
+        if input == "Player1":
+            self.assertEqual(input(), "Enter the new name: \n")
+        if input == "Player1":
+            self.assertEqual(input(), "The name is the same as the old name.\n")
 
     def test_load_highscore(self):
         """Test the load_highscore function."""
