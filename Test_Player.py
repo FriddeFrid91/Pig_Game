@@ -2,14 +2,12 @@
 import unittest
 from Player import Player
 from unittest.mock import patch, MagicMock
-from io import StringIO
-from Dice import Dice
 """unittest for Player.py"""
 
 
 class Test_Player(unittest.TestCase):
     """Test for Player class."""
-
+    @patch("builtins.input", side_effect=["yes", "no", "cheat", "quit"])
     def test_player_name(self):
         """Test for player_name method."""
         player1 = Player("TestPlayer1", 0)
@@ -43,10 +41,27 @@ class Test_Player(unittest.TestCase):
         player = Player("TestPlayer", 0)
         player.set_score(100)
         self.assertEqual(player.get_score(), 100)
-    
-    def test_player_move(self):
+
+    def test_player_move(self, mock_input):
         """Test for player_move method."""
         player = Player("TestPlayer", 0)
+
+        with self.subTest(message="Test 'yes' input"):
+            result = player.player_move()
+            self.assertEqual(result, "yes")
+
+        with self.subTest(message="Test 'no' input"):
+            result = player.player_move()
+            self.assertEqual(result, "no")
+
+        with self.subTest(message="Test 'quit' input"):
+            result = player.player_move()
+            self.assertEqual(result, "quit")
+
+        with self.subTest(message="Test 'cheat' input"):
+            result = player.player_move()
+            self.assertEqual(result, "cheat")
+
         player.dice.roll_the_dice = MagicMock(return_value=1)
         player.player_move()
         player.dice.roll_the_dice.assert_called_once()
@@ -70,6 +85,7 @@ class Test_Player(unittest.TestCase):
         player.dice.roll_the_dice = MagicMock(return_value=6)
         player.player_move()
         player.dice.roll_the_dice.assert_called_once()
+
 
 if __name__ == "__main__":
     unittest.main()
