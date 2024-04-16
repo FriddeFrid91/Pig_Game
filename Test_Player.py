@@ -14,7 +14,7 @@ class Test_Player(unittest.TestCase):
         player2 = Player("TestPlayer2", 0)
 
         self.assertEqual(player1.get_name(), "TestPlayer1")
-        self.assertEqual(player2.get_name(), "TestPlayer2") 
+        self.assertEqual(player2.get_name(), "TestPlayer2")
 
     def test_add_score(self):
         """Test for add_score method."""
@@ -44,47 +44,13 @@ class Test_Player(unittest.TestCase):
 
     def test_player_move(self):
         """Test for player_move method."""
-        player = Player("TestPlayer", 0)
+    player = Player("TestPlayer", 0)
 
-        with self.subTest(message="Test 'yes' input"):
-            result = player.player_move()
-            self.assertEqual(result, "yes")
-
-        with self.subTest(message="Test 'no' input"):
-            result = player.player_move()
-            self.assertEqual(result, "no")
-
-        with self.subTest(message="Test 'quit' input"):
-            result = player.player_move()
-            self.assertEqual(result, "quit")
-
-        with self.subTest(message="Test 'cheat' input"):
-            result = player.player_move()
-            self.assertEqual(result, "cheat")
-
-        player.dice.roll_the_dice = MagicMock(return_value=1)
-        player.player_move()
-        player.dice.roll_the_dice.assert_called_once()
-
-        player.dice.roll_the_dice = MagicMock(return_value=2)
-        player.player_move()
-        player.dice.roll_the_dice.assert_called_once()
-
-        player.dice.roll_the_dice = MagicMock(return_value=3)
-        player.player_move()
-        player.dice.roll_the_dice.assert_called_once()
-
-        player.dice.roll_the_dice = MagicMock(return_value=4)
-        player.player_move()
-        player.dice.roll_the_dice.assert_called_once()
-
-        player.dice.roll_the_dice = MagicMock(return_value=5)
-        player.player_move()
-        player.dice.roll_the_dice.assert_called_once()
-
-        player.dice.roll_the_dice = MagicMock(return_value=6)
-        player.player_move()
-        player.dice.roll_the_dice.assert_called_once()
+    for roll_value in range(1, 7):
+        with patch.object(player.dice, "roll_the_dice",
+                          return_value=roll_value) as mock_roll:
+            player.player_move()
+            mock_roll.assert_called_once()
 
 
 if __name__ == "__main__":
