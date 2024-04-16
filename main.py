@@ -84,8 +84,7 @@ def main():
                     print("Please enter a name.")
                     continue
                 else:
-                    result = highscore()
-                    what = result.change_name(name_to_change)
+                    what = chart.change_name(name_to_change)
                     print(what)
                 print("Press any key to go back to the menu.")
                 input()

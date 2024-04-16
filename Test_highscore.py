@@ -9,6 +9,15 @@ class TestHighscore(unittest.TestCase):
     def setUp(self):
         """Set up method to create an instance of highscore."""
         self.highscore_instance = highscore()
+        self.test_highscore_data = {"Player1": 3, "Player2": 2}
+
+    def test_load_highscore(self):
+        """Test the load_highscore function."""
+        # Mock the pickle.load function to return sample data
+        with patch('pickle.load', return_value={"Player1": 3, "Player2": 2}):
+            self.highscore_instance.load_highscore()
+            self.assertEqual(self.highscore_instance.get_highscore(),
+                             self.test_highscore_data)
 
     def test_show_highscore(self):
         """Test the show_highscore function."""
@@ -42,14 +51,6 @@ class TestHighscore(unittest.TestCase):
         with patch('pickle.dump', side_effect=FileNotFoundError):
             self.highscore_instance.add_highscore("Player1")
             self.assertEqual(self.highscore_instance.get_highscore(), {})
-
-    def test_load_highscore(self):
-        """Test the load_highscore function."""
-        # Mock the pickle.load function to return sample data
-        with patch('pickle.load', return_value={"Player1": 3, "Player2": 2}):
-            self.highscore_instance.load_highscore()
-            self.assertEqual(self.highscore_instance.get_highscore(), {"Player1": 3,
-                                                                       "Player2": 2})
 
     def test_load_highscore_file_not_found(self):
         """Test the load_highscore function when the file is not found."""
