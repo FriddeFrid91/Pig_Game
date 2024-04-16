@@ -10,27 +10,44 @@ class highscore:
         self.losses = {}
         self.wins = {}
 
-    def change_name(self, old_name):
-        print("Change the name of the player.")
-        print(f"{old_name} wishes to change name.")
+    def change_name(self):
+        print("Change the name of the player. \n")
+        what = True
+        while what:
+            self.show_losses(), self.show_highscore()
+            old_name = input("Enter name you want to change (q for quit): \n")
+
+            if old_name == "":
+                print("Please enter a name from the scoreboard. \n")
+                continue
+            elif old_name.lower() == "q":
+                print("Quitting the name change. \n")
+                return
+            elif old_name in self.highscore_dict or old_name in self.losses:
+                print(f"{old_name} WHAT\n")
+                what = False
+            else:
+                print("The name is not in the highscore table. \n")
+                continue
+
         boolean = True
+        print(f"{old_name} is the old name.\n")
         while boolean:
-            new_name = input("Enter the new name: ")
+            new_name = input("Enter the new name: \n")
             if new_name == old_name:
-                print("The name is the same.")
+                print("The name is the same as the old name.\n")
+                continue
+            elif new_name in self.highscore_dict or new_name in self.losses:
+                print("The name is already in the highscore table.\n")
                 continue
             else:
-                print(f"{new_name} is the new name.")
+                print(f"{new_name} is the new name.\n")
                 boolean = False
+
         if old_name in self.highscore_dict:
             self.highscore_dict[new_name] = self.highscore_dict.pop(old_name)
         if old_name in self.losses:
             self.losses[new_name] = self.losses.pop(old_name)
-
-        for name, score in self.highscore_dict.items():
-            print(name, score)
-        for name, score in self.losses.items():
-            print(name, score)
 
         try:
             with open("highscore.pkl", "wb") as file:
@@ -43,6 +60,8 @@ class highscore:
                 pickle.dump(self.losses, file)
         except (FileNotFoundError, EOFError):
             print("No highscore at the moment.")
+        print(">> The name has been changed and the highscore table board updated <<\n")
+        self.show_losses(), self.show_highscore()
 
     def show_losses(self):
         """Show the losses."""

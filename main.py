@@ -73,19 +73,15 @@ def main():
                 chart.load_losses()
                 chart.show_highscore()
                 chart.show_losses()
-                print("Press any key to go back to the menu.")
+                print("Press any key to go back to the menu. \n")
                 input()
 
             if user_choice == 5:
                 print("Change name")
-                name_to_change = input("Enter the name you want to change: ")
-                if name_to_change == "":
-                    print("Please enter a name.")
-                    continue
-                else:
-                    what = chart.change_name(name_to_change)
-                    print(what)
-                print("Press any key to go back to the menu.")
+                chart.load_highscore()
+                chart.load_losses()
+                chart.change_name()
+                print("Press any key to go back to the menu. \n")
                 input()
 
             if user_choice == 6:
