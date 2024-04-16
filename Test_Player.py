@@ -42,7 +42,7 @@ class Test_Player(unittest.TestCase):
         player.set_score(100)
         self.assertEqual(player.get_score(), 100)
 
-    def test_player_move(self, mock_input):
+    def test_player_move(self):
         """Test for player_move method."""
         player = Player("TestPlayer", 0)
 
