@@ -1,17 +1,10 @@
-# a class for the game Rules
+"""This module contains the rules of the game."""
 
-class colors:  # pragma: no cover
-    RED = '\033[91m'
-    GREEN = '\033[92m'
-    YELLOW = '\033[93m'
-    BLUE = '\033[94m'
-    PINK = '\033[95m'
-    RESET = '\033[0m'
+from colors import colors
 
-    # pragma: no cover
 
-    
 class Rules:
+    """This class contains the rules of the game."""
     def __init__(self):  # pragma: no cover
         self.rules = "You can play the game with 1 players with the computer\nYou can" \
             "play the game with 2 players\nFirst player to get 100 points wins\nIf " \
