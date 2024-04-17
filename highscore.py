@@ -4,6 +4,7 @@ from colors import colors
 
 class highscore:
     """Class for highscore."""
+
     def __init__(self):
         """Initialize the highscore."""
         self.highscore_dict = {}

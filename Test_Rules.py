@@ -1,9 +1,12 @@
+"""unittest for Rules"""
+
 import unittest
 from Rules import Rules
 """Testing the Rules class"""
 
 
 class Test_Rules(unittest.TestCase):
+    
     """Test for Rules class."""
     def test_get_rules(self):
         the_rules = Rules()

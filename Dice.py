@@ -3,6 +3,7 @@ import random
 
 
 class Dice:
+    
     """Class for the dice."""
     def __init__(self, numbers):  # Constructor
         # roll_the_dice = 0  # Variable to store the result of the dice roll
@@ -24,14 +25,14 @@ class Dice:
             print(f"You got a {result}!")
             return result
 
-    def get_dice(self):  # Getter
+    def get_dice(self):  # Method to get the dice
         """Get the dice."""
         if self.numbers > 1:
             return self.numbers
         else:
             return 0
 
-    def set_dice(self, numbers):  # Setter
+    def set_dice(self, numbers):  
         """Set the dice."""
         self.numbers = numbers
 

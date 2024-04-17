@@ -1,3 +1,4 @@
+"""Main module for the program."""
 from menu import Menu
 from Rules import Rules
 from player_vs_player import player_vs_player
@@ -27,8 +28,9 @@ def main():
 
             if user_choice == 1:
                 print("Player Vs Computer")
+                difficulty = input("Enter the difficulty level (easy, medium, hard): ")
                 game = player_vs_computer()
-                game.player_vs_computer_game()
+                game.player_vs_computer_game(difficulty)
 
             if user_choice == 2:
                 print("Player Vs Player")
@@ -57,6 +59,7 @@ def main():
                 winner = new_game.two_player_game(player_1, player_2)
                 loser = new_game.get_loser()
                 try:
+                    chart = highscore()
                     chart.add_highscore(winner)
                     chart.add_losses(loser)
                 except UnboundLocalError:

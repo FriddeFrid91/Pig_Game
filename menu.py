@@ -3,6 +3,11 @@ from colors import colors
 
 
 class Menu:
+    """Menu class."""
+    def __init__(self):
+        """Menu constructor."""
+        self.menu_options = 0
+
     """This is a class for the menu of the game."""
 
     def show_pig(self):

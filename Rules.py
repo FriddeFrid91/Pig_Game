@@ -8,7 +8,9 @@ class colors:  # pragma: no cover
     PINK = '\033[95m'
     RESET = '\033[0m'
 
+    # pragma: no cover
 
+    
 class Rules:
     def __init__(self):  # pragma: no cover
         self.rules = "You can play the game with 1 players with the computer\nYou can" \
