@@ -20,7 +20,7 @@ class Player:
             round_score += roll
             current_score = round_score + self.score
             print(f"{self.name} rolled a {roll}.\n")
-            if current_score >= 50:
+            if current_score >= 100:
                 self.add_score(current_score)
                 print(colors.YELLOW + "*******************************" + colors.RESET)
                 print(f"{self.name} wins!\n")

@@ -35,11 +35,6 @@ class player_vs_player:
                 current_player.player_move()
 
                 if current_player.get_score() >= 100 and current_player.get_score() != 200:
-                    print(colors.YELLOW + "*********************************"
-                          + colors.RESET)
-                    print(f"{current_player.name} wins!\n")
-                    print(colors.YELLOW + "*********************************"
-                          + colors.RESET)
                     if current_player == player_1:
                         self.loser = player_2.name
                         self.set_loser(player_2.name)
@@ -47,8 +42,6 @@ class player_vs_player:
                     elif current_player == player_2:
                         self.loser = player_1.name
                         self.set_loser(player_1.name)
-
-                    self.winner = current_player.name
 
                     return current_player.name
 
@@ -73,10 +66,6 @@ class player_vs_player:
                     print(colors.PINK + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                           + colors.RESET)
                     current_player = player_1
-
-    def get_winner(self):
-        """Get the winner."""
-        return self.winner
 
     def get_loser(self):
         """Get the loser."""
