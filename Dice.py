@@ -3,7 +3,7 @@ import random
 
 
 class Dice:
-    
+
     """Class for the dice."""
     def __init__(self, numbers):  # Constructor
         # roll_the_dice = 0  # Variable to store the result of the dice roll

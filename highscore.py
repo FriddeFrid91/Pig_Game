@@ -1,5 +1,6 @@
 import pickle
 from colors import colors
+"""Module for highscore."""
 
 
 class highscore:
