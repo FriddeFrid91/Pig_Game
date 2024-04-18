@@ -6,7 +6,8 @@ class TestDice(unittest.TestCase):
     """Test for Dice class."""
     def test_roll_the_dice(self):
         """Test for roll_the_dice method."""
-        dice = Dice()
+        numbers = [1, 2, 3, 4, 5, 6]
+        dice = Dice(numbers)
         result = dice.roll_the_dice()
         self.assertIsNotNone(result)
         self.assertIsInstance(result, int)
