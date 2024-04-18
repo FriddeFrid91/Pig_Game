@@ -34,13 +34,12 @@ def main():
             if user_choice == 1:
                 print("Player Vs Computer")
                 difficulty = input("Enter the difficulty level (easy, medium, hard): ")
-                game = player_vs_computer()
-                game.player_vs_computer_game(difficulty)
+            if difficulty not in ["easy", "medium", "hard"]:
+                print("Invalid input. Please enter easy, medium, or hard.")
+                continue
+            game = player_vs_computer()
+            game.player_vs_computer_game(difficulty)
             
-
-                
-
-
 
             if user_choice == 2:
                 print("Player Vs Player")
@@ -58,6 +57,7 @@ def main():
                 else:
                     print("Invalid input. Please press enter to "
                           + "go back to the menu.")
+                    break
 
             if user_choice == 4:
                 print("Highscore")

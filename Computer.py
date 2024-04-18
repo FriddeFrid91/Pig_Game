@@ -7,7 +7,7 @@ class Computer:
         """Initialize the computer player."""
         self.name = "Computer"
         self.score = 0
-        self.difficulty = "easy", "medium", "hard"
+        self.difficulty = None
 
     def set_difficulty(self, difficulty):
         """Set the difficulty level of the computer."""
@@ -44,35 +44,32 @@ class Computer:
     
     def medium_difficulty(self):
         """Set the difficulty to medium."""
-        roll = random.randint(2, 6)
-        while True:
-            if self.score >= 15:
-                print("The computer has decided to hold.\n")
-                break
-            if roll == 1:
-                print("Oink, oink! The computer lost all its points for this round!\n")
-                break
-            else:
+        roll = random.randint(1, 10)
+    
+        if roll == 1:
+                print("Oink, oink! The computer cheatycheats, and not lose any point HAHAHA!\n")
+                
+        else:                
                 print(f"The computer rolled a {roll}.\n")
                 self.score += roll
-                break
+                if self.score >= 10:
+                    print("The computer has decided to hold.\n")
+                    print(f"The computer's score is {self.score}.\n")
+                
 
        
 
     def hard_difficulty(self):
         """Set the difficulty to hard."""
-        roll = random.randint(4, 6)
-        while True:
-            if self.score >= 20:
-                print("The computer has decided to hold.\n")
-                break
-            if roll == 1:
-                print("Oink, oink! Sorry, but this score is mina too!\n")
-                continue
-            else:
+        roll = random.randint(4, 10)
+        if roll == 1:
+            print("Oink, oink! NO ones for me \n")        
+        else:
                 print(f"The computer rolled a {roll}.\n")
                 self.score += roll
-                break
+                if self.score >= 20:
+                    print("The computer has decided to hold.\n")
+                    print(f"The computer's score is {self.score}.\n")
         
 
 
