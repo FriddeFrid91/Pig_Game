@@ -17,7 +17,7 @@ class Dice:
     def show_the_dice(self, result):  # Method to show the dice
         """Show the dice."""
         if result == 1:
-            # If the result is 1, the player loses all the points and the turn is over
+            # If the result is 1, the player loses all the points and their turn is over
             return 0
         else:
             # If the result is not 1, the player gets
