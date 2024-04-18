@@ -19,6 +19,17 @@ class TestDice(unittest.TestCase):
         else:
             self.assertIsNotNone(dice.show_the_dice(result))
 
+    def test_get_dice(self):
+        """Test for get_dice method."""
+        dice = Dice(6)
+        self.assertEqual(dice.get_dice(), 6)
+
+    def test_set_dice(self):
+        """Test for set_dice method."""
+        dice = Dice(6)
+        dice.set_dice(8)
+        self.assertEqual(dice.get_dice(), 8)
+
 
 if __name__ == "__main__":
     unittest.main()
