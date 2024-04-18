@@ -1,4 +1,0 @@
-1. Skapa "change-name"-funktionalitet.
-2. Få ett högre coverage på rules.py.
-3. Skapa intelligence/computer.
-4. Svårighetsgrader.
