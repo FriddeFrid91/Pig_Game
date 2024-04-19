@@ -47,8 +47,8 @@ class Computer:
         roll = random.randint(1, 10)
     
         if roll == 1:
+                print("The computer rolled a 1.\n")
                 print("Oink, oink! The computer cheatycheats, and not lose any point HAHAHA!\n")
-                
         else:                
                 print(f"The computer rolled a {roll}.\n")
                 self.score += roll
@@ -63,7 +63,7 @@ class Computer:
         """Set the difficulty to hard."""
         roll = random.randint(4, 10)
         if roll == 1:
-            print("Oink, oink! NO ones for me \n")        
+            print("Oink, oink! NO 1:s for me \n")        
         else:
                 print(f"The computer rolled a {roll}.\n")
                 self.score += roll

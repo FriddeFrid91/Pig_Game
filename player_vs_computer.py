@@ -43,6 +43,7 @@ class player_vs_computer:
                     current_player.player_move()
                 else:
                     self.computer.computer_move()
+                    current_player = self.computer
 
                 if current_player.get_score() >= 50:
                     print(colors.YELLOW + "*********************************")
