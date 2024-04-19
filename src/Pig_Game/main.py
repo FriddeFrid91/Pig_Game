@@ -40,23 +40,34 @@ def main():
                 boolean = True
                 while boolean:
                     player_1 = input("Enter the name of player 1: ")
-                    if player_1 == "":
-                        print("Please enter a name: ")
+                    if len(player_1) < 2 or len(player_1) > 10:
+                        print("Please enter a between 2 and 10 characters.")
                         continue
                     else:
-                        boolean = False
+                        confirm_name = input(f"Is {player_1} the correct name? (yes/no): ")
+                        if confirm_name.lower() not in ["yes", "no"]:
+                            print("Invalid input. Please enter yes or no.")
+                            continue
+                        elif confirm_name.lower() == "no":
+                            continue
+                        else:
+                            boolean = False
 
                 boolean = True
                 while boolean:
-                    player_2 = input("Enter the name of player 2: ")
-                    if player_2 == "":
-                        print("Please enter a name: ")
-                        continue
-                    elif player_2 == player_1:
-                        print("Oink, oink! You can't have the same name as player 1!")
+                    player_2 = input("Enter the name of player 1: ")
+                    if len(player_2) < 2 or len(player_1) > 10:
+                        print("Please enter a between 2 and 10 characters.")
                         continue
                     else:
-                        boolean = False
+                        confirm_name = input(f"Is {player_2} the correct name? (yes/no): ")
+                        if confirm_name.lower() not in ["yes", "no"]:
+                            print("Invalid input. Please enter yes or no.")
+                            continue
+                        elif confirm_name.lower() == "no":
+                            continue
+                        else:
+                            boolean = False
 
                 new_game = player_vs_player()
                 winner = new_game.two_player_game(player_1, player_2)

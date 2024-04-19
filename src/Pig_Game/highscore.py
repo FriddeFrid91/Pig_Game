@@ -1,6 +1,6 @@
+"""Module for highscore."""
 import pickle
 from colors import colors
-"""Module for highscore."""
 
 
 class highscore:
@@ -13,7 +13,7 @@ class highscore:
         self.wins = {}
 
     def change_name(self):
-        """Change the name of the player."""
+        """Change the name of the player at the highscore board."""
         print("Change the name of the player. \n")
         what = True
         while what:
@@ -23,7 +23,7 @@ class highscore:
             if old_name == "":
                 print("Please enter a name from the scoreboard. \n")
                 continue
-            elif old_name.lower() == "q":
+            elif old_name.lower() == "quit":
                 print("Quitting the name change. \n")
                 return
             elif old_name in self.highscore_dict or old_name in self.losses:
@@ -67,7 +67,7 @@ class highscore:
         self.show_losses(), self.show_highscore()
 
     def show_losses(self):
-        """Show the losses."""
+        """Show the losses for all players."""
         hall_of_fame = [
             colors.BLUE + "*****************" + colors.RESET + "\n" +
             colors.BLUE + "* HALL OF SHAME *" + colors.RESET + "\n" +

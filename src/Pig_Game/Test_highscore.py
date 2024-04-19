@@ -1,3 +1,4 @@
+"""Test module for highscore."""
 import unittest
 from highscore import highscore
 from unittest.mock import patch
@@ -7,7 +8,7 @@ class TestHighscore(unittest.TestCase):
     """Test class for highscore."""
 
     def setUp(self):
-        """Set up method to create an instance of highscore."""
+        """Set up a method to create an instance of highscore."""
         self.highscore_instance = highscore()
         self.test_highscore_data = {"Player1": 3, "Player2": 2}
 

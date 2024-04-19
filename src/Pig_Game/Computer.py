@@ -1,3 +1,4 @@
+"""This module contains the Computer class."""
 import random
 
 
@@ -12,7 +13,7 @@ class Computer:
     def set_difficulty(self, difficulty):
         """Set the difficulty level of the computer."""
         self.difficulty = difficulty
-    
+
     def get_score(self):
         """Return the computer's score."""
         return self.score
