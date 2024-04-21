@@ -15,10 +15,10 @@ class highscore:
     def change_name(self):
         """Change the name of the player at the highscore board."""
         print("Change the name of the player. \n")
-        what = True
-        while what:
+        name_loop = True
+        while name_loop:
             self.show_losses(), self.show_highscore()
-            old_name = input("Enter name you want to change (q for quit): \n")
+            old_name = input("Enter name you want to change (quit for quit): \n")
 
             if old_name == "":
                 print("Please enter a name from the scoreboard. \n")
@@ -27,8 +27,8 @@ class highscore:
                 print("Quitting the name change. \n")
                 return
             elif old_name in self.highscore_dict or old_name in self.losses:
-                print(f"{old_name} WHAT\n")
-                what = False
+                print(f"{old_name}\n")
+                name_loop = False
             else:
                 print("The name is not in the highscore table. \n")
                 continue

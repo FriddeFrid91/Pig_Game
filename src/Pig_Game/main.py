@@ -55,8 +55,8 @@ def main():
 
                 boolean = True
                 while boolean:
-                    player_2 = input("Enter the name of player 1: ")
-                    if len(player_2) < 2 or len(player_1) > 10:
+                    player_2 = input("Enter the name of player 2: ")
+                    if len(player_2) < 2 or len(player_2) > 10:
                         print("Please enter a between 2 and 10 characters.")
                         continue
                     else:
@@ -82,21 +82,15 @@ def main():
             if user_choice == 3:
                 the_rules = Rules()
                 print(the_rules)
-
-                back = input("Press enter to go back to the menu: ")
-                if back == "":
-                    continue
-                else:
-                    print("Invalid input. Please press enter to "
-                          + "go back to the menu.")
-                    break
+                print("Press any key to go back to the menu.")
+                input()
 
             if user_choice == 4:
                 chart.load_highscore()
                 chart.load_losses()
                 chart.show_highscore()
                 chart.show_losses()
-                print("Press any key to go back to the menu. \n")
+                print("Press any key to go back to the menu.")
                 input()
 
             if user_choice == 5:
@@ -104,7 +98,7 @@ def main():
                 chart.load_highscore()
                 chart.load_losses()
                 chart.change_name()
-                print("Press any key to go back to the menu. \n")
+                print("Press any key to go back to the menu.")
                 input()
 
             if user_choice == 6:
