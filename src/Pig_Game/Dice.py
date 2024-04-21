@@ -32,7 +32,7 @@ class Dice:
         else:
             return 0
 
-    def set_dice(self, numbers):  
+    def set_dice(self, numbers):
         """Set the dice."""
         self.numbers = numbers
 
