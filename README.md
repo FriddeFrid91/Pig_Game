@@ -1,14 +1,32 @@
-<<<<<<< HEAD
-Course repo oopython
-===========================
+Pig - Dice Game in Python
+Pig is a simple dice game where the goal is to be the first player to reach 100 points. This project was developed by Merjam Al-Beibani, Sara Schmerti, and Frida Jóhannesson as a student project.
 
-[![Documentation Status](https://readthedocs.org/projects/python-oo/badge/?version=latest)](https://python-oo.readthedocs.io/en/latest/?badge=latest)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+Gameplay
+Pig offers the option to play with another player or against the computer. When playing against the computer, you can choose the difficulty level.
 
-Example program for object oriented Python with static code analyses, unit tests and documentation tools.
+Rules
+Each player takes turns rolling a single die.
+Points accumulate based on the outcome of the dice rolls.
+After every roll, the player has a choice: they can either save the total points they have gathered and pass the die to the other player, or they can roll the die again.
+If a player rolls a 1, they lose all accumulated points from the current round.
+Installation
+To get started with Pig, follow these steps:
 
-There is a [Question and Answer](questions-and-answers) area that might be of help to you.
-=======
-# Test_Pig_Game
-Test
->>>>>>> 71de3252033fad9db03df1463a3cac4ed566835f
+Clone this repository to your local machine:
+bash
+Copy code
+git clone https://github.com/FriddeFrid91/Pig_Game.git
+Ensure you have Python 3 installed.
+Navigate to the project directory:
+bash
+Copy code
+cd Pig
+Run the makefile to install dependencies and set up the environment:
+go
+Copy code
+make install
+Navigate to the game directory:
+bash
+Copy code
+cd Pig/src
+Now you're ready to play Pig! Have fun rolling the dice and aiming for that 100-point mark!

@@ -31,6 +31,11 @@ class TestHighscore(unittest.TestCase):
         if input == "Player3":
             self.assertEqual(input(), "Player3 is the new name.\n")
 
+        if input in self.highscore_instance.highscore_dict:
+            self.assertEqual(input(), "Player3")
+        if input in self.highscore_instance.losses:
+            self.assertEqual(input(), "Player3")
+
     def test_load_highscore(self):
         """Test the load_highscore function."""
         # Mock the pickle.load function to return sample data
