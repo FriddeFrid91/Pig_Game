@@ -1,44 +1,23 @@
 Pig - Dice Game in Python
-Pig is a simple dice game where the goal is to be the first player to reach a certain score. The game is played with one or more dice and involves strategic decision-making and risk-taking.
+A student project by Merjam Al-Beibani, Sara Schmerti and Frida Jóhannesson.
+Pig is a simple dice game where the goal is to be the first player to reach 100 points. The game is played with one dice and involves strategic decision-making and risk-taking.
 
-Features
-Players can roll one or more dice in each turn.
+Gameplay
+Pig offers the option to play with another player or against the computer. When playing against the computer, you can choose the difficulty level.
+
+Rules
+Each player takes turns rolling a single die.
 Points accumulate based on the outcome of the dice rolls.
-Players can choose to save their points and pass to the next player.
-The first player to reach a predetermined winning score wins the game.
+After every roll, the player has a choice: they can either save the total points they have gathered and pass the die to the other player, or they can roll the die again.
+If a player rolls a 1, they lose all accumulated points from the current round.
+
 Installation
 Clone this repository to your local machine:
-bash
-Copy code
-git clone https://github.com/yourusername/pig-dice-game.git
+git clone https://github.com/FriddeFrid91/Pig_Game.git
+Make sure you have Python 3 installed.
 Navigate to the project directory:
-bash
-Copy code
-cd pig-dice-game
-Start the game by running the main file:
-Copy code
-python pig.py
-Usage
-Follow the instructions displayed in the terminal to play the game.
-Enter the number of dice to roll in each turn and choose whether to save points or continue rolling.
-Example
-python
-Copy code
-# Example code to run the game
-
-from pig import Game
-
-# Create a new game with two players
-game = Game(2)
-
-# Start the game
-game.play()
-Contributing
-If you'd like to contribute to the project, create a branch from the main branch and submit a pull request with your changes.
-License
-This project is licensed under the MIT License.
-
-Contact Us
-For questions or feedback, contact us at email@example.com.
-
-F
+cd Pig
+Run the makefile to install dependencies and setup the environment:
+make install
+Navigate to the game directory:
+cd Pig/src
