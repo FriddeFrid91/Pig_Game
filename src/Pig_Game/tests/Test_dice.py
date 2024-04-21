@@ -23,6 +23,7 @@ class TestDice(unittest.TestCase):
         result = dice.roll_the_dice()
         if result == 1:
             self.assertEqual(dice.show_the_dice(result), 0)
+            return 0
         else:
             self.assertIsNotNone(dice.show_the_dice(result))
 
