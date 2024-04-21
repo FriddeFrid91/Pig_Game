@@ -14,22 +14,22 @@ If a player rolls a 1, they lose all accumulated points from the current round.
 To get started with Pig, follow these steps:
 
 Clone this repository to your local machine:
-bash
-Copy code
+```
 git clone https://github.com/FriddeFrid91/Pig_Game.git
+```
 Ensure you have Python 3 installed.
+```
+python --version
+python3 --version
+```
 Navigate to the project directory:
-bash
-Copy code
 cd Pig
 Run the makefile to install dependencies and set up the environment:
-go
-Copy code
 ```
 make install
 ```
 Navigate to the game directory:
-bash
-Copy code
-cd Pig/src
+```
+cd Pig/src/Pig_Game
+```
 Now you're ready to play Pig! Have fun rolling the dice and aiming for that 100-point mark!
