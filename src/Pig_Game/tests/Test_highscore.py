@@ -1,7 +1,8 @@
 """Test module for highscore."""
 import unittest
 from highscore import highscore
-from unittest.mock import patch
+from unittest.mock import mock_open, patch
+import pickle
 
 
 class TestHighscore(unittest.TestCase):
@@ -12,7 +13,7 @@ class TestHighscore(unittest.TestCase):
         self.highscore_instance = highscore()
         self.test_highscore_data = {"Player1": 3, "Player2": 2}
 
-    def test_change_name(self):
+    def test_change_name(self, mock_file_open):
         """Test the change_name function."""
         # Mock the print function
         with patch('builtins.print') as mock_print:
@@ -35,6 +36,18 @@ class TestHighscore(unittest.TestCase):
             self.assertEqual(input(), "Player3")
         if input in self.highscore_instance.losses:
             self.assertEqual(input(), "Player3")
+
+        highscore_dict = {"player_1": 100, "player_2": 90}
+        with patch("pickle.dump") as mock_pickle_dump:
+            try:
+                with open("highscore.pkl", "wb") as file:
+                    pickle.dump(highscore_dict, file)
+            except (FileNotFoundError, EOFError):
+                pass
+
+        mock_file_open.assert_called_once_with("highscore.pkl", "wb")
+        mock_pickle_dump.assert_called_once_with(highscore_dict, 
+                                                 mock_file_open.return_value)
 
     def test_load_highscore(self):
         """Test the load_highscore function."""
