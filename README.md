@@ -25,7 +25,9 @@ cd Pig
 Run the makefile to install dependencies and set up the environment:
 go
 Copy code
+```
 make install
+```
 Navigate to the game directory:
 bash
 Copy code
