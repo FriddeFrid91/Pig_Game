@@ -20,12 +20,21 @@ class TestHighscore(unittest.TestCase):
             mock_print.assert_called()
         if input == "":
             self.assertEqual(input(), "Please enter a name from the scoreboard. \n")
-        if input == "q":
+        if input == "quit":
             self.assertEqual(input(), "Quitting the name change. \n")
         if input == "Player1":
             self.assertEqual(input(), "Enter the new name: \n")
         if input == "Player1":
             self.assertEqual(input(), "The name is the same as the old name.\n")
+        if input == "Player2":
+            self.assertEqual(input(), "The name is already in the highscore table.\n")
+        if input == "Player3":
+            self.assertEqual(input(), "Player3 is the new name.\n")
+
+        if input in self.highscore_instance.highscore_dict:
+            self.assertEqual(input(), "Player3")
+        if input in self.highscore_instance.losses:
+            self.assertEqual(input(), "Player3")
 
     def test_load_highscore(self):
         """Test the load_highscore function."""
