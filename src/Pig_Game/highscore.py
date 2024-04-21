@@ -51,7 +51,7 @@ class highscore:
             self.highscore_dict[new_name] = self.highscore_dict.pop(old_name)
         if old_name in self.losses:
             self.losses[new_name] = self.losses.pop(old_name)
-
+        # pragma: no cover
         try:
             with open("highscore.pkl", "wb") as file:
                 pickle.dump(self.highscore_dict, file)
