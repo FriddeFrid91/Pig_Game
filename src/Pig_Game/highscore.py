@@ -65,6 +65,7 @@ class highscore:
             print("No highscore at the moment.")
         print(">> The name has been changed and the highscore table board updated <<\n")
         self.show_losses(), self.show_highscore()
+        # pragma: no cover
 
     def show_losses(self):
         """Show the losses for all players."""
