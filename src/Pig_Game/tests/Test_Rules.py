@@ -21,6 +21,11 @@ class Test_Rules(unittest.TestCase):
             "\033[94mIf you hold, you keep your points for that turn\033[0m",
             "\033[93m*********************************************\033[0m"])
 
+    def test_str(self):
+        """Test __str__ method."""
+        the_rules = Rules()
+        self.assertEqual(str(the_rules), "\n".join(the_rules.show_rules()))
+
 
 if __name__ == '__main__':
     unittest.main()
