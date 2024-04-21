@@ -1,4 +1,4 @@
-"""unittest for Rules"""
+"""unittest for Rules."""
 
 import unittest
 from Rules import Rules
@@ -6,18 +6,28 @@ from Rules import Rules
 
 
 class Test_Rules(unittest.TestCase):
-    
-    """Test for Rules class."""
-    def test_get_rules(self):
-        the_rules = Rules()
-        self.assertEqual(
-            the_rules.get_rules().strip(),
-            "You can play the game with 1 players with the computer\nYou can"
-            "play the game with 2 players\nFirst player to get 100 points wins\nIf "
-            "You roll a 1, you lose all your points for that turn\nIf you hold,"
-            "you keep your points for that turn")
-        
-        # pragma: no cover
+    """Test Rules class."""
+
+    def test_show_rules(self):
+        """Test show_rules method."""
+        rules = Rules()
+        self.assertEqual(rules.show_rules(),
+                         "The rules are simple: \n"
+                         "1. The game has 2 players, a human and a computer.\n"
+                         "2. Each turn, a player repeatedly rolls a die ",
+                         " until either a 1 is rolled or the player ",
+                         "decides to hold.\n"
+                         "3. If the player rolls a 1, ",
+                         "they score nothing and it becomes ",
+                         "the opponent's turn.\n"
+                         "4. If the player rolls any other number, ",
+                         "it is added to their turn total and the ",
+                         "player's turn continues.\n"
+                         "5. If a player chooses to hold, ",
+                         "their turn total is added to their score, ",
+                         "and it becomes the opponent's turn.\n"
+                         "6. The first player to score ",
+                         "100 or more points wins.\n")
 
 
 if __name__ == '__main__':
