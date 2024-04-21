@@ -13,9 +13,10 @@ class TestHighscore(unittest.TestCase):
         self.highscore_instance = highscore()
         self.test_highscore_data = {"Player1": 3, "Player2": 2}
 
-    def test_change_name(self, mock_file_open):
+    def test_change_name(self):
         """Test the change_name function."""
         # Mock the print function
+        mock_file_open = mock_open()
         with patch('builtins.print') as mock_print:
             self.assertIsNone(self.highscore_instance.change_name())
             mock_print.assert_called()
@@ -46,8 +47,9 @@ class TestHighscore(unittest.TestCase):
                 pass
 
         mock_file_open.assert_called_once_with("highscore.pkl", "wb")
-        mock_pickle_dump.assert_called_once_with(highscore_dict, 
+        mock_pickle_dump.assert_called_once_with(highscore_dict,
                                                  mock_file_open.return_value)
+
 
     def test_load_highscore(self):
         """Test the load_highscore function."""
