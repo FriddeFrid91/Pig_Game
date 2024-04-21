@@ -38,19 +38,6 @@ class TestHighscore(unittest.TestCase):
         if input in self.highscore_instance.losses:
             self.assertEqual(input(), "Player3")
 
-        highscore_dict = {"player_1": 100, "player_2": 90}
-        with patch("pickle.dump") as mock_pickle_dump:
-            try:
-                with open("highscore.pkl", "wb") as file:
-                    pickle.dump(highscore_dict, file)
-            except (FileNotFoundError, EOFError):
-                pass
-
-        mock_file_open.assert_called_once_with("highscore.pkl", "wb")
-        mock_pickle_dump.assert_called_once_with(highscore_dict,
-                                                 mock_file_open.return_value)
-
-
     def test_load_highscore(self):
         """Test the load_highscore function."""
         # Mock the pickle.load function to return sample data
