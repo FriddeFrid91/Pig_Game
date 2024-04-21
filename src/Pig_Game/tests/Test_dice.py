@@ -30,7 +30,7 @@ class TestDice(unittest.TestCase):
         """Test for get_dice method."""
         dice = Dice(6)
         self.assertEqual(dice.get_dice(), 6)
-        if dice > 1:
+        if dice.get_dice() > 1:
             self.assertEqual(dice.get_dice(), 6)
         if dice.get_dice() == 0:
             self.assertEqual(dice.get_dice(), 0)
