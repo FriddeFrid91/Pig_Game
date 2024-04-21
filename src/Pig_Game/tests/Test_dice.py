@@ -35,7 +35,7 @@ class TestDice(unittest.TestCase):
         if dice.get_dice() == 0:
             self.assertEqual(dice.get_dice(), 0)
         else:
-            self.assertEqual(dice.get_dice(), 0)
+            self.assertIsInstance(dice.get_dice(), int)
 
     def test_set_dice(self):
         """Test for set_dice method."""
