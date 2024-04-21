@@ -1,4 +1,4 @@
-# Pig - Dice Game in Python
+# Pig - Dice Game in Python :pig_nose:
 Pig is a simple dice game where the goal is to be the first player to reach 100 points. This project was developed by Merjam Al-Beibani, Sara Schmerti, and Frida Jóhannesson as a student project.
 
 ## Gameplay
