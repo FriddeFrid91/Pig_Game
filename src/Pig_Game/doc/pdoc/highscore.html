@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>highscore API documentation</title>
-<meta name="description" content="" />
+<meta name="description" content="Module for highscore." />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,13 +22,14 @@
 <h1 class="title">Module <code>highscore</code></h1>
 </header>
 <section id="section-intro">
+<p>Module for highscore.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">import pickle
+<pre><code class="python">&#34;&#34;&#34;Module for highscore.&#34;&#34;&#34;
+import pickle
 from colors import colors
-&#34;&#34;&#34;Module for highscore.&#34;&#34;&#34;
 
 
 class highscore:
@@ -41,7 +42,7 @@ class highscore:
         self.wins = {}
 
     def change_name(self):
-        &#34;&#34;&#34;Change the name of the player.&#34;&#34;&#34;
+        &#34;&#34;&#34;Change the name of the player at the highscore board.&#34;&#34;&#34;
         print(&#34;Change the name of the player. \n&#34;)
         what = True
         while what:
@@ -51,7 +52,7 @@ class highscore:
             if old_name == &#34;&#34;:
                 print(&#34;Please enter a name from the scoreboard. \n&#34;)
                 continue
-            elif old_name.lower() == &#34;q&#34;:
+            elif old_name.lower() == &#34;quit&#34;:
                 print(&#34;Quitting the name change. \n&#34;)
                 return
             elif old_name in self.highscore_dict or old_name in self.losses:
@@ -95,7 +96,7 @@ class highscore:
         self.show_losses(), self.show_highscore()
 
     def show_losses(self):
-        &#34;&#34;&#34;Show the losses.&#34;&#34;&#34;
+        &#34;&#34;&#34;Show the losses for all players.&#34;&#34;&#34;
         hall_of_fame = [
             colors.BLUE + &#34;*****************&#34; + colors.RESET + &#34;\n&#34; +
             colors.BLUE + &#34;* HALL OF SHAME *&#34; + colors.RESET + &#34;\n&#34; +
@@ -223,7 +224,7 @@ class highscore:
         self.wins = {}
 
     def change_name(self):
-        &#34;&#34;&#34;Change the name of the player.&#34;&#34;&#34;
+        &#34;&#34;&#34;Change the name of the player at the highscore board.&#34;&#34;&#34;
         print(&#34;Change the name of the player. \n&#34;)
         what = True
         while what:
@@ -233,7 +234,7 @@ class highscore:
             if old_name == &#34;&#34;:
                 print(&#34;Please enter a name from the scoreboard. \n&#34;)
                 continue
-            elif old_name.lower() == &#34;q&#34;:
+            elif old_name.lower() == &#34;quit&#34;:
                 print(&#34;Quitting the name change. \n&#34;)
                 return
             elif old_name in self.highscore_dict or old_name in self.losses:
@@ -277,7 +278,7 @@ class highscore:
         self.show_losses(), self.show_highscore()
 
     def show_losses(self):
-        &#34;&#34;&#34;Show the losses.&#34;&#34;&#34;
+        &#34;&#34;&#34;Show the losses for all players.&#34;&#34;&#34;
         hall_of_fame = [
             colors.BLUE + &#34;*****************&#34; + colors.RESET + &#34;\n&#34; +
             colors.BLUE + &#34;* HALL OF SHAME *&#34; + colors.RESET + &#34;\n&#34; +
@@ -439,13 +440,13 @@ class highscore:
 <span>def <span class="ident">change_name</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Change the name of the player.</p></div>
+<div class="desc"><p>Change the name of the player at the highscore board.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def change_name(self):
-    &#34;&#34;&#34;Change the name of the player.&#34;&#34;&#34;
+    &#34;&#34;&#34;Change the name of the player at the highscore board.&#34;&#34;&#34;
     print(&#34;Change the name of the player. \n&#34;)
     what = True
     while what:
@@ -455,7 +456,7 @@ class highscore:
         if old_name == &#34;&#34;:
             print(&#34;Please enter a name from the scoreboard. \n&#34;)
             continue
-        elif old_name.lower() == &#34;q&#34;:
+        elif old_name.lower() == &#34;quit&#34;:
             print(&#34;Quitting the name change. \n&#34;)
             return
         elif old_name in self.highscore_dict or old_name in self.losses:
@@ -601,13 +602,13 @@ class highscore:
 <span>def <span class="ident">show_losses</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Show the losses.</p></div>
+<div class="desc"><p>Show the losses for all players.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def show_losses(self):
-    &#34;&#34;&#34;Show the losses.&#34;&#34;&#34;
+    &#34;&#34;&#34;Show the losses for all players.&#34;&#34;&#34;
     hall_of_fame = [
         colors.BLUE + &#34;*****************&#34; + colors.RESET + &#34;\n&#34; +
         colors.BLUE + &#34;* HALL OF SHAME *&#34; + colors.RESET + &#34;\n&#34; +

@@ -69,23 +69,34 @@ def main():
                 boolean = True
                 while boolean:
                     player_1 = input(&#34;Enter the name of player 1: &#34;)
-                    if player_1 == &#34;&#34;:
-                        print(&#34;Please enter a name: &#34;)
+                    if len(player_1) &lt; 2 or len(player_1) &gt; 10:
+                        print(&#34;Please enter a between 2 and 10 characters.&#34;)
                         continue
                     else:
-                        boolean = False
+                        confirm_name = input(f&#34;Is {player_1} the correct name? (yes/no): &#34;)
+                        if confirm_name.lower() not in [&#34;yes&#34;, &#34;no&#34;]:
+                            print(&#34;Invalid input. Please enter yes or no.&#34;)
+                            continue
+                        elif confirm_name.lower() == &#34;no&#34;:
+                            continue
+                        else:
+                            boolean = False
 
                 boolean = True
                 while boolean:
-                    player_2 = input(&#34;Enter the name of player 2: &#34;)
-                    if player_2 == &#34;&#34;:
-                        print(&#34;Please enter a name: &#34;)
-                        continue
-                    elif player_2 == player_1:
-                        print(&#34;Oink, oink! You can&#39;t have the same name as player 1!&#34;)
+                    player_2 = input(&#34;Enter the name of player 1: &#34;)
+                    if len(player_2) &lt; 2 or len(player_1) &gt; 10:
+                        print(&#34;Please enter a between 2 and 10 characters.&#34;)
                         continue
                     else:
-                        boolean = False
+                        confirm_name = input(f&#34;Is {player_2} the correct name? (yes/no): &#34;)
+                        if confirm_name.lower() not in [&#34;yes&#34;, &#34;no&#34;]:
+                            print(&#34;Invalid input. Please enter yes or no.&#34;)
+                            continue
+                        elif confirm_name.lower() == &#34;no&#34;:
+                            continue
+                        else:
+                            boolean = False
 
                 new_game = player_vs_player()
                 winner = new_game.two_player_game(player_1, player_2)
@@ -190,23 +201,34 @@ if __name__ == &#34;__main__&#34;:
                 boolean = True
                 while boolean:
                     player_1 = input(&#34;Enter the name of player 1: &#34;)
-                    if player_1 == &#34;&#34;:
-                        print(&#34;Please enter a name: &#34;)
+                    if len(player_1) &lt; 2 or len(player_1) &gt; 10:
+                        print(&#34;Please enter a between 2 and 10 characters.&#34;)
                         continue
                     else:
-                        boolean = False
+                        confirm_name = input(f&#34;Is {player_1} the correct name? (yes/no): &#34;)
+                        if confirm_name.lower() not in [&#34;yes&#34;, &#34;no&#34;]:
+                            print(&#34;Invalid input. Please enter yes or no.&#34;)
+                            continue
+                        elif confirm_name.lower() == &#34;no&#34;:
+                            continue
+                        else:
+                            boolean = False
 
                 boolean = True
                 while boolean:
-                    player_2 = input(&#34;Enter the name of player 2: &#34;)
-                    if player_2 == &#34;&#34;:
-                        print(&#34;Please enter a name: &#34;)
-                        continue
-                    elif player_2 == player_1:
-                        print(&#34;Oink, oink! You can&#39;t have the same name as player 1!&#34;)
+                    player_2 = input(&#34;Enter the name of player 1: &#34;)
+                    if len(player_2) &lt; 2 or len(player_1) &gt; 10:
+                        print(&#34;Please enter a between 2 and 10 characters.&#34;)
                         continue
                     else:
-                        boolean = False
+                        confirm_name = input(f&#34;Is {player_2} the correct name? (yes/no): &#34;)
+                        if confirm_name.lower() not in [&#34;yes&#34;, &#34;no&#34;]:
+                            print(&#34;Invalid input. Please enter yes or no.&#34;)
+                            continue
+                        elif confirm_name.lower() == &#34;no&#34;:
+                            continue
+                        else:
+                            boolean = False
 
                 new_game = player_vs_player()
                 winner = new_game.two_player_game(player_1, player_2)
