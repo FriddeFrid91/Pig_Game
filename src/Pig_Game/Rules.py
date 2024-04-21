@@ -2,16 +2,19 @@
 
 from colors import colors
 
-
 class Rules:
     """This class contains the rules of the game."""
+
     def __init__(self):
+        """Initialize the rules of the game."""
         self.rules = []
 
     def show_rules(self):
+        """Show the rules of the game."""
         rules = [
           colors.PINK + "**RULES OF PIG GAME**" + colors.RESET,
-          colors.YELLOW + "********************************************" + colors.RESET,
+          colors.YELLOW + "********************************************"
+          + colors.RESET,
           colors.BLUE + "You can play the game with 1 player with the computer"
           + colors.RESET,
           colors.BLUE + "You can play the game with 2 players" + colors.RESET,
@@ -25,4 +28,5 @@ class Rules:
         return rules
 
     def __str__(self):
+        """Return the rules of the game as a string."""
         return "\n".join(self.show_rules())
