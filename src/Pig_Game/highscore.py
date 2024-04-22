@@ -127,6 +127,7 @@ class highscore:
                 print(f"{sorted_scores:8}: {self.highscore_dict[sorted_scores]:>6}")
             else:
                 return
+# pragma: no cover
 
     def add_highscore(self, winner):
         """Add the winner to the highscore."""
