@@ -62,18 +62,35 @@ class Computer:
         &#34;&#34;&#34;Set the difficulty to easy.&#34;&#34;&#34;
         roll = random.randint(1, 6)
 
-        if roll == 1:
-            print(&#34;Oink, oink! The computer lost all its points for this round!\n&#34;)      
-        else:
-            print(f&#34;The computer rolled a {roll}.\n&#34;)
-            self.score += roll
-            print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+        counting_round = 0
+
+        boolean = True
+        while boolean:
+            if counting_round == 3:
+                print(&#34;The computer has decided to hold.\n&#34;)
+                print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+                boolean = False
+            if roll == 1:
+                print(&#34;Oink, oink! The computer lost all its points for this round!\n&#34;)
+                boolean = False
+                break
+            elif roll &gt;= 5:
+                print(&#34;The computer has decided to hold.\n&#34;)
+                print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+                boolean = False
+                break
+            else:
+                print(f&#34;The computer rolled a {roll}.\n&#34;)
+                self.score += roll
+                print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+                counting_round += 1
 
     def medium_difficulty(self):
         &#34;&#34;&#34;Set the difficulty to medium.&#34;&#34;&#34;
         roll = random.randint(1, 10)
         if roll == 1:
-            print(&#34;Oink, oink! The computer cheatycheats, and not lose any point HAHAHA!\n&#34;)
+            print(&#34;Oink, oink! The computer cheatycheats, &#34;
+                  + &#34;and not lose any point HAHAHA!\n&#34;)
 
         else:
             print(f&#34;The computer rolled a {roll}.\n&#34;)
@@ -145,18 +162,35 @@ class Computer:
         &#34;&#34;&#34;Set the difficulty to easy.&#34;&#34;&#34;
         roll = random.randint(1, 6)
 
-        if roll == 1:
-            print(&#34;Oink, oink! The computer lost all its points for this round!\n&#34;)      
-        else:
-            print(f&#34;The computer rolled a {roll}.\n&#34;)
-            self.score += roll
-            print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+        counting_round = 0
+
+        boolean = True
+        while boolean:
+            if counting_round == 3:
+                print(&#34;The computer has decided to hold.\n&#34;)
+                print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+                boolean = False
+            if roll == 1:
+                print(&#34;Oink, oink! The computer lost all its points for this round!\n&#34;)
+                boolean = False
+                break
+            elif roll &gt;= 5:
+                print(&#34;The computer has decided to hold.\n&#34;)
+                print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+                boolean = False
+                break
+            else:
+                print(f&#34;The computer rolled a {roll}.\n&#34;)
+                self.score += roll
+                print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+                counting_round += 1
 
     def medium_difficulty(self):
         &#34;&#34;&#34;Set the difficulty to medium.&#34;&#34;&#34;
         roll = random.randint(1, 10)
         if roll == 1:
-            print(&#34;Oink, oink! The computer cheatycheats, and not lose any point HAHAHA!\n&#34;)
+            print(&#34;Oink, oink! The computer cheatycheats, &#34;
+                  + &#34;and not lose any point HAHAHA!\n&#34;)
 
         else:
             print(f&#34;The computer rolled a {roll}.\n&#34;)
@@ -213,12 +247,28 @@ class Computer:
     &#34;&#34;&#34;Set the difficulty to easy.&#34;&#34;&#34;
     roll = random.randint(1, 6)
 
-    if roll == 1:
-        print(&#34;Oink, oink! The computer lost all its points for this round!\n&#34;)      
-    else:
-        print(f&#34;The computer rolled a {roll}.\n&#34;)
-        self.score += roll
-        print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)</code></pre>
+    counting_round = 0
+
+    boolean = True
+    while boolean:
+        if counting_round == 3:
+            print(&#34;The computer has decided to hold.\n&#34;)
+            print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+            boolean = False
+        if roll == 1:
+            print(&#34;Oink, oink! The computer lost all its points for this round!\n&#34;)
+            boolean = False
+            break
+        elif roll &gt;= 5:
+            print(&#34;The computer has decided to hold.\n&#34;)
+            print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+            boolean = False
+            break
+        else:
+            print(f&#34;The computer rolled a {roll}.\n&#34;)
+            self.score += roll
+            print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+            counting_round += 1</code></pre>
 </details>
 </dd>
 <dt id="Computer.Computer.get_score"><code class="name flex">
@@ -270,7 +320,8 @@ class Computer:
     &#34;&#34;&#34;Set the difficulty to medium.&#34;&#34;&#34;
     roll = random.randint(1, 10)
     if roll == 1:
-        print(&#34;Oink, oink! The computer cheatycheats, and not lose any point HAHAHA!\n&#34;)
+        print(&#34;Oink, oink! The computer cheatycheats, &#34;
+              + &#34;and not lose any point HAHAHA!\n&#34;)
 
     else:
         print(f&#34;The computer rolled a {roll}.\n&#34;)

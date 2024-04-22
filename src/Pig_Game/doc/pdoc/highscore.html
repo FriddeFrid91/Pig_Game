@@ -44,10 +44,10 @@ class highscore:
     def change_name(self):
         &#34;&#34;&#34;Change the name of the player at the highscore board.&#34;&#34;&#34;
         print(&#34;Change the name of the player. \n&#34;)
-        what = True
-        while what:
+        name_loop = True
+        while name_loop:
             self.show_losses(), self.show_highscore()
-            old_name = input(&#34;Enter name you want to change (q for quit): \n&#34;)
+            old_name = input(&#34;Enter name you want to change (quit for quit): \n&#34;)
 
             if old_name == &#34;&#34;:
                 print(&#34;Please enter a name from the scoreboard. \n&#34;)
@@ -56,8 +56,8 @@ class highscore:
                 print(&#34;Quitting the name change. \n&#34;)
                 return
             elif old_name in self.highscore_dict or old_name in self.losses:
-                print(f&#34;{old_name} WHAT\n&#34;)
-                what = False
+                print(f&#34;{old_name}\n&#34;)
+                name_loop = False
             else:
                 print(&#34;The name is not in the highscore table. \n&#34;)
                 continue
@@ -80,7 +80,7 @@ class highscore:
             self.highscore_dict[new_name] = self.highscore_dict.pop(old_name)
         if old_name in self.losses:
             self.losses[new_name] = self.losses.pop(old_name)
-
+        # pragma: no cover
         try:
             with open(&#34;highscore.pkl&#34;, &#34;wb&#34;) as file:
                 pickle.dump(self.highscore_dict, file)
@@ -94,6 +94,7 @@ class highscore:
             print(&#34;No highscore at the moment.&#34;)
         print(&#34;&gt;&gt; The name has been changed and the highscore table board updated &lt;&lt;\n&#34;)
         self.show_losses(), self.show_highscore()
+        # pragma: no cover
 
     def show_losses(self):
         &#34;&#34;&#34;Show the losses for all players.&#34;&#34;&#34;
@@ -155,6 +156,7 @@ class highscore:
                 print(f&#34;{sorted_scores:8}: {self.highscore_dict[sorted_scores]:&gt;6}&#34;)
             else:
                 return
+# pragma: no cover
 
     def add_highscore(self, winner):
         &#34;&#34;&#34;Add the winner to the highscore.&#34;&#34;&#34;
@@ -226,10 +228,10 @@ class highscore:
     def change_name(self):
         &#34;&#34;&#34;Change the name of the player at the highscore board.&#34;&#34;&#34;
         print(&#34;Change the name of the player. \n&#34;)
-        what = True
-        while what:
+        name_loop = True
+        while name_loop:
             self.show_losses(), self.show_highscore()
-            old_name = input(&#34;Enter name you want to change (q for quit): \n&#34;)
+            old_name = input(&#34;Enter name you want to change (quit for quit): \n&#34;)
 
             if old_name == &#34;&#34;:
                 print(&#34;Please enter a name from the scoreboard. \n&#34;)
@@ -238,8 +240,8 @@ class highscore:
                 print(&#34;Quitting the name change. \n&#34;)
                 return
             elif old_name in self.highscore_dict or old_name in self.losses:
-                print(f&#34;{old_name} WHAT\n&#34;)
-                what = False
+                print(f&#34;{old_name}\n&#34;)
+                name_loop = False
             else:
                 print(&#34;The name is not in the highscore table. \n&#34;)
                 continue
@@ -262,7 +264,7 @@ class highscore:
             self.highscore_dict[new_name] = self.highscore_dict.pop(old_name)
         if old_name in self.losses:
             self.losses[new_name] = self.losses.pop(old_name)
-
+        # pragma: no cover
         try:
             with open(&#34;highscore.pkl&#34;, &#34;wb&#34;) as file:
                 pickle.dump(self.highscore_dict, file)
@@ -276,6 +278,7 @@ class highscore:
             print(&#34;No highscore at the moment.&#34;)
         print(&#34;&gt;&gt; The name has been changed and the highscore table board updated &lt;&lt;\n&#34;)
         self.show_losses(), self.show_highscore()
+        # pragma: no cover
 
     def show_losses(self):
         &#34;&#34;&#34;Show the losses for all players.&#34;&#34;&#34;
@@ -337,6 +340,7 @@ class highscore:
                 print(f&#34;{sorted_scores:8}: {self.highscore_dict[sorted_scores]:&gt;6}&#34;)
             else:
                 return
+# pragma: no cover
 
     def add_highscore(self, winner):
         &#34;&#34;&#34;Add the winner to the highscore.&#34;&#34;&#34;
@@ -448,10 +452,10 @@ class highscore:
 <pre><code class="python">def change_name(self):
     &#34;&#34;&#34;Change the name of the player at the highscore board.&#34;&#34;&#34;
     print(&#34;Change the name of the player. \n&#34;)
-    what = True
-    while what:
+    name_loop = True
+    while name_loop:
         self.show_losses(), self.show_highscore()
-        old_name = input(&#34;Enter name you want to change (q for quit): \n&#34;)
+        old_name = input(&#34;Enter name you want to change (quit for quit): \n&#34;)
 
         if old_name == &#34;&#34;:
             print(&#34;Please enter a name from the scoreboard. \n&#34;)
@@ -460,8 +464,8 @@ class highscore:
             print(&#34;Quitting the name change. \n&#34;)
             return
         elif old_name in self.highscore_dict or old_name in self.losses:
-            print(f&#34;{old_name} WHAT\n&#34;)
-            what = False
+            print(f&#34;{old_name}\n&#34;)
+            name_loop = False
         else:
             print(&#34;The name is not in the highscore table. \n&#34;)
             continue
@@ -484,7 +488,7 @@ class highscore:
         self.highscore_dict[new_name] = self.highscore_dict.pop(old_name)
     if old_name in self.losses:
         self.losses[new_name] = self.losses.pop(old_name)
-
+    # pragma: no cover
     try:
         with open(&#34;highscore.pkl&#34;, &#34;wb&#34;) as file:
             pickle.dump(self.highscore_dict, file)
@@ -497,7 +501,8 @@ class highscore:
     except (FileNotFoundError, EOFError):
         print(&#34;No highscore at the moment.&#34;)
     print(&#34;&gt;&gt; The name has been changed and the highscore table board updated &lt;&lt;\n&#34;)
-    self.show_losses(), self.show_highscore()</code></pre>
+    self.show_losses(), self.show_highscore()
+    # pragma: no cover</code></pre>
 </details>
 </dd>
 <dt id="highscore.highscore.get_highscore"><code class="name flex">

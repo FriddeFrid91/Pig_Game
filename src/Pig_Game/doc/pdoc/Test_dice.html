@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>Test_dice API documentation</title>
-<meta name="description" content="" />
+<meta name="description" content="Unittest for the Dice class." />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,23 +22,31 @@
 <h1 class="title">Module <code>Test_dice</code></h1>
 </header>
 <section id="section-intro">
+<p>Unittest for the Dice class.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">import unittest
+<pre><code class="python">&#34;&#34;&#34;Unittest for the Dice class.&#34;&#34;&#34;
+import unittest
 from Dice import Dice
 
 
 class TestDice(unittest.TestCase):
     &#34;&#34;&#34;Test for Dice class.&#34;&#34;&#34;
+
     def test_roll_the_dice(self):
         &#34;&#34;&#34;Test for roll_the_dice method.&#34;&#34;&#34;
         dice = Dice(6)
         result = dice.roll_the_dice()
         self.assertTrue(1 &lt;= result &lt;= 6)
 
-    def show_the_dice(self):
+    def test_str(self):
+        &#34;&#34;&#34;Test for __str__ method.&#34;&#34;&#34;
+        dice = Dice(6)
+        self.assertEqual(str(dice), &#34;The dice has 6 sides.&#34;)
+
+    def test_show_the_dice(self):
         &#34;&#34;&#34;Test for show_the_dice method.&#34;&#34;&#34;
         dice = Dice(6)
         result = dice.roll_the_dice()
@@ -51,6 +59,10 @@ class TestDice(unittest.TestCase):
         &#34;&#34;&#34;Test for get_dice method.&#34;&#34;&#34;
         dice = Dice(6)
         self.assertEqual(dice.get_dice(), 6)
+        if dice &gt; 1:
+            self.assertEqual(dice.get_dice(), 6)
+        if dice.get_dice() == 0:
+            self.assertEqual(dice.get_dice(), 0)
 
     def test_set_dice(self):
         &#34;&#34;&#34;Test for set_dice method.&#34;&#34;&#34;
@@ -87,13 +99,19 @@ not have a method with the specified name.</p></div>
 </summary>
 <pre><code class="python">class TestDice(unittest.TestCase):
     &#34;&#34;&#34;Test for Dice class.&#34;&#34;&#34;
+
     def test_roll_the_dice(self):
         &#34;&#34;&#34;Test for roll_the_dice method.&#34;&#34;&#34;
         dice = Dice(6)
         result = dice.roll_the_dice()
         self.assertTrue(1 &lt;= result &lt;= 6)
 
-    def show_the_dice(self):
+    def test_str(self):
+        &#34;&#34;&#34;Test for __str__ method.&#34;&#34;&#34;
+        dice = Dice(6)
+        self.assertEqual(str(dice), &#34;The dice has 6 sides.&#34;)
+
+    def test_show_the_dice(self):
         &#34;&#34;&#34;Test for show_the_dice method.&#34;&#34;&#34;
         dice = Dice(6)
         result = dice.roll_the_dice()
@@ -106,6 +124,10 @@ not have a method with the specified name.</p></div>
         &#34;&#34;&#34;Test for get_dice method.&#34;&#34;&#34;
         dice = Dice(6)
         self.assertEqual(dice.get_dice(), 6)
+        if dice &gt; 1:
+            self.assertEqual(dice.get_dice(), 6)
+        if dice.get_dice() == 0:
+            self.assertEqual(dice.get_dice(), 0)
 
     def test_set_dice(self):
         &#34;&#34;&#34;Test for set_dice method.&#34;&#34;&#34;
@@ -119,25 +141,6 @@ not have a method with the specified name.</p></div>
 </ul>
 <h3>Methods</h3>
 <dl>
-<dt id="Test_dice.TestDice.show_the_dice"><code class="name flex">
-<span>def <span class="ident">show_the_dice</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Test for show_the_dice method.</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def show_the_dice(self):
-    &#34;&#34;&#34;Test for show_the_dice method.&#34;&#34;&#34;
-    dice = Dice(6)
-    result = dice.roll_the_dice()
-    if result == 1:
-        self.assertEqual(dice.show_the_dice(result), 0)
-    else:
-        self.assertIsNotNone(dice.show_the_dice(result))</code></pre>
-</details>
-</dd>
 <dt id="Test_dice.TestDice.test_get_dice"><code class="name flex">
 <span>def <span class="ident">test_get_dice</span></span>(<span>self)</span>
 </code></dt>
@@ -150,7 +153,11 @@ not have a method with the specified name.</p></div>
 <pre><code class="python">def test_get_dice(self):
     &#34;&#34;&#34;Test for get_dice method.&#34;&#34;&#34;
     dice = Dice(6)
-    self.assertEqual(dice.get_dice(), 6)</code></pre>
+    self.assertEqual(dice.get_dice(), 6)
+    if dice &gt; 1:
+        self.assertEqual(dice.get_dice(), 6)
+    if dice.get_dice() == 0:
+        self.assertEqual(dice.get_dice(), 0)</code></pre>
 </details>
 </dd>
 <dt id="Test_dice.TestDice.test_roll_the_dice"><code class="name flex">
@@ -185,6 +192,40 @@ not have a method with the specified name.</p></div>
     self.assertEqual(dice.get_dice(), 8)</code></pre>
 </details>
 </dd>
+<dt id="Test_dice.TestDice.test_show_the_dice"><code class="name flex">
+<span>def <span class="ident">test_show_the_dice</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Test for show_the_dice method.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_show_the_dice(self):
+    &#34;&#34;&#34;Test for show_the_dice method.&#34;&#34;&#34;
+    dice = Dice(6)
+    result = dice.roll_the_dice()
+    if result == 1:
+        self.assertEqual(dice.show_the_dice(result), 0)
+    else:
+        self.assertIsNotNone(dice.show_the_dice(result))</code></pre>
+</details>
+</dd>
+<dt id="Test_dice.TestDice.test_str"><code class="name flex">
+<span>def <span class="ident">test_str</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Test for <strong>str</strong> method.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_str(self):
+    &#34;&#34;&#34;Test for __str__ method.&#34;&#34;&#34;
+    dice = Dice(6)
+    self.assertEqual(str(dice), &#34;The dice has 6 sides.&#34;)</code></pre>
+</details>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -201,10 +242,11 @@ not have a method with the specified name.</p></div>
 <li>
 <h4><code><a title="Test_dice.TestDice" href="#Test_dice.TestDice">TestDice</a></code></h4>
 <ul class="">
-<li><code><a title="Test_dice.TestDice.show_the_dice" href="#Test_dice.TestDice.show_the_dice">show_the_dice</a></code></li>
 <li><code><a title="Test_dice.TestDice.test_get_dice" href="#Test_dice.TestDice.test_get_dice">test_get_dice</a></code></li>
 <li><code><a title="Test_dice.TestDice.test_roll_the_dice" href="#Test_dice.TestDice.test_roll_the_dice">test_roll_the_dice</a></code></li>
 <li><code><a title="Test_dice.TestDice.test_set_dice" href="#Test_dice.TestDice.test_set_dice">test_set_dice</a></code></li>
+<li><code><a title="Test_dice.TestDice.test_show_the_dice" href="#Test_dice.TestDice.test_show_the_dice">test_show_the_dice</a></code></li>
+<li><code><a title="Test_dice.TestDice.test_str" href="#Test_dice.TestDice.test_str">test_str</a></code></li>
 </ul>
 </li>
 </ul>

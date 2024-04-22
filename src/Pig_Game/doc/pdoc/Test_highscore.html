@@ -49,12 +49,21 @@ class TestHighscore(unittest.TestCase):
             mock_print.assert_called()
         if input == &#34;&#34;:
             self.assertEqual(input(), &#34;Please enter a name from the scoreboard. \n&#34;)
-        if input == &#34;q&#34;:
+        if input == &#34;quit&#34;:
             self.assertEqual(input(), &#34;Quitting the name change. \n&#34;)
         if input == &#34;Player1&#34;:
             self.assertEqual(input(), &#34;Enter the new name: \n&#34;)
         if input == &#34;Player1&#34;:
             self.assertEqual(input(), &#34;The name is the same as the old name.\n&#34;)
+        if input == &#34;Player2&#34;:
+            self.assertEqual(input(), &#34;The name is already in the highscore table.\n&#34;)
+        if input == &#34;Player3&#34;:
+            self.assertEqual(input(), &#34;Player3 is the new name.\n&#34;)
+
+        if input in self.highscore_instance.highscore_dict:
+            self.assertEqual(input(), &#34;Player3&#34;)
+        if input in self.highscore_instance.losses:
+            self.assertEqual(input(), &#34;Player3&#34;)
 
     def test_load_highscore(self):
         &#34;&#34;&#34;Test the load_highscore function.&#34;&#34;&#34;
@@ -196,12 +205,21 @@ not have a method with the specified name.</p></div>
             mock_print.assert_called()
         if input == &#34;&#34;:
             self.assertEqual(input(), &#34;Please enter a name from the scoreboard. \n&#34;)
-        if input == &#34;q&#34;:
+        if input == &#34;quit&#34;:
             self.assertEqual(input(), &#34;Quitting the name change. \n&#34;)
         if input == &#34;Player1&#34;:
             self.assertEqual(input(), &#34;Enter the new name: \n&#34;)
         if input == &#34;Player1&#34;:
             self.assertEqual(input(), &#34;The name is the same as the old name.\n&#34;)
+        if input == &#34;Player2&#34;:
+            self.assertEqual(input(), &#34;The name is already in the highscore table.\n&#34;)
+        if input == &#34;Player3&#34;:
+            self.assertEqual(input(), &#34;Player3 is the new name.\n&#34;)
+
+        if input in self.highscore_instance.highscore_dict:
+            self.assertEqual(input(), &#34;Player3&#34;)
+        if input in self.highscore_instance.losses:
+            self.assertEqual(input(), &#34;Player3&#34;)
 
     def test_load_highscore(self):
         &#34;&#34;&#34;Test the load_highscore function.&#34;&#34;&#34;
@@ -423,12 +441,21 @@ not have a method with the specified name.</p></div>
         mock_print.assert_called()
     if input == &#34;&#34;:
         self.assertEqual(input(), &#34;Please enter a name from the scoreboard. \n&#34;)
-    if input == &#34;q&#34;:
+    if input == &#34;quit&#34;:
         self.assertEqual(input(), &#34;Quitting the name change. \n&#34;)
     if input == &#34;Player1&#34;:
         self.assertEqual(input(), &#34;Enter the new name: \n&#34;)
     if input == &#34;Player1&#34;:
-        self.assertEqual(input(), &#34;The name is the same as the old name.\n&#34;)</code></pre>
+        self.assertEqual(input(), &#34;The name is the same as the old name.\n&#34;)
+    if input == &#34;Player2&#34;:
+        self.assertEqual(input(), &#34;The name is already in the highscore table.\n&#34;)
+    if input == &#34;Player3&#34;:
+        self.assertEqual(input(), &#34;Player3 is the new name.\n&#34;)
+
+    if input in self.highscore_instance.highscore_dict:
+        self.assertEqual(input(), &#34;Player3&#34;)
+    if input in self.highscore_instance.losses:
+        self.assertEqual(input(), &#34;Player3&#34;)</code></pre>
 </details>
 </dd>
 <dt id="Test_highscore.TestHighscore.test_get_highscore"><code class="name flex">

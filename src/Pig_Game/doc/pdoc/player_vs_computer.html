@@ -60,7 +60,7 @@ class player_vs_computer:
 
             current_player = self.player
 
-            while current_player.get_score() &lt; 50:
+            while current_player.get_score() &lt; 100:
                 print(&#34;*********************************&#34;)
                 print(f&#34; &gt;&gt;&gt; {current_player.name}s turn &lt;&lt;&lt;&#34;)
                 print(&#34;*********************************&#34;)
@@ -68,9 +68,10 @@ class player_vs_computer:
                 if current_player == self.player:
                     current_player.player_move()
                 else:
+                    current_player = self.computer
                     self.computer.computer_move()
 
-                if current_player.get_score() &gt;= 50:
+                if current_player.get_score() &gt;= 100:
                     print(colors.YELLOW + &#34;*********************************&#34;)
                     print(f&#34;{current_player.name} wins!\n&#34;)
                     print(colors.YELLOW + &#34;*********************************&#34;)
@@ -134,7 +135,7 @@ class player_vs_computer:
 
             current_player = self.player
 
-            while current_player.get_score() &lt; 50:
+            while current_player.get_score() &lt; 100:
                 print(&#34;*********************************&#34;)
                 print(f&#34; &gt;&gt;&gt; {current_player.name}s turn &lt;&lt;&lt;&#34;)
                 print(&#34;*********************************&#34;)
@@ -142,9 +143,10 @@ class player_vs_computer:
                 if current_player == self.player:
                     current_player.player_move()
                 else:
+                    current_player = self.computer
                     self.computer.computer_move()
 
-                if current_player.get_score() &gt;= 50:
+                if current_player.get_score() &gt;= 100:
                     print(colors.YELLOW + &#34;*********************************&#34;)
                     print(f&#34;{current_player.name} wins!\n&#34;)
                     print(colors.YELLOW + &#34;*********************************&#34;)
@@ -192,7 +194,7 @@ class player_vs_computer:
 
         current_player = self.player
 
-        while current_player.get_score() &lt; 50:
+        while current_player.get_score() &lt; 100:
             print(&#34;*********************************&#34;)
             print(f&#34; &gt;&gt;&gt; {current_player.name}s turn &lt;&lt;&lt;&#34;)
             print(&#34;*********************************&#34;)
@@ -200,9 +202,10 @@ class player_vs_computer:
             if current_player == self.player:
                 current_player.player_move()
             else:
+                current_player = self.computer
                 self.computer.computer_move()
 
-            if current_player.get_score() &gt;= 50:
+            if current_player.get_score() &gt;= 100:
                 print(colors.YELLOW + &#34;*********************************&#34;)
                 print(f&#34;{current_player.name} wins!\n&#34;)
                 print(colors.YELLOW + &#34;*********************************&#34;)

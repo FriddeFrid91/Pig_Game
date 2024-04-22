@@ -40,21 +40,21 @@ class player_vs_computer:
                     current_player.player_move()
                 else:
                     current_player = self.computer
-                    self.computer.computer_move()             
+                    self.computer.computer_move()
 
                 if current_player.get_score() >= 100:
-                    print(colors.YELLOW + "*********************************")
+                    print(colors.YELLOW + "*********************************" + colors.RESET)
                     print(f"{current_player.name} wins!\n")
-                    print(colors.YELLOW + "*********************************")
+                    print(colors.YELLOW + "*********************************" + colors.RESET)
                     return current_player.name
 
                 if current_player == self.player:
-                    print(colors.PINK + "*********************************")
+                    print(colors.PINK + "*********************************" + colors.RESET)
                     print(f"{current_player.name} got {current_player.get_score()}")
-                    print(colors.PINK + "*********************************")
+                    print(colors.PINK + "*********************************" + colors.RESET)
                     current_player = self.computer
                 else:
-                    print(colors.PINK + "*********************************")
+                    print(colors.PINK + "*********************************" + colors.RESET)
                     print("Computer's score: ", current_player.get_score())
-                    print(colors.PINK + "*********************************")
+                    print(colors.PINK + "*********************************" + colors.RESET)
                     current_player = self.player
