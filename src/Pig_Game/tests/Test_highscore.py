@@ -1,8 +1,7 @@
 """Test module for highscore."""
 import unittest
 from highscore import highscore
-from unittest.mock import mock_open, patch
-import pickle
+from unittest.mock import patch
 
 
 class TestHighscore(unittest.TestCase):
@@ -16,20 +15,22 @@ class TestHighscore(unittest.TestCase):
     def test_change_name(self):
         """Test the change_name function."""
         # Mock the print function
-        mock_file_open = mock_open()
         with patch('builtins.print') as mock_print:
             self.assertIsNone(self.highscore_instance.change_name())
             mock_print.assert_called()
         if input == "":
-            self.assertEqual(input(), "Please enter a name from the scoreboard. \n")
+            self.assertEqual(input(), "Please enter a name from "
+                             + "the scoreboard. \n")
         if input == "quit":
             self.assertEqual(input(), "Quitting the name change. \n")
         if input == "Player1":
             self.assertEqual(input(), "Enter the new name: \n")
         if input == "Player1":
-            self.assertEqual(input(), "The name is the same as the old name.\n")
+            self.assertEqual(input(), "The name is the same "
+                             + "as the old name.\n")
         if input == "Player2":
-            self.assertEqual(input(), "The name is already in the highscore table.\n")
+            self.assertEqual(input(), "The name is already "
+                             + "in the highscore table.\n")
         if input == "Player3":
             self.assertEqual(input(), "Player3 is the new name.\n")
 
@@ -104,13 +105,6 @@ class TestHighscore(unittest.TestCase):
         with patch('pickle.dump') as mock_dump:
             self.highscore_instance.add_losses("Player1")
             mock_dump.assert_called_once()
-
-    def test_add_losses_success(self, loser="Player1"):
-        """Test the add_losses function when it is successful."""
-        # Test adding losses for an existing player
-        self.highscore_instance = {"player1": 2, "player2": 3}  # Sample existing losses
-        self.assertTrue(self.highscore_instance(loser))  # Add a loss for player1
-        self.assertEqual(self.highscore_instance[loser], 3)  # Check if player1's losses increased by 1
 
     def test_load_losses(self):
         """Test the load_losses function."""

@@ -49,6 +49,10 @@ def main():
                         print("Please enter a between 2 and 10 characters.")
                         continue
                     else:
+                        boolean = False
+
+                    name = True
+                    while name:
                         confirm_name = input(f"Is {player_1} the correct " +
                                              "name? " + "(yes/no): ")
                         if confirm_name.lower() not in ["yes", "no"]:
@@ -57,16 +61,23 @@ def main():
                         elif confirm_name.lower() == "no":
                             continue
                         else:
-                            boolean = False
+                            name = False
 
                 boolean = True
                 while boolean:
                     player_2 = input("Enter the name of player 2: ")
-                    if len(player_2) < 2 or len(player_2) > 10:
+                    if len(player_2) < 2 or len(player_2) > 10 or player_2 == "":
                         print("Please enter a between 2 and 10 characters.")
                         continue
+                    elif player_2 == player_1:
+                        print("Player 2 cannot have the same name as Player 1.")
+                        continue
                     else:
-                        confirm_name = input(f"Is {player_1} the correct " +
+                        boolean = False
+
+                    name = True
+                    while name:
+                        confirm_name = input(f"Is {player_2} the correct " +
                                              "name? " + "(yes/no): ")
                         if confirm_name.lower() not in ["yes", "no"]:
                             print("Invalid input. Please enter yes or no.")
@@ -74,7 +85,7 @@ def main():
                         elif confirm_name.lower() == "no":
                             continue
                         else:
-                            boolean = False
+                            name = False
 
                 new_game = player_vs_player()
                 winner = new_game.two_player_game(player_1, player_2)

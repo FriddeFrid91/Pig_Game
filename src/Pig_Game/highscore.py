@@ -106,10 +106,8 @@ class highscore:
         try:
             with open("losses.pkl", "rb") as file:
                 self.losses = pickle.load(file)
-        except FileNotFoundError:
-            print("No highscore at the moment")
-        except EOFError:
-            print("No highscore at the moment")
+        except Exception:
+            self.losses = {}
         return self.losses
 
     def show_highscore(self):
@@ -129,7 +127,6 @@ class highscore:
                 print(f"{sorted_scores:8}: {self.highscore_dict[sorted_scores]:>6}")
             else:
                 return
-# pragma: no cover
 
     def add_highscore(self, winner):
         """Add the winner to the highscore."""
