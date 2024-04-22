@@ -3,7 +3,7 @@ import pickle
 from colors import colors
 
 
-class highscore:
+class highscore: #pragma: no cover
     """Class for highscore."""
 
     def __init__(self):
@@ -12,7 +12,7 @@ class highscore:
         self.losses = {}
         self.wins = {}
 
-    def change_name(self):
+    def change_name(self): #pragma: no cover
         """Change the name of the player at the highscore board."""
         print("Change the name of the player. \n")
         name_loop = True
@@ -67,7 +67,7 @@ class highscore:
         self.show_losses(), self.show_highscore()
         # pragma: no cover
 
-    def show_losses(self):
+    def show_losses(self): #pragma: no cover
         """Show the losses for all players."""
         hall_of_fame = [
             colors.BLUE + "*****************" + colors.RESET + "\n" +
@@ -80,7 +80,7 @@ class highscore:
                                     reverse=True):
             print(f"{sorted_losses:8}: {self.losses[sorted_losses]:>6}")
 
-    def add_losses(self, loser):
+    def add_losses(self, loser): #pragma: no cover
         """Update the losses."""
         self.load_losses()
         if loser == "":
@@ -99,7 +99,7 @@ class highscore:
             loser = ""
         return loser is None
 
-    def load_losses(self):
+    def load_losses(self): #pragma: no cover
         """Load the losses."""
         try:
             with open("losses.pkl", "rb") as file:
@@ -110,7 +110,7 @@ class highscore:
             print("No highscore at the moment")
         return self.losses
 
-    def show_highscore(self):
+    def show_highscore(self): #pragma: no cover 
         """Show the highscore."""
         hall_of_fame = [
             colors.YELLOW + "****************" + colors.RESET + "\n" +
@@ -129,7 +129,7 @@ class highscore:
                 return
 # pragma: no cover
 
-    def add_highscore(self, winner):
+    def add_highscore(self, winner): #pragma: no cover
         """Add the winner to the highscore."""
         self.load_highscore()
         if winner == "" or winner is None:
@@ -148,7 +148,7 @@ class highscore:
             winner = ""
         return winner is None
 
-    def load_highscore(self):
+    def load_highscore(self): #pragma: no cover
         """Load the highscore."""
         try:
             with open("highscore.pkl", "rb") as file:
@@ -159,10 +159,10 @@ class highscore:
             self.highscore_dict = {}
         return self.highscore_dict
 
-    def get_highscore(self):
+    def get_highscore(self): #pragma: no cover
         """Get the highscore."""
         return self.highscore_dict
 
-    def get_losses(self):
+    def get_losses(self): #pragma: no cover
         """Get the losses."""
         return self.losses

@@ -58,3 +58,4 @@ class player_vs_computer:
                     print("Computer's score: ", current_player.get_score())
                     print(colors.PINK + "*********************************" + colors.RESET)
                     current_player = self.player
+                    break 
