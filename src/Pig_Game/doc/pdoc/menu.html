@@ -42,8 +42,8 @@ class Menu:
     def show_pig(self):
         &#34;&#34;&#34;Show the pig.&#34;&#34;&#34;
         ascii_pig = &#34;&#34;
-        ascii_pig += colors.YELLOW + &#34;&gt;&gt; A GAME OF PIG &lt;&lt;\n&#34; + colors.RESET
-        ascii_pig += colors.RED + &#34;       __,---.__&#34; + &#34;\n&#34;
+        ascii_pig += colors.PINK + colors.TextStyles.BOLD + colors.TextStyles.ITALIC + &#34;&gt;&gt; A GAME OF PIG &lt;&lt;\n&#34; + colors.RESET
+        ascii_pig += colors.PINK + &#34;       __,---.__&#34; + &#34;\n&#34;
         ascii_pig += &#34;  __,-&#39;         `-.&#34; + &#34;\n&#34;
         ascii_pig += &#34; /_ /_,&#39;           \\&amp;&#34; + &#34;\n&#34;
         ascii_pig += &#34; _,&#39;&#39;               \\&#34; + &#34;\n&#34;
@@ -54,16 +54,16 @@ class Menu:
     def show_menu(self):
         &#34;&#34;&#34;Generate the menu text.&#34;&#34;&#34;
         menu_text = &#34;&#34;
-        menu_text += colors.PINK + &#34;Welcome to a game of Pig!&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.PINK + colors.TextStyles.BOLD + &#34;Welcome to a game of Pig!&#34; + colors.RESET + &#34;\n&#34;
         menu_text += colors.YELLOW + &#34;*************************&#34; + colors.RESET + &#34;\n&#34;
-        menu_text += colors.BLUE + &#34;* 1. Player Vs Computer *&#34; + colors.RESET + &#34;\n&#34;
-        menu_text += colors.BLUE + &#34;* 2. Player Vs Player   *&#34; + colors.RESET + &#34;\n&#34;
-        menu_text += colors.BLUE + &#34;* 3. Rules              *&#34; + colors.RESET + &#34;\n&#34;
-        menu_text += colors.BLUE + &#34;* 4. Highscore          *&#34; + colors.RESET + &#34;\n&#34;
-        menu_text += colors.BLUE + &#34;* 5. Change name        *&#34; + colors.RESET + &#34;\n&#34;
-        menu_text += colors.YELLOW + &#34;*************************&#34; + colors.RESET + &#34;\n&#34;
-        menu_text += colors.GREEN + &#34;* 6. Exit               *&#34; + colors.RESET + &#34;\n&#34;
-        menu_text += colors.YELLOW + &#34;*************************&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.BLUE + colors.TextStyles.ITALIC +&#34;* 1. Player Vs Computer *&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.BLUE + colors.TextStyles.ITALIC +&#34;* 2. Player Vs Player   *&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.BLUE + colors.TextStyles.ITALIC +&#34;* 3. Rules              *&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.BLUE + colors.TextStyles.ITALIC +&#34;* 4. Highscore          *&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.BLUE + colors.TextStyles.ITALIC +&#34;* 5. Change name        *&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.YELLOW + colors.TextStyles.ITALIC +&#34;*************************&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.GREEN + colors.TextStyles.ITALIC +&#34;* 6. Exit               *&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.YELLOW + colors.TextStyles.ITALIC +&#34;*************************&#34; + colors.RESET + &#34;\n&#34;
         return menu_text</code></pre>
 </details>
 </section>
@@ -97,8 +97,8 @@ class Menu:
     def show_pig(self):
         &#34;&#34;&#34;Show the pig.&#34;&#34;&#34;
         ascii_pig = &#34;&#34;
-        ascii_pig += colors.YELLOW + &#34;&gt;&gt; A GAME OF PIG &lt;&lt;\n&#34; + colors.RESET
-        ascii_pig += colors.RED + &#34;       __,---.__&#34; + &#34;\n&#34;
+        ascii_pig += colors.PINK + colors.TextStyles.BOLD + colors.TextStyles.ITALIC + &#34;&gt;&gt; A GAME OF PIG &lt;&lt;\n&#34; + colors.RESET
+        ascii_pig += colors.PINK + &#34;       __,---.__&#34; + &#34;\n&#34;
         ascii_pig += &#34;  __,-&#39;         `-.&#34; + &#34;\n&#34;
         ascii_pig += &#34; /_ /_,&#39;           \\&amp;&#34; + &#34;\n&#34;
         ascii_pig += &#34; _,&#39;&#39;               \\&#34; + &#34;\n&#34;
@@ -109,16 +109,16 @@ class Menu:
     def show_menu(self):
         &#34;&#34;&#34;Generate the menu text.&#34;&#34;&#34;
         menu_text = &#34;&#34;
-        menu_text += colors.PINK + &#34;Welcome to a game of Pig!&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.PINK + colors.TextStyles.BOLD + &#34;Welcome to a game of Pig!&#34; + colors.RESET + &#34;\n&#34;
         menu_text += colors.YELLOW + &#34;*************************&#34; + colors.RESET + &#34;\n&#34;
-        menu_text += colors.BLUE + &#34;* 1. Player Vs Computer *&#34; + colors.RESET + &#34;\n&#34;
-        menu_text += colors.BLUE + &#34;* 2. Player Vs Player   *&#34; + colors.RESET + &#34;\n&#34;
-        menu_text += colors.BLUE + &#34;* 3. Rules              *&#34; + colors.RESET + &#34;\n&#34;
-        menu_text += colors.BLUE + &#34;* 4. Highscore          *&#34; + colors.RESET + &#34;\n&#34;
-        menu_text += colors.BLUE + &#34;* 5. Change name        *&#34; + colors.RESET + &#34;\n&#34;
-        menu_text += colors.YELLOW + &#34;*************************&#34; + colors.RESET + &#34;\n&#34;
-        menu_text += colors.GREEN + &#34;* 6. Exit               *&#34; + colors.RESET + &#34;\n&#34;
-        menu_text += colors.YELLOW + &#34;*************************&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.BLUE + colors.TextStyles.ITALIC +&#34;* 1. Player Vs Computer *&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.BLUE + colors.TextStyles.ITALIC +&#34;* 2. Player Vs Player   *&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.BLUE + colors.TextStyles.ITALIC +&#34;* 3. Rules              *&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.BLUE + colors.TextStyles.ITALIC +&#34;* 4. Highscore          *&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.BLUE + colors.TextStyles.ITALIC +&#34;* 5. Change name        *&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.YELLOW + colors.TextStyles.ITALIC +&#34;*************************&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.GREEN + colors.TextStyles.ITALIC +&#34;* 6. Exit               *&#34; + colors.RESET + &#34;\n&#34;
+        menu_text += colors.YELLOW + colors.TextStyles.ITALIC +&#34;*************************&#34; + colors.RESET + &#34;\n&#34;
         return menu_text</code></pre>
 </details>
 <h3>Methods</h3>
@@ -135,16 +135,16 @@ class Menu:
 <pre><code class="python">def show_menu(self):
     &#34;&#34;&#34;Generate the menu text.&#34;&#34;&#34;
     menu_text = &#34;&#34;
-    menu_text += colors.PINK + &#34;Welcome to a game of Pig!&#34; + colors.RESET + &#34;\n&#34;
+    menu_text += colors.PINK + colors.TextStyles.BOLD + &#34;Welcome to a game of Pig!&#34; + colors.RESET + &#34;\n&#34;
     menu_text += colors.YELLOW + &#34;*************************&#34; + colors.RESET + &#34;\n&#34;
-    menu_text += colors.BLUE + &#34;* 1. Player Vs Computer *&#34; + colors.RESET + &#34;\n&#34;
-    menu_text += colors.BLUE + &#34;* 2. Player Vs Player   *&#34; + colors.RESET + &#34;\n&#34;
-    menu_text += colors.BLUE + &#34;* 3. Rules              *&#34; + colors.RESET + &#34;\n&#34;
-    menu_text += colors.BLUE + &#34;* 4. Highscore          *&#34; + colors.RESET + &#34;\n&#34;
-    menu_text += colors.BLUE + &#34;* 5. Change name        *&#34; + colors.RESET + &#34;\n&#34;
-    menu_text += colors.YELLOW + &#34;*************************&#34; + colors.RESET + &#34;\n&#34;
-    menu_text += colors.GREEN + &#34;* 6. Exit               *&#34; + colors.RESET + &#34;\n&#34;
-    menu_text += colors.YELLOW + &#34;*************************&#34; + colors.RESET + &#34;\n&#34;
+    menu_text += colors.BLUE + colors.TextStyles.ITALIC +&#34;* 1. Player Vs Computer *&#34; + colors.RESET + &#34;\n&#34;
+    menu_text += colors.BLUE + colors.TextStyles.ITALIC +&#34;* 2. Player Vs Player   *&#34; + colors.RESET + &#34;\n&#34;
+    menu_text += colors.BLUE + colors.TextStyles.ITALIC +&#34;* 3. Rules              *&#34; + colors.RESET + &#34;\n&#34;
+    menu_text += colors.BLUE + colors.TextStyles.ITALIC +&#34;* 4. Highscore          *&#34; + colors.RESET + &#34;\n&#34;
+    menu_text += colors.BLUE + colors.TextStyles.ITALIC +&#34;* 5. Change name        *&#34; + colors.RESET + &#34;\n&#34;
+    menu_text += colors.YELLOW + colors.TextStyles.ITALIC +&#34;*************************&#34; + colors.RESET + &#34;\n&#34;
+    menu_text += colors.GREEN + colors.TextStyles.ITALIC +&#34;* 6. Exit               *&#34; + colors.RESET + &#34;\n&#34;
+    menu_text += colors.YELLOW + colors.TextStyles.ITALIC +&#34;*************************&#34; + colors.RESET + &#34;\n&#34;
     return menu_text</code></pre>
 </details>
 </dd>
@@ -160,8 +160,8 @@ class Menu:
 <pre><code class="python">def show_pig(self):
     &#34;&#34;&#34;Show the pig.&#34;&#34;&#34;
     ascii_pig = &#34;&#34;
-    ascii_pig += colors.YELLOW + &#34;&gt;&gt; A GAME OF PIG &lt;&lt;\n&#34; + colors.RESET
-    ascii_pig += colors.RED + &#34;       __,---.__&#34; + &#34;\n&#34;
+    ascii_pig += colors.PINK + colors.TextStyles.BOLD + colors.TextStyles.ITALIC + &#34;&gt;&gt; A GAME OF PIG &lt;&lt;\n&#34; + colors.RESET
+    ascii_pig += colors.PINK + &#34;       __,---.__&#34; + &#34;\n&#34;
     ascii_pig += &#34;  __,-&#39;         `-.&#34; + &#34;\n&#34;
     ascii_pig += &#34; /_ /_,&#39;           \\&amp;&#34; + &#34;\n&#34;
     ascii_pig += &#34; _,&#39;&#39;               \\&#34; + &#34;\n&#34;

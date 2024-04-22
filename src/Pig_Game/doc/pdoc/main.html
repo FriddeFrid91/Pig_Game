@@ -33,6 +33,7 @@ from Rules import Rules
 from player_vs_player import player_vs_player
 from player_vs_computer import player_vs_computer
 from highscore import highscore
+from colors import colors
 
 
 def main():
@@ -44,7 +45,11 @@ def main():
     pig = piggy.show_pig()
     print(pig)
 
-    print(&#34;Press any key to start the game.&#34;)
+    print(colors.BLUE
+          + colors.TextStyles.BOLD
+          + colors.TextStyles.ITALIC
+          + &#34;Press any key to start the game.&#34;
+          + colors.RESET)
     input()
     while True:
         the_menu = Menu()
@@ -52,17 +57,25 @@ def main():
         print(menu)
 
         try:
-            user_choice = int(input(&#34;Enter your choice: \n&#34;))
+            user_choice = int(input(colors.PINK
+                                    + colors.TextStyles.ITALIC
+                                    + colors.TextStyles.BOLD
+                                    + &#34;Enter your choice: \n&#34;
+                                    + colors.RESET))
 
             if user_choice == 1:
-                print(&#34;Player Vs Computer&#34;)
+                print(colors.BLUE + colors.TextStyles.BOLD
+                      + &#34;Player Vs Computer&#34; + colors.RESET)
                 boolean = True
                 while boolean:
-                    difficulty = input(&#34;Enter the difficulty level &#34;
-                                       + &#34;(easy, medium, hard): &#34;)
+                    difficulty = input(colors.RED
+                                       + &#34;Enter the difficulty level &#34;
+                                       + &#34;(easy, medium, hard): &#34;
+                                       + colors.RESET)
                     if difficulty.lower() not in [&#34;easy&#34;, &#34;medium&#34;, &#34;hard&#34;]:
-                        print(&#34;Invalid input. Please enter &#34;
-                              + &#34;easy, medium, or hard.&#34;)
+                        print(colors.RED
+                              + &#34;Invalid input. Please enter &#34;
+                              + &#34;easy, medium, or hard.&#34; + colors.RESET)
                         continue
                     else:
                         boolean = False
@@ -70,40 +83,48 @@ def main():
                 game.player_vs_computer_game(difficulty)
 
             if user_choice == 2:
-                print(&#34;Player Vs Player&#34;)
+                print(colors.BLUE + colors.TextStyles.BOLD
+                      + &#34;Player Vs Player&#34; + colors.RESET)
                 boolean = True
                 while boolean:
-                    player_1 = input(&#34;Enter the name of player 1: &#34;)
+                    player_1 = input(colors.CYAN + &#34;Enter the name &#34;
+                                     + &#34;of player 1: &#34; + colors.RESET)
                     if len(player_1) &lt; 2 or len(player_1) &gt; 10 or player_1 == &#34;&#34;:
-                        print(&#34;Please enter a between 2 and 10 characters.&#34;)
+                        print(colors.BLUE + &#34;Please enter a between &#34;
+                              + &#34;2 and 10 characters.&#34; + colors.RESET)
                         continue
                     else:
-                        confirm_name = input(f&#34;Is {player_1} the correct &#34; +
-                                             &#34;name? &#34; + &#34;(yes/no): &#34;)
-                        if confirm_name.lower() not in [&#34;yes&#34;, &#34;no&#34;]:
-                            print(&#34;Invalid input. Please enter yes or no.&#34;)
+                        confirm_name = input(f&#34;Is {player_1} the correct name (yes/no)? &#34;)
+                        if confirm_name.lower() == &#34;no&#34;:
                             continue
-                        elif confirm_name.lower() == &#34;no&#34;:
-                            continue
-                        else:
+                        elif confirm_name.lower() == &#34;yes&#34;:
                             boolean = False
-
+                        else:
+                            print(colors.RED + &#34;Invalid input. Please enter yes or no.&#34;
+                                  + colors.RESET)
+                            continue
                 boolean = True
                 while boolean:
-                    player_2 = input(&#34;Enter the name of player 2: &#34;)
-                    if len(player_2) &lt; 2 or len(player_2) &gt; 10:
-                        print(&#34;Please enter a between 2 and 10 characters.&#34;)
+                    player_2 = input(colors.CYAN + &#34;Enter the name &#34;
+                                     + &#34;of player 2: &#34; + colors.RESET)
+                    if len(player_2) &lt; 2 or len(player_2) &gt; 10 or player_2 == &#34;&#34;:
+                        print(colors.BLUE + &#34;Please enter a between &#34;
+                              + &#34;2 and 10 characters.&#34; + colors.RESET)
+                        continue
+                    elif player_2 == player_1:
+                        print(colors.RED + &#34;The name can&#39;t be the same as player 1!&#34;
+                              + colors.RESET)
                         continue
                     else:
-                        confirm_name = input(f&#34;Is {player_1} the correct &#34; +
-                                             &#34;name? &#34; + &#34;(yes/no): &#34;)
-                        if confirm_name.lower() not in [&#34;yes&#34;, &#34;no&#34;]:
-                            print(&#34;Invalid input. Please enter yes or no.&#34;)
+                        confirm_name = input(f&#34;Is {player_2} the correct name (yes/no)? &#34;)
+                        if confirm_name.lower() == &#34;no&#34;:
                             continue
-                        elif confirm_name.lower() == &#34;no&#34;:
-                            continue
-                        else:
+                        elif confirm_name.lower() == &#34;yes&#34;:
                             boolean = False
+                        else:
+                            print(colors.RED + &#34;Invalid input. Please enter yes or no.&#34;
+                                  + colors.RESET)
+                            continue
 
                 new_game = player_vs_player()
                 winner = new_game.two_player_game(player_1, player_2)
@@ -118,7 +139,8 @@ def main():
             if user_choice == 3:
                 the_rules = Rules()
                 print(the_rules)
-                print(&#34;Press any key to go back to the menu.&#34;)
+                print(colors.BLUE + colors.TextStyles.BOLD + &#34;Press any &#34;
+                      + &#34;key to go back to the menu.&#34; + colors.RESET)
                 input()
 
             if user_choice == 4:
@@ -126,26 +148,47 @@ def main():
                 chart.load_losses()
                 chart.show_highscore()
                 chart.show_losses()
-                print(&#34;Press any key to go back to the menu.&#34;)
+                print(colors.BLUE + colors.TextStyles.BOLD + &#34;Press any key&#34;
+                      + &#34; to go back to the menu.&#34; + colors.RESET)
                 input()
 
             if user_choice == 5:
-                print(&#34;Change name&#34;)
+                print(colors.CYAN + &#34;Change name&#34; + colors.RESET)
                 chart.load_highscore()
                 chart.load_losses()
                 chart.change_name()
-                print(&#34;Press any key to go back to the menu.&#34;)
+                print(colors.BLUE + &#34;Press any key to go back to the menu.&#34;
+                      + colors.RESET)
                 input()
 
             if user_choice == 6:
-                print(&#34;Goodbye!&#34;)
+                print(colors.PINK + colors.TextStyles.BOLD + &#34;Thank you &#34;
+                      + &#34;for playing Pig!&#34; + colors.RESET)
+                print(colors.YELLOW + &#34;*************************&#34;
+                      + colors.RESET)
+                print(colors.CYAN + colors.TextStyles.ITALIC
+                      + &#34;***CREDITS TO STUDENT DEVELOPERS!***&#34; + colors.RESET)
+                print(colors.YELLOW + &#34;*************************&#34;
+                      + colors.RESET)
+                print(colors.GREEN + colors.TextStyles.ITALIC
+                      + &#34;* ~Frida Johannesson~&#34; + colors.RESET)
+                print(colors.GREEN + colors.TextStyles.ITALIC
+                      + &#34;* ~Merjam Farj-Beibani~&#34; + colors.RESET)
+                print(colors.GREEN + colors.TextStyles.ITALIC
+                      + &#34;* ~Sara Shmerti~&#34; + colors.RESET)
+                print(colors.YELLOW + &#34;*************************&#34;
+                      + colors.RESET)
+                print(colors.PINK + colors.TextStyles.BOLD + &#34;Goodbye!&#34;
+                      + colors.RESET)
                 break
 
             if user_choice not in [1, 2, 3, 4, 5, 6]:
-                print(&#34;Invalid input. Please enter a number between 1 and 6.&#34;)
+                print(colors.RED + &#34;Invalid input. Please enter a number &#34;
+                      + &#34;between 1 and 6.&#34; + colors.RESET)
 
         except ValueError:
-            print(&#34;Invalid input. Please enter a number between 1 and 6.&#34;)
+            print(colors.RED + &#34;Invalid input. Please enter a &#34;
+                  + &#34;number between 1 and 6.&#34; + colors.RESET)
 
 
 if __name__ == &#34;__main__&#34;:
@@ -177,7 +220,11 @@ if __name__ == &#34;__main__&#34;:
     pig = piggy.show_pig()
     print(pig)
 
-    print(&#34;Press any key to start the game.&#34;)
+    print(colors.BLUE
+          + colors.TextStyles.BOLD
+          + colors.TextStyles.ITALIC
+          + &#34;Press any key to start the game.&#34;
+          + colors.RESET)
     input()
     while True:
         the_menu = Menu()
@@ -185,17 +232,25 @@ if __name__ == &#34;__main__&#34;:
         print(menu)
 
         try:
-            user_choice = int(input(&#34;Enter your choice: \n&#34;))
+            user_choice = int(input(colors.PINK
+                                    + colors.TextStyles.ITALIC
+                                    + colors.TextStyles.BOLD
+                                    + &#34;Enter your choice: \n&#34;
+                                    + colors.RESET))
 
             if user_choice == 1:
-                print(&#34;Player Vs Computer&#34;)
+                print(colors.BLUE + colors.TextStyles.BOLD
+                      + &#34;Player Vs Computer&#34; + colors.RESET)
                 boolean = True
                 while boolean:
-                    difficulty = input(&#34;Enter the difficulty level &#34;
-                                       + &#34;(easy, medium, hard): &#34;)
+                    difficulty = input(colors.RED
+                                       + &#34;Enter the difficulty level &#34;
+                                       + &#34;(easy, medium, hard): &#34;
+                                       + colors.RESET)
                     if difficulty.lower() not in [&#34;easy&#34;, &#34;medium&#34;, &#34;hard&#34;]:
-                        print(&#34;Invalid input. Please enter &#34;
-                              + &#34;easy, medium, or hard.&#34;)
+                        print(colors.RED
+                              + &#34;Invalid input. Please enter &#34;
+                              + &#34;easy, medium, or hard.&#34; + colors.RESET)
                         continue
                     else:
                         boolean = False
@@ -203,40 +258,48 @@ if __name__ == &#34;__main__&#34;:
                 game.player_vs_computer_game(difficulty)
 
             if user_choice == 2:
-                print(&#34;Player Vs Player&#34;)
+                print(colors.BLUE + colors.TextStyles.BOLD
+                      + &#34;Player Vs Player&#34; + colors.RESET)
                 boolean = True
                 while boolean:
-                    player_1 = input(&#34;Enter the name of player 1: &#34;)
+                    player_1 = input(colors.CYAN + &#34;Enter the name &#34;
+                                     + &#34;of player 1: &#34; + colors.RESET)
                     if len(player_1) &lt; 2 or len(player_1) &gt; 10 or player_1 == &#34;&#34;:
-                        print(&#34;Please enter a between 2 and 10 characters.&#34;)
+                        print(colors.BLUE + &#34;Please enter a between &#34;
+                              + &#34;2 and 10 characters.&#34; + colors.RESET)
                         continue
                     else:
-                        confirm_name = input(f&#34;Is {player_1} the correct &#34; +
-                                             &#34;name? &#34; + &#34;(yes/no): &#34;)
-                        if confirm_name.lower() not in [&#34;yes&#34;, &#34;no&#34;]:
-                            print(&#34;Invalid input. Please enter yes or no.&#34;)
+                        confirm_name = input(f&#34;Is {player_1} the correct name (yes/no)? &#34;)
+                        if confirm_name.lower() == &#34;no&#34;:
                             continue
-                        elif confirm_name.lower() == &#34;no&#34;:
-                            continue
-                        else:
+                        elif confirm_name.lower() == &#34;yes&#34;:
                             boolean = False
-
+                        else:
+                            print(colors.RED + &#34;Invalid input. Please enter yes or no.&#34;
+                                  + colors.RESET)
+                            continue
                 boolean = True
                 while boolean:
-                    player_2 = input(&#34;Enter the name of player 2: &#34;)
-                    if len(player_2) &lt; 2 or len(player_2) &gt; 10:
-                        print(&#34;Please enter a between 2 and 10 characters.&#34;)
+                    player_2 = input(colors.CYAN + &#34;Enter the name &#34;
+                                     + &#34;of player 2: &#34; + colors.RESET)
+                    if len(player_2) &lt; 2 or len(player_2) &gt; 10 or player_2 == &#34;&#34;:
+                        print(colors.BLUE + &#34;Please enter a between &#34;
+                              + &#34;2 and 10 characters.&#34; + colors.RESET)
+                        continue
+                    elif player_2 == player_1:
+                        print(colors.RED + &#34;The name can&#39;t be the same as player 1!&#34;
+                              + colors.RESET)
                         continue
                     else:
-                        confirm_name = input(f&#34;Is {player_1} the correct &#34; +
-                                             &#34;name? &#34; + &#34;(yes/no): &#34;)
-                        if confirm_name.lower() not in [&#34;yes&#34;, &#34;no&#34;]:
-                            print(&#34;Invalid input. Please enter yes or no.&#34;)
+                        confirm_name = input(f&#34;Is {player_2} the correct name (yes/no)? &#34;)
+                        if confirm_name.lower() == &#34;no&#34;:
                             continue
-                        elif confirm_name.lower() == &#34;no&#34;:
-                            continue
-                        else:
+                        elif confirm_name.lower() == &#34;yes&#34;:
                             boolean = False
+                        else:
+                            print(colors.RED + &#34;Invalid input. Please enter yes or no.&#34;
+                                  + colors.RESET)
+                            continue
 
                 new_game = player_vs_player()
                 winner = new_game.two_player_game(player_1, player_2)
@@ -251,7 +314,8 @@ if __name__ == &#34;__main__&#34;:
             if user_choice == 3:
                 the_rules = Rules()
                 print(the_rules)
-                print(&#34;Press any key to go back to the menu.&#34;)
+                print(colors.BLUE + colors.TextStyles.BOLD + &#34;Press any &#34;
+                      + &#34;key to go back to the menu.&#34; + colors.RESET)
                 input()
 
             if user_choice == 4:
@@ -259,26 +323,47 @@ if __name__ == &#34;__main__&#34;:
                 chart.load_losses()
                 chart.show_highscore()
                 chart.show_losses()
-                print(&#34;Press any key to go back to the menu.&#34;)
+                print(colors.BLUE + colors.TextStyles.BOLD + &#34;Press any key&#34;
+                      + &#34; to go back to the menu.&#34; + colors.RESET)
                 input()
 
             if user_choice == 5:
-                print(&#34;Change name&#34;)
+                print(colors.CYAN + &#34;Change name&#34; + colors.RESET)
                 chart.load_highscore()
                 chart.load_losses()
                 chart.change_name()
-                print(&#34;Press any key to go back to the menu.&#34;)
+                print(colors.BLUE + &#34;Press any key to go back to the menu.&#34;
+                      + colors.RESET)
                 input()
 
             if user_choice == 6:
-                print(&#34;Goodbye!&#34;)
+                print(colors.PINK + colors.TextStyles.BOLD + &#34;Thank you &#34;
+                      + &#34;for playing Pig!&#34; + colors.RESET)
+                print(colors.YELLOW + &#34;*************************&#34;
+                      + colors.RESET)
+                print(colors.CYAN + colors.TextStyles.ITALIC
+                      + &#34;***CREDITS TO STUDENT DEVELOPERS!***&#34; + colors.RESET)
+                print(colors.YELLOW + &#34;*************************&#34;
+                      + colors.RESET)
+                print(colors.GREEN + colors.TextStyles.ITALIC
+                      + &#34;* ~Frida Johannesson~&#34; + colors.RESET)
+                print(colors.GREEN + colors.TextStyles.ITALIC
+                      + &#34;* ~Merjam Farj-Beibani~&#34; + colors.RESET)
+                print(colors.GREEN + colors.TextStyles.ITALIC
+                      + &#34;* ~Sara Shmerti~&#34; + colors.RESET)
+                print(colors.YELLOW + &#34;*************************&#34;
+                      + colors.RESET)
+                print(colors.PINK + colors.TextStyles.BOLD + &#34;Goodbye!&#34;
+                      + colors.RESET)
                 break
 
             if user_choice not in [1, 2, 3, 4, 5, 6]:
-                print(&#34;Invalid input. Please enter a number between 1 and 6.&#34;)
+                print(colors.RED + &#34;Invalid input. Please enter a number &#34;
+                      + &#34;between 1 and 6.&#34; + colors.RESET)
 
         except ValueError:
-            print(&#34;Invalid input. Please enter a number between 1 and 6.&#34;)</code></pre>
+            print(colors.RED + &#34;Invalid input. Please enter a &#34;
+                  + &#34;number between 1 and 6.&#34; + colors.RESET)</code></pre>
 </details>
 </dd>
 </dl>

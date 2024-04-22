@@ -47,7 +47,8 @@ class highscore:
         name_loop = True
         while name_loop:
             self.show_losses(), self.show_highscore()
-            old_name = input(&#34;Enter name you want to change (quit for quit): \n&#34;)
+            old_name = input(&#34;Enter name you want to change &#34;
+                             + &#34;(quit for quit): \n&#34;)
 
             if old_name == &#34;&#34;:
                 print(&#34;Please enter a name from the scoreboard. \n&#34;)
@@ -92,9 +93,9 @@ class highscore:
                 pickle.dump(self.losses, file)
         except (FileNotFoundError, EOFError):
             print(&#34;No highscore at the moment.&#34;)
-        print(&#34;&gt;&gt; The name has been changed and the highscore table board updated &lt;&lt;\n&#34;)
+        print(&#34;&gt;&gt; The name has been changed and the highscore &#34;
+              + &#34;table board updated &lt;&lt;\n&#34;)
         self.show_losses(), self.show_highscore()
-        # pragma: no cover
 
     def show_losses(self):
         &#34;&#34;&#34;Show the losses for all players.&#34;&#34;&#34;
@@ -133,10 +134,8 @@ class highscore:
         try:
             with open(&#34;losses.pkl&#34;, &#34;rb&#34;) as file:
                 self.losses = pickle.load(file)
-        except FileNotFoundError:
-            print(&#34;No highscore at the moment&#34;)
-        except EOFError:
-            print(&#34;No highscore at the moment&#34;)
+        except Exception:
+            self.losses = {}
         return self.losses
 
     def show_highscore(self):
@@ -156,7 +155,6 @@ class highscore:
                 print(f&#34;{sorted_scores:8}: {self.highscore_dict[sorted_scores]:&gt;6}&#34;)
             else:
                 return
-# pragma: no cover
 
     def add_highscore(self, winner):
         &#34;&#34;&#34;Add the winner to the highscore.&#34;&#34;&#34;
@@ -231,7 +229,8 @@ class highscore:
         name_loop = True
         while name_loop:
             self.show_losses(), self.show_highscore()
-            old_name = input(&#34;Enter name you want to change (quit for quit): \n&#34;)
+            old_name = input(&#34;Enter name you want to change &#34;
+                             + &#34;(quit for quit): \n&#34;)
 
             if old_name == &#34;&#34;:
                 print(&#34;Please enter a name from the scoreboard. \n&#34;)
@@ -276,9 +275,9 @@ class highscore:
                 pickle.dump(self.losses, file)
         except (FileNotFoundError, EOFError):
             print(&#34;No highscore at the moment.&#34;)
-        print(&#34;&gt;&gt; The name has been changed and the highscore table board updated &lt;&lt;\n&#34;)
+        print(&#34;&gt;&gt; The name has been changed and the highscore &#34;
+              + &#34;table board updated &lt;&lt;\n&#34;)
         self.show_losses(), self.show_highscore()
-        # pragma: no cover
 
     def show_losses(self):
         &#34;&#34;&#34;Show the losses for all players.&#34;&#34;&#34;
@@ -317,10 +316,8 @@ class highscore:
         try:
             with open(&#34;losses.pkl&#34;, &#34;rb&#34;) as file:
                 self.losses = pickle.load(file)
-        except FileNotFoundError:
-            print(&#34;No highscore at the moment&#34;)
-        except EOFError:
-            print(&#34;No highscore at the moment&#34;)
+        except Exception:
+            self.losses = {}
         return self.losses
 
     def show_highscore(self):
@@ -340,7 +337,6 @@ class highscore:
                 print(f&#34;{sorted_scores:8}: {self.highscore_dict[sorted_scores]:&gt;6}&#34;)
             else:
                 return
-# pragma: no cover
 
     def add_highscore(self, winner):
         &#34;&#34;&#34;Add the winner to the highscore.&#34;&#34;&#34;
@@ -455,7 +451,8 @@ class highscore:
     name_loop = True
     while name_loop:
         self.show_losses(), self.show_highscore()
-        old_name = input(&#34;Enter name you want to change (quit for quit): \n&#34;)
+        old_name = input(&#34;Enter name you want to change &#34;
+                         + &#34;(quit for quit): \n&#34;)
 
         if old_name == &#34;&#34;:
             print(&#34;Please enter a name from the scoreboard. \n&#34;)
@@ -500,9 +497,9 @@ class highscore:
             pickle.dump(self.losses, file)
     except (FileNotFoundError, EOFError):
         print(&#34;No highscore at the moment.&#34;)
-    print(&#34;&gt;&gt; The name has been changed and the highscore table board updated &lt;&lt;\n&#34;)
-    self.show_losses(), self.show_highscore()
-    # pragma: no cover</code></pre>
+    print(&#34;&gt;&gt; The name has been changed and the highscore &#34;
+          + &#34;table board updated &lt;&lt;\n&#34;)
+    self.show_losses(), self.show_highscore()</code></pre>
 </details>
 </dd>
 <dt id="highscore.highscore.get_highscore"><code class="name flex">
@@ -568,10 +565,8 @@ class highscore:
     try:
         with open(&#34;losses.pkl&#34;, &#34;rb&#34;) as file:
             self.losses = pickle.load(file)
-    except FileNotFoundError:
-        print(&#34;No highscore at the moment&#34;)
-    except EOFError:
-        print(&#34;No highscore at the moment&#34;)
+    except Exception:
+        self.losses = {}
     return self.losses</code></pre>
 </details>
 </dd>
