@@ -1,0 +1,12 @@
+1. starta git bash
+2. cd Pig
+3. make venv inuti Pig
+4. .venv/Scripts/activate
+5. make install
+6. ls
+7. cd src
+8. ls
+9. cd Pig_Game
+10. ls 
+11. make coverage
+12. make pdoc

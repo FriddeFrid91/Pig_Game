@@ -1,0 +1,139 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class Computer {
+            difficulty : NoneType
+            name : str
+            score : int
+            computer_move()
+            easy_difficulty()
+            get_score()
+            hard_difficulty()
+            medium_difficulty()
+            set_difficulty(difficulty)
+          }
+          class Dice {
+            numbers
+            get_dice()
+            roll_the_dice()
+            set_dice(numbers)
+            show_the_dice(result)
+          }
+          class Difficulty {
+            difficulty : int
+            get_difficulty()
+            set_difficulty(difficulty)
+          }
+          class Menu {
+            menu_options : int
+            show_menu()
+            show_pig()
+          }
+          class Player {
+            dice
+            name
+            score : int
+            add_score(score)
+            deduct_score(score)
+            get_name()
+            get_score()
+            player_move()
+            set_score(score)
+          }
+          class Rules {
+            rules : str
+            get_rules()
+            show_rules()
+          }
+          class TestDice {
+            show_the_dice()
+            test_get_dice()
+            test_roll_the_dice()
+            test_set_dice()
+          }
+          class TestHighscore {
+            highscore_instance
+            test_highscore_data : dict
+            setUp()
+            test_add_highscore()
+            test_add_highscore_eof_error()
+            test_add_highscore_file_not_found()
+            test_add_highscore_no_winner()
+            test_add_losses()
+            test_change_name()
+            test_get_highscore()
+            test_get_losses()
+            test_load_highscore()
+            test_load_highscore_eof_error()
+            test_load_highscore_file_not_found()
+            test_load_losses()
+            test_load_losses_eof_error()
+            test_load_losses_file_not_found()
+            test_show_highscore()
+            test_show_losses()
+          }
+          class TestPlayerVsPlayer {
+            test_get_loser()
+          }
+          class Test_Player {
+            mock_roll
+            player
+            roll_value
+            test_add_score()
+            test_deduct_score()
+            test_get_score()
+            test_player_move()*
+            test_player_name()
+            test_set_score()
+          }
+          class Test_Rules {
+            test_get_rules()
+          }
+          class colors {
+            BLUE : str
+            CYAN : str
+            GREEN : str
+            PINK : str
+            RED : str
+            RESET : str
+            YELLOW : str
+          }
+          class highscore {
+            highscore_dict : dict
+            losses : dict
+            wins : dict
+            add_highscore(winner)
+            add_losses(loser)
+            change_name()
+            get_highscore()
+            get_losses()
+            load_highscore()
+            load_losses()
+            show_highscore()
+            show_losses()
+          }
+          class player_vs_computer {
+            computer
+            player
+            player_vs_computer_game(difficulty)
+          }
+          class player_vs_player {
+            loser : str
+            name : str
+            score : int
+            winner : str
+            get_loser()
+            set_loser(loser)
+            two_player_game(name_1, name_2)
+          }
+          class test_menu {
+            test_show_menu()
+            test_show_pig()
+          }
+  
+       </div>
+  </body>
+</html>
