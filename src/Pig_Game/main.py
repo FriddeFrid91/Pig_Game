@@ -49,6 +49,15 @@ def main():
                         print("Please enter a between 2 and 10 characters.")
                         continue
                     else:
+                        confirm_name = input(f"Is {player_1} the correct " +
+                                             "name? " + "(yes/no): ")
+                        if confirm_name.lower() not in ["yes", "no"]:
+                            print("Invalid input. Please enter yes or no.")
+                            continue
+                        elif confirm_name.lower() == "no":
+                            continue
+                        elif confirm_name.lower() == "yes":
+                            break
                         boolean = False
 
                     name = True
