@@ -36,8 +36,7 @@ from highscore import highscore
 
 
 def main():
-    &#34;&#34;&#34;Main function for the program.&#34;&#34;&#34;
-
+    &#34;&#34;&#34;Doing what the main function does.&#34;&#34;&#34;
     chart = highscore()
     winner = &#34;&#34;
 
@@ -62,7 +61,8 @@ def main():
                     difficulty = input(&#34;Enter the difficulty level &#34;
                                        + &#34;(easy, medium, hard): &#34;)
                     if difficulty.lower() not in [&#34;easy&#34;, &#34;medium&#34;, &#34;hard&#34;]:
-                        print(&#34;Invalid input. Please enter easy, medium, or hard.&#34;)
+                        print(&#34;Invalid input. Please enter &#34;
+                              + &#34;easy, medium, or hard.&#34;)
                         continue
                     else:
                         boolean = False
@@ -78,8 +78,8 @@ def main():
                         print(&#34;Please enter a between 2 and 10 characters.&#34;)
                         continue
                     else:
-                        confirm_name = input(f&#34;Is {player_1} the correct name? &#34;
-                                             + &#34;(yes/no): &#34;)
+                        confirm_name = input(f&#34;Is {player_1} the correct &#34; +
+                                             &#34;name? &#34; + &#34;(yes/no): &#34;)
                         if confirm_name.lower() not in [&#34;yes&#34;, &#34;no&#34;]:
                             print(&#34;Invalid input. Please enter yes or no.&#34;)
                             continue
@@ -95,7 +95,8 @@ def main():
                         print(&#34;Please enter a between 2 and 10 characters.&#34;)
                         continue
                     else:
-                        confirm_name = input(f&#34;Is {player_2} the correct name? (yes/no): &#34;)
+                        confirm_name = input(f&#34;Is {player_1} the correct &#34; +
+                                             &#34;name? &#34; + &#34;(yes/no): &#34;)
                         if confirm_name.lower() not in [&#34;yes&#34;, &#34;no&#34;]:
                             print(&#34;Invalid input. Please enter yes or no.&#34;)
                             continue
@@ -162,14 +163,13 @@ if __name__ == &#34;__main__&#34;:
 <span>def <span class="ident">main</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Main function for the program.</p></div>
+<div class="desc"><p>Doing what the main function does.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def main():
-    &#34;&#34;&#34;Main function for the program.&#34;&#34;&#34;
-
+    &#34;&#34;&#34;Doing what the main function does.&#34;&#34;&#34;
     chart = highscore()
     winner = &#34;&#34;
 
@@ -194,7 +194,8 @@ if __name__ == &#34;__main__&#34;:
                     difficulty = input(&#34;Enter the difficulty level &#34;
                                        + &#34;(easy, medium, hard): &#34;)
                     if difficulty.lower() not in [&#34;easy&#34;, &#34;medium&#34;, &#34;hard&#34;]:
-                        print(&#34;Invalid input. Please enter easy, medium, or hard.&#34;)
+                        print(&#34;Invalid input. Please enter &#34;
+                              + &#34;easy, medium, or hard.&#34;)
                         continue
                     else:
                         boolean = False
@@ -210,8 +211,8 @@ if __name__ == &#34;__main__&#34;:
                         print(&#34;Please enter a between 2 and 10 characters.&#34;)
                         continue
                     else:
-                        confirm_name = input(f&#34;Is {player_1} the correct name? &#34;
-                                             + &#34;(yes/no): &#34;)
+                        confirm_name = input(f&#34;Is {player_1} the correct &#34; +
+                                             &#34;name? &#34; + &#34;(yes/no): &#34;)
                         if confirm_name.lower() not in [&#34;yes&#34;, &#34;no&#34;]:
                             print(&#34;Invalid input. Please enter yes or no.&#34;)
                             continue
@@ -227,7 +228,8 @@ if __name__ == &#34;__main__&#34;:
                         print(&#34;Please enter a between 2 and 10 characters.&#34;)
                         continue
                     else:
-                        confirm_name = input(f&#34;Is {player_2} the correct name? (yes/no): &#34;)
+                        confirm_name = input(f&#34;Is {player_1} the correct &#34; +
+                                             &#34;name? &#34; + &#34;(yes/no): &#34;)
                         if confirm_name.lower() not in [&#34;yes&#34;, &#34;no&#34;]:
                             print(&#34;Invalid input. Please enter yes or no.&#34;)
                             continue

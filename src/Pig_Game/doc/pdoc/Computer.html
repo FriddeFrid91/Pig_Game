@@ -29,6 +29,8 @@
 </summary>
 <pre><code class="python">&#34;&#34;&#34;This module contains the Computer class.&#34;&#34;&#34;
 import random
+from Dice import Dice
+from colors import colors
 
 
 class Computer:
@@ -38,6 +40,7 @@ class Computer:
         self.name = &#34;Computer&#34;
         self.score = 0
         self.difficulty = None
+        self.Dice = Dice(6)
 
     def set_difficulty(self, difficulty):
         &#34;&#34;&#34;Set the difficulty level of the computer.&#34;&#34;&#34;
@@ -60,29 +63,36 @@ class Computer:
 
     def easy_difficulty(self):
         &#34;&#34;&#34;Set the difficulty to easy.&#34;&#34;&#34;
-        roll = random.randint(1, 6)
+        roll = self.Dice.roll_the_dice()
 
         counting_round = 0
-
         boolean = True
         while boolean:
             if counting_round == 3:
-                print(&#34;The computer has decided to hold.\n&#34;)
-                print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
-                boolean = False
-            if roll == 1:
-                print(&#34;Oink, oink! The computer lost all its points for this round!\n&#34;)
+                print(colors.BLUE + &#34;The computer has decided to hold.\n&#34;
+                      + colors.RESET)
+                print(colors.GREEN + f&#34;The computer&#39;s score is {self.score}.\n&#34;
+                      + colors.RESET)
                 boolean = False
                 break
-            elif roll &gt;= 5:
-                print(&#34;The computer has decided to hold.\n&#34;)
-                print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+            if roll == 1:
+                print(colors.RED + &#34;Oink, oink! The computer lost all its &#34; +
+                      &#34;points for this round!\n&#34; + colors.RESET)
+                boolean = False
+                break
+            elif roll == 6:
+                print(colors.BLUE + &#34;The computer has decided to hold.\n&#34;
+                      + colors.RESET)
+                print(colors.GREEN + f&#34;The computer&#39;s score is {self.score}.\n&#34;
+                      + colors.RESET)
                 boolean = False
                 break
             else:
-                print(f&#34;The computer rolled a {roll}.\n&#34;)
+                print(colors.CYAN + f&#34;The computer rolled a {roll}.\n&#34;
+                      + colors.RESET)
                 self.score += roll
-                print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+                print(colors.GREEN + f&#34;The computer&#39;s score is {self.score}.\n&#34;
+                      + colors.RESET)
                 counting_round += 1
 
     def medium_difficulty(self):
@@ -138,6 +148,7 @@ class Computer:
         self.name = &#34;Computer&#34;
         self.score = 0
         self.difficulty = None
+        self.Dice = Dice(6)
 
     def set_difficulty(self, difficulty):
         &#34;&#34;&#34;Set the difficulty level of the computer.&#34;&#34;&#34;
@@ -160,29 +171,36 @@ class Computer:
 
     def easy_difficulty(self):
         &#34;&#34;&#34;Set the difficulty to easy.&#34;&#34;&#34;
-        roll = random.randint(1, 6)
+        roll = self.Dice.roll_the_dice()
 
         counting_round = 0
-
         boolean = True
         while boolean:
             if counting_round == 3:
-                print(&#34;The computer has decided to hold.\n&#34;)
-                print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
-                boolean = False
-            if roll == 1:
-                print(&#34;Oink, oink! The computer lost all its points for this round!\n&#34;)
+                print(colors.BLUE + &#34;The computer has decided to hold.\n&#34;
+                      + colors.RESET)
+                print(colors.GREEN + f&#34;The computer&#39;s score is {self.score}.\n&#34;
+                      + colors.RESET)
                 boolean = False
                 break
-            elif roll &gt;= 5:
-                print(&#34;The computer has decided to hold.\n&#34;)
-                print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+            if roll == 1:
+                print(colors.RED + &#34;Oink, oink! The computer lost all its &#34; +
+                      &#34;points for this round!\n&#34; + colors.RESET)
+                boolean = False
+                break
+            elif roll == 6:
+                print(colors.BLUE + &#34;The computer has decided to hold.\n&#34;
+                      + colors.RESET)
+                print(colors.GREEN + f&#34;The computer&#39;s score is {self.score}.\n&#34;
+                      + colors.RESET)
                 boolean = False
                 break
             else:
-                print(f&#34;The computer rolled a {roll}.\n&#34;)
+                print(colors.CYAN + f&#34;The computer rolled a {roll}.\n&#34;
+                      + colors.RESET)
                 self.score += roll
-                print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+                print(colors.GREEN + f&#34;The computer&#39;s score is {self.score}.\n&#34;
+                      + colors.RESET)
                 counting_round += 1
 
     def medium_difficulty(self):
@@ -245,29 +263,36 @@ class Computer:
 </summary>
 <pre><code class="python">def easy_difficulty(self):
     &#34;&#34;&#34;Set the difficulty to easy.&#34;&#34;&#34;
-    roll = random.randint(1, 6)
+    roll = self.Dice.roll_the_dice()
 
     counting_round = 0
-
     boolean = True
     while boolean:
         if counting_round == 3:
-            print(&#34;The computer has decided to hold.\n&#34;)
-            print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
-            boolean = False
-        if roll == 1:
-            print(&#34;Oink, oink! The computer lost all its points for this round!\n&#34;)
+            print(colors.BLUE + &#34;The computer has decided to hold.\n&#34;
+                  + colors.RESET)
+            print(colors.GREEN + f&#34;The computer&#39;s score is {self.score}.\n&#34;
+                  + colors.RESET)
             boolean = False
             break
-        elif roll &gt;= 5:
-            print(&#34;The computer has decided to hold.\n&#34;)
-            print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+        if roll == 1:
+            print(colors.RED + &#34;Oink, oink! The computer lost all its &#34; +
+                  &#34;points for this round!\n&#34; + colors.RESET)
+            boolean = False
+            break
+        elif roll == 6:
+            print(colors.BLUE + &#34;The computer has decided to hold.\n&#34;
+                  + colors.RESET)
+            print(colors.GREEN + f&#34;The computer&#39;s score is {self.score}.\n&#34;
+                  + colors.RESET)
             boolean = False
             break
         else:
-            print(f&#34;The computer rolled a {roll}.\n&#34;)
+            print(colors.CYAN + f&#34;The computer rolled a {roll}.\n&#34;
+                  + colors.RESET)
             self.score += roll
-            print(f&#34;The computer&#39;s score is {self.score}.\n&#34;)
+            print(colors.GREEN + f&#34;The computer&#39;s score is {self.score}.\n&#34;
+                  + colors.RESET)
             counting_round += 1</code></pre>
 </details>
 </dd>

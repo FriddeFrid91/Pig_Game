@@ -105,6 +105,13 @@ class TestHighscore(unittest.TestCase):
             self.highscore_instance.add_losses("Player1")
             mock_dump.assert_called_once()
 
+    def test_add_losses_eof_error(self):
+        """Test the add_losses function when EOFError is raised."""
+        # Mock the pickle.add function to raise EOFError
+        with patch('pickle.load', side_effect=EOFError):
+            self.highscore_instance.add_losses()
+            self.assertEqual(self.highscore_instance.get_losses(), {})
+
     def test_load_losses(self):
         """Test the load_losses function."""
         # Mock the pickle.load function to return sample data
