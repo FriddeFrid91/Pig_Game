@@ -6,6 +6,7 @@ from colors import colors
 
 class player_vs_computer:
     """This is a class for a player vs computer game."""
+
     def __init__(self):
         """Initialize the player vs computer game."""
         self.player = Player("", 0)
@@ -43,18 +44,25 @@ class player_vs_computer:
                     self.computer.computer_move()
 
                 if current_player.get_score() >= 100:
-                    print(colors.YELLOW + "*********************************" + colors.RESET)
+                    print(colors.YELLOW + "*********************************"
+                          + colors.RESET)
                     print(f"{current_player.name} wins!\n")
-                    print(colors.YELLOW + "*********************************" + colors.RESET)
+                    print(colors.YELLOW + "*********************************"
+                          + colors.RESET)
                     return current_player.name
 
                 if current_player == self.player:
-                    print(colors.PINK + "*********************************" + colors.RESET)
-                    print(f"{current_player.name} got {current_player.get_score()}")
-                    print(colors.PINK + "*********************************" + colors.RESET)
+                    print(colors.PINK + "*********************************"
+                          + colors.RESET)
+                    print(f"{current_player.name} "
+                          + "got {current_player.get_score()}")
+                    print(colors.PINK + "*********************************"
+                          + colors.RESET)
                     current_player = self.computer
                 else:
-                    print(colors.PINK + "*********************************" + colors.RESET)
+                    print(colors.PINK + "*********************************"
+                          + colors.RESET)
                     print("Computer's score: ", current_player.get_score())
-                    print(colors.PINK + "*********************************" + colors.RESET)
+                    print(colors.PINK + "*********************************"
+                          + colors.RESET)
                     current_player = self.player
