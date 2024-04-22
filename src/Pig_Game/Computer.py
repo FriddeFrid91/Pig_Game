@@ -1,11 +1,11 @@
 """This module contains the Computer class."""
-import random
 from Dice import Dice
 from colors import colors
 
 
 class Computer:
     """Class represennting a computer player."""
+
     def __init__(self):
         """Initialize the computer player."""
         self.name = "Computer"
@@ -70,7 +70,7 @@ class Computer:
         """Set the difficulty to medium."""
         roll = self.Dice.roll_the_dice()
 
-        counting_round = 0  
+        counting_round = 0
         boolean = True
         while boolean:
             if counting_round == 3:
@@ -100,7 +100,6 @@ class Computer:
                 print(colors.GREEN + f"The computer's score is {self.score}.\n"
                       + colors.RESET)
                 counting_round += 1
-    
 
     def hard_difficulty(self):
         """Set the difficulty to hard."""
@@ -118,8 +117,8 @@ class Computer:
                 break
             if roll == 1:
                 print(f"The computer rolled a {roll}.\n")
-                print(colors.RED + "Oink, oink! The computer lose any points " +
-                      "in this round!\n" + colors.RESET)
+                print(colors.RED + "Oink, oink! The computer lose any points "
+                      + "in this round!\n" + colors.RESET)
                 boolean = True
                 break
             elif roll == 15:
@@ -136,4 +135,3 @@ class Computer:
                 print(colors.GREEN + f"The computer's score is {self.score}.\n"
                       + colors.RESET)
                 counting_round += 1
-

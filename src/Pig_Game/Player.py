@@ -1,14 +1,20 @@
+"""A module to represent a player in a game of Pig."""
 from Dice import Dice
 from colors import colors
+"""A module to represent a player in a game of Pig."""
 
 
 class Player:
+    """A class to represent a player in a game of Pig."""
+
     def __init__(self, name, score):
+        """Initialize the player with a name and score."""
         self.name = name
         self.score = score
         self.dice = Dice(6)
 
     def __str__(self):
+        """Return the player's name and score."""
         return f"{self.name} has {self.score} points."
 
     def player_move(self):
@@ -22,9 +28,11 @@ class Player:
             print(f"{self.name} rolled a {roll}.\n")
             if current_score >= 100:
                 self.add_score(current_score)
-                print(colors.YELLOW + "*******************************" + colors.RESET)
+                print(colors.YELLOW + "*******************************"
+                      + colors.RESET)
                 print(f"{self.name} wins!\n")
-                print(colors.YELLOW + "*******************************" + colors.RESET)
+                print(colors.YELLOW + "*******************************"
+                      + colors.RESET)
                 return self.get_score()
 
             if roll == 1:
@@ -34,10 +42,12 @@ class Player:
                 break
 
             if roll > 1:
-                print(colors.YELLOW + "*******************************" + colors.RESET)
+                print(colors.YELLOW + "*******************************"
+                      + colors.RESET)
                 print(f"{self.name} round score: {round_score}. ")
                 print(f"{self.name} total score: {current_score}. ")
-                print(colors.YELLOW + "*******************************" + colors.RESET)
+                print(colors.YELLOW + "*******************************"
+                      + colors.RESET)
 
                 while True:
                     decision = input("Roll again? (yes/no/quit): ").lower()
@@ -46,10 +56,12 @@ class Player:
                     print("Invalid input. Please enter yes, no, or quit.")
 
                 if decision.lower() == "no":
-                    print(colors.YELLOW + "***************************" + colors.RESET)
+                    print(colors.YELLOW + "***************************"
+                          + colors.RESET)
                     print(f"{self.name} round score: {round_score}. ")
                     print(f"{self.name} total score: {current_score}. ")
-                    print(colors.YELLOW + "***************************" + colors.RESET)
+                    print(colors.YELLOW + "***************************"
+                          + colors.RESET)
                     self.add_score(round_score)
                     break
                 elif decision.lower() == "yes":
