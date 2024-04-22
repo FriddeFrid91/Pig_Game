@@ -25,7 +25,7 @@ Run the makefile to install dependencies and setup the environment:
 ```
 make install
 ```
-Navigate to the game directory:
+- Navigate to the game directory:
 ```
 cd Pig/src/Pig_Game
 ```
