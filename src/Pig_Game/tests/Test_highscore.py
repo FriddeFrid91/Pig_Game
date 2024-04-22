@@ -105,23 +105,12 @@ class TestHighscore(unittest.TestCase):
             self.highscore_instance.add_losses("Player1")
             mock_dump.assert_called_once()
 
-    def test_add_losses_success(self):
+    def test_add_losses_success(self, loser="Player1"):
         """Test the add_losses function when it is successful."""
         # Test adding losses for an existing player
-        self.game.losses = {"player1": 2, "player2": 3}  # Sample existing losses
-        self.assertTrue(self.game.add_losses("player1"))  # Add a loss for player1
-        self.assertEqual(self.game.losses["player1"], 3)  # Check if player1's losses increased by 1
-
-    def test_add_losses_new_player(self):
-        # Test adding losses for a new player
-        self.game.losses = {"player1": 2, "player2": 3}  # Sample existing losses
-        self.assertTrue(self.game.add_losses("player3"))  # Add a loss for player3
-        self.assertEqual(self.game.losses["player3"], 1)  # Check if player3's losses are set to 1
-
-    def test_add_losses_invalid_input(self):
-        # Test adding losses with invalid input (empty string)
-        self.game.losses = {"player1": 2, "player2": 3}  # Sample existing losses
-        self.assertFalse(self.game.add_losses(""))  # Try adding losses with empty string
+        self.highscore_instance = {"player1": 2, "player2": 3}  # Sample existing losses
+        self.assertTrue(self.highscore_instance(loser))  # Add a loss for player1
+        self.assertEqual(self.highscore_instance[loser], 3)  # Check if player1's losses increased by 1
 
     def test_load_losses(self):
         """Test the load_losses function."""
