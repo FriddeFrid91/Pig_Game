@@ -1,11 +1,11 @@
-# Pig - Dice Game in Python
+# Pig - Dice Game in Python 🐷
 A student project by Merjam Farj-Beibani, Sara Shmerti and Frida Jóhannesson.
 Pig is a simple dice game where the goal is to be the first player to reach 100 points. The game is played with one dice and involves strategic decision-making and risk-taking.
 
 ## Gameplay
 Pig offers the option to play with another player or against the computer. When playing against the computer, you can choose the difficulty level.
 
-## Rules
+## Rules 🎲
 - Each player takes turns rolling a single die.
 - Points accumulate based on the outcome of the dice rolls.
 - After every roll, the player has a choice: they can either save the total points they have gathered and pass the die to the other player, or they can roll the die again.
@@ -29,5 +29,5 @@ make install
 ```
 cd Pig/src/Pig_Game
 ```
-Now you're ready to play Pig! Have fun rolling the dice and aiming for that 100-point mark!
+Now you're ready to play Pig! Have fun rolling the dice and aiming for that 100-point mark! 🐖
 
