@@ -81,10 +81,11 @@ class Computer:
                 boolean = False
                 break
             if roll == 1:
-                print(colors.RED + "Oink, oink! The computer do not lose all its " +
+                print(f"The computer rolled a {roll}.\n")
+                print(colors.RED + "Oink, oink! The computer do not lose any " +
                       "points for this round!\n" + colors.RESET)
                 boolean = True
-                continue
+                break
             elif roll == 10:
                 print(colors.BLUE + "The computer has decided to hold.\n"
                       + colors.RESET)
@@ -116,10 +117,11 @@ class Computer:
                 boolean = False
                 break
             if roll == 1:
-                print(colors.RED + "Oink, oink! The computer dont get 1 " +
+                print(f"The computer rolled a {roll}.\n")
+                print(colors.RED + "Oink, oink! The computer lose any points " +
                       "in this round!\n" + colors.RESET)
                 boolean = True
-                continue
+                break
             elif roll == 15:
                 print(colors.BLUE + "The computer has decided to hold.\n"
                       + colors.RESET)
