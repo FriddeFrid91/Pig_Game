@@ -28,13 +28,14 @@ class Computer:
         else:
             raise ValueError("Invalid difficulty level.")
         
-
+         
+          
       
 
     def easy_difficulty(self):
         """Set the difficulty to easy."""
         for _ in range(2):
-             roll = random.randint(1, 6)
+            roll = random.randint(1, 6)
        
         if roll == 1:
             print(f"The computer rolled a {roll}.\n")
@@ -42,12 +43,12 @@ class Computer:
             self.score = 0
             
         
-        if roll == 3 and roll == 5:
+        elif roll in [3, 5]:
             print(f"The computer rolled a {roll}.\n")
             self.score += roll
             print("The computer has decided to hold.\n")
 
-        if roll == 15 and roll == 18:
+        elif roll in [15, 18]:
             print(f"The computer rolled a {roll}.\n")
             self.score += roll
             print("The computer has decided to hold.\n")
@@ -60,7 +61,7 @@ class Computer:
     def medium_difficulty(self):
         """Set the difficulty to medium."""
         for _ in range(2):  
-             roll = random.randint(1, 8)
+            roll = random.randint(1, 8)
     
         if roll == 1:
                 print(f"The computer rolled a {roll}.\n")
@@ -70,7 +71,7 @@ class Computer:
                 self.score += roll
                 
 
-        if roll > 2 and roll < 6:
+        elif 2 < roll < 6:
                 print(f"The computer rolled a {roll}.\n")
                 print("The computer has decided to hold.\n")
                 self.score += roll

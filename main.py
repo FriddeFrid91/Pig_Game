@@ -37,6 +37,8 @@ def main():
             if difficulty not in ["easy", "medium", "hard"]:
                 print("Invalid input. Please enter easy, medium, or hard.")
                 continue
+            computer = Computer()
+            computer.set_difficulty(difficulty)
             game = player_vs_computer()
             game.player_vs_computer_game(difficulty)
             
