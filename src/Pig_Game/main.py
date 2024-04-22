@@ -28,10 +28,15 @@ def main():
 
             if user_choice == 1:
                 print("Player Vs Computer")
-                difficulty = input("Enter the difficulty level (easy, medium, hard): ")
-                if difficulty not in ["easy", "medium", "hard"]:
-                    print("Invalid input. Please enter easy, medium, or hard.")
-                    continue
+                boolean = True
+                while boolean:
+                    difficulty = input("Enter the difficulty level "
+                                       + "(easy, medium, hard): ")
+                    if difficulty.lower() not in ["easy", "medium", "hard"]:
+                        print("Invalid input. Please enter easy, medium, or hard.")
+                        continue
+                    else:
+                        boolean = False
                 game = player_vs_computer()
                 game.player_vs_computer_game(difficulty)
 
@@ -40,11 +45,12 @@ def main():
                 boolean = True
                 while boolean:
                     player_1 = input("Enter the name of player 1: ")
-                    if len(player_1) < 2 or len(player_1) > 10:
+                    if len(player_1) < 2 or len(player_1) > 10 or player_1 == "":
                         print("Please enter a between 2 and 10 characters.")
                         continue
                     else:
-                        confirm_name = input(f"Is {player_1} the correct name? (yes/no): ")
+                        confirm_name = input(f"Is {player_1} the correct name? "
+                                             + "(yes/no): ")
                         if confirm_name.lower() not in ["yes", "no"]:
                             print("Invalid input. Please enter yes or no.")
                             continue
