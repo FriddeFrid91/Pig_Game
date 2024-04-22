@@ -107,8 +107,9 @@ class TestHighscore(unittest.TestCase):
 
     def test_add_losses_eof_error(self):
         """Test the add_losses function when EOFError is raised."""
-        with self.assertRaises(EOFError):
-            self.highscore_instance("Player3")
+        with patch('pickle.dump', side_effect=EOFError):
+            self.highscore_instance.add_losses("Player1")
+            self.assertEqual(self.highscore_instance.add_losses(), {})
 
     def test_load_losses(self):
         """Test the load_losses function."""
