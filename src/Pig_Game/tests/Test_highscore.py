@@ -115,7 +115,7 @@ class TestHighscore(unittest.TestCase):
         """Test the load_losses function."""
         # Mock the pickle.load function to return sample data
         with patch('pickle.load', return_value={"Player1": 3, "Player2": 2}):
-            self.highscore_instance.load_losses()
+            self.highscore_instance.load_losses("loser")
             self.assertEqual(self.highscore_instance.get_losses(), {"Player1": 3,
                                                                     "Player2": 2})
 
