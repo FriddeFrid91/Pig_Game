@@ -20,6 +20,7 @@ class player_vs_computer:
         while True:
             self.player.name = input("Enter your name: ")
             if self.player.name:
+                print(f"Welcome, {self.player.name}!\n")
                 break
             else:
                 print("Please enter a name.\n")
@@ -54,8 +55,8 @@ class player_vs_computer:
                 if current_player == self.player:
                     print(colors.PINK + "*********************************"
                           + colors.RESET)
-                    print(f"{current_player.name} "
-                          + "got {current_player.get_score()}")
+                    print(f"{current_player.name} got "
+                          + f"{current_player.get_score()}")
                     print(colors.PINK + "*********************************"
                           + colors.RESET)
                     current_player = self.computer

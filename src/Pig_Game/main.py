@@ -7,8 +7,7 @@ from highscore import highscore
 
 
 def main():
-    """Main function for the program."""
-
+    """Doing what the main function does."""
     chart = highscore()
     winner = ""
 
@@ -33,7 +32,8 @@ def main():
                     difficulty = input("Enter the difficulty level "
                                        + "(easy, medium, hard): ")
                     if difficulty.lower() not in ["easy", "medium", "hard"]:
-                        print("Invalid input. Please enter easy, medium, or hard.")
+                        print("Invalid input. Please enter "
+                              + "easy, medium, or hard.")
                         continue
                     else:
                         boolean = False
@@ -49,8 +49,8 @@ def main():
                         print("Please enter a between 2 and 10 characters.")
                         continue
                     else:
-                        confirm_name = input(f"Is {player_1} the correct name? "
-                                             + "(yes/no): ")
+                        confirm_name = input(f"Is {player_1} the correct " +
+                                             "name? " + "(yes/no): ")
                         if confirm_name.lower() not in ["yes", "no"]:
                             print("Invalid input. Please enter yes or no.")
                             continue
@@ -66,7 +66,8 @@ def main():
                         print("Please enter a between 2 and 10 characters.")
                         continue
                     else:
-                        confirm_name = input(f"Is {player_2} the correct name? (yes/no): ")
+                        confirm_name = input(f"Is {player_1} the correct " +
+                                             "name? " + "(yes/no): ")
                         if confirm_name.lower() not in ["yes", "no"]:
                             print("Invalid input. Please enter yes or no.")
                             continue
