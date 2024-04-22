@@ -33,10 +33,25 @@ class Computer:
 
     def easy_difficulty(self):
         """Set the difficulty to easy."""
-        roll = random.randint(1, 6)
+        for _ in range(2):
+             roll = random.randint(1, 6)
        
         if roll == 1:
-            print("Oink, oink! The computer lost all its points for this round!\n")      
+            print(f"The computer rolled a {roll}.\n")
+            print("Oink, oink! The computer lost all its points for this round!\n") 
+            self.score = 0
+            
+        
+        if roll == 3 and roll == 5:
+            print(f"The computer rolled a {roll}.\n")
+            self.score += roll
+            print("The computer has decided to hold.\n")
+
+        if roll == 15 and roll == 18:
+            print(f"The computer rolled a {roll}.\n")
+            self.score += roll
+            print("The computer has decided to hold.\n")
+             
         else:
             print(f"The computer rolled a {roll}.\n")
             self.score += roll
@@ -44,26 +59,42 @@ class Computer:
     
     def medium_difficulty(self):
         """Set the difficulty to medium."""
-        roll = random.randint(1, 10)
+        for _ in range(2):  
+             roll = random.randint(1, 8)
     
         if roll == 1:
-                print("The computer rolled a 1.\n")
+                print(f"The computer rolled a {roll}.\n")
+                self.score += roll
                 print("Oink, oink! The computer cheatycheats, and not lose any point HAHAHA!\n")
+                print(f"The computer's score is {self.score}.\n")
+                self.score += roll
+                
+
+        if roll > 2 and roll < 6:
+                print(f"The computer rolled a {roll}.\n")
+                print("The computer has decided to hold.\n")
+                self.score += roll
+                print(f"The computer's score is {self.score}.\n")
+
+
         else:                
                 print(f"The computer rolled a {roll}.\n")
                 self.score += roll
-                if self.score >= 10:
-                    print("The computer has decided to hold.\n")
-                    print(f"The computer's score is {self.score}.\n")
+                print(f"The computer's score is {self.score}.\n")
                 
 
        
 
     def hard_difficulty(self):
         """Set the difficulty to hard."""
-        roll = random.randint(4, 10)
+        for _ in range(2):
+            roll = random.randint(4, 10)
         if roll == 1:
-            print("Oink, oink! NO 1:s for me \n")        
+            print("Oink, oink! NO 1:s for me \n")   
+        if roll > 7 and roll < 10:
+            print (f"The computer rolled a {roll}.\n")
+            print(f"The computer has decided to hold.\n")
+            self.score += roll
         else:
                 print(f"The computer rolled a {roll}.\n")
                 self.score += roll

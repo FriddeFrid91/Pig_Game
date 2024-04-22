@@ -1,8 +1,6 @@
 #!/usr/bin/env make
 
 # Change this to be your variant of the python command
-# Set the env variable PYTHON to another value if needed
-# PYTHON=python3 make version
 PYTHON ?= python # python3 py
 
 # Print out colored action message
@@ -12,17 +10,13 @@ all:
 
 
 # ---------------------------------------------------------
-# Check the current python executable.
+# Setup a venv and install packages.
 #
 version:
 	@printf "Currently using executable: $(PYTHON)\n"
 	which $(PYTHON)
 	$(PYTHON) --version
 
-
-# ---------------------------------------------------------
-# Setup a venv and install packages.
-#
 venv:
 	[ -d .venv ] || $(PYTHON) -m venv .venv
 	@printf "Now activate the Python virtual environment.\n"
@@ -62,7 +56,7 @@ clean-all: clean clean-doc
 #
 pylint:
 	@$(call MESSAGE,$@)
-	-$(PYTHON) -m pylint *.py
+	-pylint *.py
 
 flake8:
 	@$(call MESSAGE,$@)
@@ -76,7 +70,7 @@ lint: flake8 pylint
 #
 black:
 	@$(call MESSAGE,$@)
-	 $(PYTHON) -m black guess/ test/
+	 $(PYTHON) -m black .
 
 codestyle: black
 
@@ -86,18 +80,13 @@ codestyle: black
 #
 unittest:
 	@$(call MESSAGE,$@)
-	 $(PYTHON) -m unittest discover
+	 $(PYTHON) -m unittest discover -s ./tests
 
 coverage:
 	@$(call MESSAGE,$@)
-	coverage run -m unittest discover
+	coverage run -m unittest discover -s ./tests
 	coverage html
 	coverage report -m
-
-coverage-xml:
-	@$(call MESSAGE,$@)
-	coverage run -m unittest discover
-	coverage xml
 
 test: lint coverage
 
@@ -108,23 +97,27 @@ test: lint coverage
 .PHONY: pydoc
 pydoc:
 	@$(call MESSAGE,$@)
+	# This does not work on Windows installed Python
+	$(PYTHON) -m pydoc -w "$(PWD)"
 	install -d doc/pydoc
-	$(PYTHON) -m pydoc -w guess/*.py
 	mv *.html doc/pydoc
 
 pdoc:
 	@$(call MESSAGE,$@)
-	pdoc --force --html --output-dir doc/pdoc guess/*.py
+	pdoc --force --html --output-dir doc/pdoc *.py
 
 pyreverse:
 	@$(call MESSAGE,$@)
 	install -d doc/pyreverse
-	pyreverse guess/*.py
-	dot -Tpng classes.dot -o doc/pyreverse/classes.png
-	dot -Tpng packages.dot -o doc/pyreverse/packages.png
-	rm -f classes.dot packages.dot
+	pyreverse *.py -o html -d doc/pyreverse
+# ---------------------------------------------------
+#	ot -Thtml classes.dot -o doc/pyreverse/classes.html
+#	ot -Thtml packages.dot -o doc/pyreverse/packages.html
+#	m -f classes.dot packages.dot
 
-doc: pdoc pyreverse #pydoc sphinx
+doc: pdoc pyreverse
+
+uml: pdoc pyreverse
 
 
 
@@ -133,23 +126,23 @@ doc: pdoc pyreverse #pydoc sphinx
 #
 radon-cc:
 	@$(call MESSAGE,$@)
-	radon cc --show-complexity --average guess
+	radon cc --show-complexity --average .
 
 radon-mi:
 	@$(call MESSAGE,$@)
-	radon mi --show guess
+	radon mi --show .
 
 radon-raw:
 	@$(call MESSAGE,$@)
-	radon raw guess
+	radon raw .
 
 radon-hal:
 	@$(call MESSAGE,$@)
-	radon hal guess
+	radon hal .
 
 cohesion:
 	@$(call MESSAGE,$@)
-	cohesion --directory guess
+	cohesion --directory .
 
 metrics: radon-cc radon-mi radon-raw radon-hal cohesion
 
@@ -160,4 +153,4 @@ metrics: radon-cc radon-mi radon-raw radon-hal cohesion
 #
 bandit:
 	@$(call MESSAGE,$@)
-	bandit --recursive guess
+	bandit --recursive .
