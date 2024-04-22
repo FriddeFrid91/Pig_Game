@@ -16,16 +16,13 @@ class player_vs_computer:
         print(">> Welcome to a game of Pig! <<\n")
         self.computer.set_difficulty(difficulty)
 
-
-
-
         while True:
             self.player.name = input("Enter your name: ")
             if self.player.name:
                 break
             else:
                 print("Please enter a name.\n")
-                
+
         with open("player.txt", "w") as f:
             f.write(self.player.name)
 
