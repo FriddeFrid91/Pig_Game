@@ -48,6 +48,7 @@ class highscore:
                 print(f"{new_name} is the new name.\n")
                 boolean = False
 
+        # If the old name is in the highcore_dict, replace it with the new name.
         if old_name in self.highscore_dict:
             self.highscore_dict[new_name] = self.highscore_dict.pop(old_name)
         if old_name in self.losses:
@@ -146,6 +147,7 @@ class highscore:
             winner = ""
         return winner is None
 
+    # pragma: no cover
     def load_highscore(self):
         """Load the highscore."""
         try:

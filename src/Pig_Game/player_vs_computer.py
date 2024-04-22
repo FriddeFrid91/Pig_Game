@@ -14,22 +14,22 @@ class player_vs_computer:
 
     def player_vs_computer_game(self, difficulty):
         """Simulate a player vs computer game of pig."""
-        print(colors.YELLOW + colors.TextStyles.ITALIC + ">> Welcome to a game of Pig! <<\n" + colors.RESET)
+        print(colors.YELLOW + colors.TextStyles.ITALIC
+              + ">> Welcome to a game of Pig! <<\n" + colors.RESET)
         self.computer.set_difficulty(difficulty)
 
         while True:
-            self.player.name = input(colors.PINK + "Enter your name: " + colors.RESET)
+            self.player.name = input(colors.PINK + "Enter your name: "
+                                     + colors.RESET)
             if self.player.name:
                 print(f"Welcome, {self.player.name}!\n")
                 break
             else:
                 print(colors.PINK + "Please enter a name.\n" + colors.RESET)
 
-        with open("player.txt", "w") as f:
-            f.write(self.player.name)
-
         while True:
-            print(colors.BLUE + f">>>> {self.player.name} vs computer <<<<\n" + colors.RESET)
+            print(colors.BLUE + f">>>> {self.player.name} vs computer <<<<\n"
+                  + colors.RESET)
 
             current_player = self.player
 
@@ -67,3 +67,4 @@ class player_vs_computer:
                     print(colors.PINK + "*********************************"
                           + colors.RESET)
                     current_player = self.player
+            break
