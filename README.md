@@ -12,10 +12,12 @@ Pig offers the option to play with another player or against the computer. When 
 - If a player rolls a 1, they lose all accumulated points from the current round.
 
 ## Installation
-Clone this repository to your local machine:
+- Clone this repository to your local machine:
+```
 git clone https://github.com/FriddeFrid91/Pig_Game.git
-Make sure you have Python 3 installed.
-Navigate to the project directory:
+```
+- Make sure you have Python 3 installed.
+- Navigate to the project directory:
 ```
 cd Pig
 ```
