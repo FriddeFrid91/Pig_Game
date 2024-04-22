@@ -18,7 +18,8 @@ class highscore:
         name_loop = True
         while name_loop:
             self.show_losses(), self.show_highscore()
-            old_name = input("Enter name you want to change (quit for quit): \n")
+            old_name = input("Enter name you want to change "
+                             + "(quit for quit): \n")
 
             if old_name == "":
                 print("Please enter a name from the scoreboard. \n")
@@ -63,7 +64,8 @@ class highscore:
                 pickle.dump(self.losses, file)
         except (FileNotFoundError, EOFError):
             print("No highscore at the moment.")
-        print(">> The name has been changed and the highscore table board updated <<\n")
+        print(">> The name has been changed and the highscore "
+              + "table board updated <<\n")
         self.show_losses(), self.show_highscore()
         # pragma: no cover
 
