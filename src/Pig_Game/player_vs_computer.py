@@ -6,6 +6,7 @@ from colors import colors
 
 class player_vs_computer:
     """This is a class for a player vs computer game."""
+
     def __init__(self):
         """Initialize the player vs computer game."""
         self.player = Player("", 0)
@@ -13,21 +14,22 @@ class player_vs_computer:
 
     def player_vs_computer_game(self, difficulty):
         """Simulate a player vs computer game of pig."""
-        print(colors.YELLOW + colors.TextStyles.ITALIC + ">> Welcome to a game of Pig! <<\n" + colors.RESET)
+        print(colors.YELLOW + colors.TextStyles.ITALIC
+              + ">> Welcome to a game of Pig! <<\n" + colors.RESET)
         self.computer.set_difficulty(difficulty)
 
         while True:
-            self.player.name = input(colors.PINK + "Enter your name: " + colors.RESET)
+            self.player.name = input(colors.PINK + "Enter your name: "
+                                     + colors.RESET)
             if self.player.name:
+                print(f"Welcome, {self.player.name}!\n")
                 break
             else:
                 print(colors.PINK + "Please enter a name.\n" + colors.RESET)
 
-        with open("player.txt", "w") as f:
-            f.write(self.player.name)
-
         while True:
-            print(colors.BLUE + f">>>> {self.player.name} vs computer <<<<\n" + colors.RESET)
+            print(colors.BLUE + f">>>> {self.player.name} vs computer <<<<\n"
+                  + colors.RESET)
 
             current_player = self.player
 
@@ -43,19 +45,27 @@ class player_vs_computer:
                     self.computer.computer_move()
 
                 if current_player.get_score() >= 100:
-                    print(colors.YELLOW + "*********************************" + colors.RESET)
+                    print(colors.YELLOW + "*********************************"
+                          + colors.RESET)
                     print(f"{current_player.name} wins!\n")
-                    print(colors.YELLOW + "*********************************" + colors.RESET)
+                    print(colors.YELLOW + "*********************************"
+                          + colors.RESET)
                     return current_player.name
 
                 if current_player == self.player:
-                    print(colors.PINK + "*********************************" + colors.RESET)
-                    print(f"{current_player.name} got {current_player.get_score()}")
-                    print(colors.PINK + "*********************************" + colors.RESET)
+                    print(colors.PINK + "*********************************"
+                          + colors.RESET)
+                    print(f"{current_player.name} got "
+                          + f"{current_player.get_score()}")
+                    print(colors.PINK + "*********************************"
+                          + colors.RESET)
                     current_player = self.computer
                 else:
-                    print(colors.PINK + "*********************************" + colors.RESET)
+                    print(colors.PINK + "*********************************"
+                          + colors.RESET)
                     print("Computer's score: ", current_player.get_score())
-                    print(colors.PINK + "*********************************" + colors.RESET)
+                    print(colors.PINK + "*********************************"
+                          + colors.RESET)
                     current_player = self.player
-                    break 
+                    break
+            break

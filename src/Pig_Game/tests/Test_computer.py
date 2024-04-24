@@ -3,8 +3,11 @@ import unittest
 
 from Computer import Computer
 """Test case for the Computer class."""
-class TestComputer(unittest.TestCase): # pragma: no cover
+
+
+class TestComputer(unittest.TestCase):
     """Test case for the Computer class."""
+
     def test_computer_move(self):
         """Test the computer_move method."""
         computer = Computer()
@@ -15,5 +18,5 @@ class TestComputer(unittest.TestCase): # pragma: no cover
         computer.set_difficulty("hard")
         computer.computer_move()
         self.assertIsNotNone(computer)
-        self.assertIsInstance(computer, Computer) 
-
+        self.assertIsInstance(computer, Computer)
+        # pragma: no cover

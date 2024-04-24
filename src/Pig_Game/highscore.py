@@ -18,7 +18,8 @@ class highscore: #pragma: no cover
         name_loop = True
         while name_loop:
             self.show_losses(), self.show_highscore()
-            old_name = input("Enter name you want to change (quit for quit): \n")
+            old_name = input("Enter name you want to change "
+                             + "(quit for quit): \n")
 
             if old_name == "":
                 print("Please enter a name from the scoreboard. \n")
@@ -47,6 +48,7 @@ class highscore: #pragma: no cover
                 print(f"{new_name} is the new name.\n")
                 boolean = False
 
+        # If the old name is in the highcore_dict, replace it with the new name.
         if old_name in self.highscore_dict:
             self.highscore_dict[new_name] = self.highscore_dict.pop(old_name)
         if old_name in self.losses:
@@ -63,9 +65,9 @@ class highscore: #pragma: no cover
                 pickle.dump(self.losses, file)
         except (FileNotFoundError, EOFError):
             print("No highscore at the moment.")
-        print(">> The name has been changed and the highscore table board updated <<\n")
+        print(">> The name has been changed and the highscore "
+              + "table board updated <<\n")
         self.show_losses(), self.show_highscore()
-        # pragma: no cover
 
     def show_losses(self): #pragma: no cover
         """Show the losses for all players."""
@@ -104,10 +106,8 @@ class highscore: #pragma: no cover
         try:
             with open("losses.pkl", "rb") as file:
                 self.losses = pickle.load(file)
-        except FileNotFoundError:
-            print("No highscore at the moment")
-        except EOFError:
-            print("No highscore at the moment")
+        except Exception:
+            self.losses = {}
         return self.losses
 
     def show_highscore(self): #pragma: no cover 
@@ -127,7 +127,6 @@ class highscore: #pragma: no cover
                 print(f"{sorted_scores:8}: {self.highscore_dict[sorted_scores]:>6}")
             else:
                 return
-# pragma: no cover
 
     def add_highscore(self, winner): #pragma: no cover
         """Add the winner to the highscore."""
@@ -148,7 +147,7 @@ class highscore: #pragma: no cover
             winner = ""
         return winner is None
 
-    def load_highscore(self): #pragma: no cover
+    def load_highscore(self):
         """Load the highscore."""
         try:
             with open("highscore.pkl", "rb") as file:

@@ -31,6 +31,15 @@
 
 
 class colors:
+    class TextStyles:
+        RESET = &#39;\033[0m&#39;      # Reset to default colors and styles
+        BOLD = &#39;\033[1m&#39;       # Bold text
+        ITALIC = &#39;\033[3m&#39;     # Italic text (not widely supported)
+        UNDERLINE = &#39;\033[4m&#39;  # Underline text
+        BLINK = &#39;\033[5m&#39;      # Blinking text (not widely supported)
+        REVERSE = &#39;\033[7m&#39;    # Reverse colors (swap foreground and background)
+        HIDDEN = &#39;\033[8m&#39;
+      
 
     RED = &#39;\033[91m&#39;
     GREEN = &#39;\033[92m&#39;
@@ -60,6 +69,15 @@ class colors:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class colors:
+    class TextStyles:
+        RESET = &#39;\033[0m&#39;      # Reset to default colors and styles
+        BOLD = &#39;\033[1m&#39;       # Bold text
+        ITALIC = &#39;\033[3m&#39;     # Italic text (not widely supported)
+        UNDERLINE = &#39;\033[4m&#39;  # Underline text
+        BLINK = &#39;\033[5m&#39;      # Blinking text (not widely supported)
+        REVERSE = &#39;\033[7m&#39;    # Reverse colors (swap foreground and background)
+        HIDDEN = &#39;\033[8m&#39;
+      
 
     RED = &#39;\033[91m&#39;
     GREEN = &#39;\033[92m&#39;
@@ -95,6 +113,10 @@ class colors:
 <dd>
 <div class="desc"></div>
 </dd>
+<dt id="colors.colors.TextStyles"><code class="name">var <span class="ident">TextStyles</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
 <dt id="colors.colors.YELLOW"><code class="name">var <span class="ident">YELLOW</span></code></dt>
 <dd>
 <div class="desc"></div>
@@ -121,6 +143,7 @@ class colors:
 <li><code><a title="colors.colors.PINK" href="#colors.colors.PINK">PINK</a></code></li>
 <li><code><a title="colors.colors.RED" href="#colors.colors.RED">RED</a></code></li>
 <li><code><a title="colors.colors.RESET" href="#colors.colors.RESET">RESET</a></code></li>
+<li><code><a title="colors.colors.TextStyles" href="#colors.colors.TextStyles">TextStyles</a></code></li>
 <li><code><a title="colors.colors.YELLOW" href="#colors.colors.YELLOW">YELLOW</a></code></li>
 </ul>
 </li>
