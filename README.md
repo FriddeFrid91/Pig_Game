@@ -5,7 +5,7 @@ Pig is a simple dice game where the goal is to be the first player to reach 100 
 ## About this project
 This is a student project for the course Sustainable development course at the university of Kristianstad. If you want to add to the project please contact @FriddeFrid91 at discord.
 ## Gameplay
-Pig offers the option to play with another player or against the computer. When playing against the computer, you can choose the difficulty level.
+Pig offers the option to play with another player or against the computer. When playing against the computer, you can choose the difficulty level. It is possible to cheat on a round by writign "cheat" when asked if you want to roll the dice again.
 
 ## Rules 🎲
 - Each player takes turns rolling a single die.
