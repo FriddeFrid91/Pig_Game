@@ -43,22 +43,22 @@ class player_vs_computer:
 
     def player_vs_computer_game(self, difficulty):
         &#34;&#34;&#34;Simulate a player vs computer game of pig.&#34;&#34;&#34;
-        print(colors.YELLOW + colors.TextStyles.ITALIC + &#34;&gt;&gt; Welcome to a game of Pig! &lt;&lt;\n&#34; + colors.RESET)
+        print(colors.YELLOW + colors.TextStyles.ITALIC
+              + &#34;&gt;&gt; Welcome to a game of Pig! &lt;&lt;\n&#34; + colors.RESET)
         self.computer.set_difficulty(difficulty)
 
         while True:
-            self.player.name = input(colors.PINK + &#34;Enter your name: &#34; + colors.RESET)
+            self.player.name = input(colors.PINK + &#34;Enter your name: &#34;
+                                     + colors.RESET)
             if self.player.name:
                 print(f&#34;Welcome, {self.player.name}!\n&#34;)
                 break
             else:
                 print(colors.PINK + &#34;Please enter a name.\n&#34; + colors.RESET)
 
-        with open(&#34;player.txt&#34;, &#34;w&#34;) as f:
-            f.write(self.player.name)
-
         while True:
-            print(colors.BLUE + f&#34;&gt;&gt;&gt;&gt; {self.player.name} vs computer &lt;&lt;&lt;&lt;\n&#34; + colors.RESET)
+            print(colors.BLUE + f&#34;&gt;&gt;&gt;&gt; {self.player.name} vs computer &lt;&lt;&lt;&lt;\n&#34;
+                  + colors.RESET)
 
             current_player = self.player
 
@@ -95,7 +95,9 @@ class player_vs_computer:
                     print(&#34;Computer&#39;s score: &#34;, current_player.get_score())
                     print(colors.PINK + &#34;*********************************&#34;
                           + colors.RESET)
-                    current_player = self.player</code></pre>
+                    current_player = self.player
+                    break
+            break</code></pre>
 </details>
 </section>
 <section>
@@ -127,22 +129,22 @@ class player_vs_computer:
 
     def player_vs_computer_game(self, difficulty):
         &#34;&#34;&#34;Simulate a player vs computer game of pig.&#34;&#34;&#34;
-        print(colors.YELLOW + colors.TextStyles.ITALIC + &#34;&gt;&gt; Welcome to a game of Pig! &lt;&lt;\n&#34; + colors.RESET)
+        print(colors.YELLOW + colors.TextStyles.ITALIC
+              + &#34;&gt;&gt; Welcome to a game of Pig! &lt;&lt;\n&#34; + colors.RESET)
         self.computer.set_difficulty(difficulty)
 
         while True:
-            self.player.name = input(colors.PINK + &#34;Enter your name: &#34; + colors.RESET)
+            self.player.name = input(colors.PINK + &#34;Enter your name: &#34;
+                                     + colors.RESET)
             if self.player.name:
                 print(f&#34;Welcome, {self.player.name}!\n&#34;)
                 break
             else:
                 print(colors.PINK + &#34;Please enter a name.\n&#34; + colors.RESET)
 
-        with open(&#34;player.txt&#34;, &#34;w&#34;) as f:
-            f.write(self.player.name)
-
         while True:
-            print(colors.BLUE + f&#34;&gt;&gt;&gt;&gt; {self.player.name} vs computer &lt;&lt;&lt;&lt;\n&#34; + colors.RESET)
+            print(colors.BLUE + f&#34;&gt;&gt;&gt;&gt; {self.player.name} vs computer &lt;&lt;&lt;&lt;\n&#34;
+                  + colors.RESET)
 
             current_player = self.player
 
@@ -179,7 +181,9 @@ class player_vs_computer:
                     print(&#34;Computer&#39;s score: &#34;, current_player.get_score())
                     print(colors.PINK + &#34;*********************************&#34;
                           + colors.RESET)
-                    current_player = self.player</code></pre>
+                    current_player = self.player
+                    break
+            break</code></pre>
 </details>
 <h3>Methods</h3>
 <dl>
@@ -194,22 +198,22 @@ class player_vs_computer:
 </summary>
 <pre><code class="python">def player_vs_computer_game(self, difficulty):
     &#34;&#34;&#34;Simulate a player vs computer game of pig.&#34;&#34;&#34;
-    print(colors.YELLOW + colors.TextStyles.ITALIC + &#34;&gt;&gt; Welcome to a game of Pig! &lt;&lt;\n&#34; + colors.RESET)
+    print(colors.YELLOW + colors.TextStyles.ITALIC
+          + &#34;&gt;&gt; Welcome to a game of Pig! &lt;&lt;\n&#34; + colors.RESET)
     self.computer.set_difficulty(difficulty)
 
     while True:
-        self.player.name = input(colors.PINK + &#34;Enter your name: &#34; + colors.RESET)
+        self.player.name = input(colors.PINK + &#34;Enter your name: &#34;
+                                 + colors.RESET)
         if self.player.name:
             print(f&#34;Welcome, {self.player.name}!\n&#34;)
             break
         else:
             print(colors.PINK + &#34;Please enter a name.\n&#34; + colors.RESET)
 
-    with open(&#34;player.txt&#34;, &#34;w&#34;) as f:
-        f.write(self.player.name)
-
     while True:
-        print(colors.BLUE + f&#34;&gt;&gt;&gt;&gt; {self.player.name} vs computer &lt;&lt;&lt;&lt;\n&#34; + colors.RESET)
+        print(colors.BLUE + f&#34;&gt;&gt;&gt;&gt; {self.player.name} vs computer &lt;&lt;&lt;&lt;\n&#34;
+              + colors.RESET)
 
         current_player = self.player
 
@@ -246,7 +250,9 @@ class player_vs_computer:
                 print(&#34;Computer&#39;s score: &#34;, current_player.get_score())
                 print(colors.PINK + &#34;*********************************&#34;
                       + colors.RESET)
-                current_player = self.player</code></pre>
+                current_player = self.player
+                break
+        break</code></pre>
 </details>
 </dd>
 </dl>

@@ -74,7 +74,7 @@ def main():
                                        + colors.RESET)
                     if difficulty.lower() not in [&#34;easy&#34;, &#34;medium&#34;, &#34;hard&#34;]:
                         print(colors.RED
-                              + &#34;Invalid input. Please enter &#34;
+                              + &#34;Invalid input. Please try again.&#34;
                               + &#34;easy, medium, or hard.&#34; + colors.RESET)
                         continue
                     else:
@@ -162,24 +162,9 @@ def main():
                 input()
 
             if user_choice == 6:
-                print(colors.PINK + colors.TextStyles.BOLD + &#34;Thank you &#34;
-                      + &#34;for playing Pig!&#34; + colors.RESET)
-                print(colors.YELLOW + &#34;*************************&#34;
-                      + colors.RESET)
-                print(colors.CYAN + colors.TextStyles.ITALIC
-                      + &#34;***CREDITS TO STUDENT DEVELOPERS!***&#34; + colors.RESET)
-                print(colors.YELLOW + &#34;*************************&#34;
-                      + colors.RESET)
-                print(colors.GREEN + colors.TextStyles.ITALIC
-                      + &#34;* ~Frida Johannesson~&#34; + colors.RESET)
-                print(colors.GREEN + colors.TextStyles.ITALIC
-                      + &#34;* ~Merjam Farj-Beibani~&#34; + colors.RESET)
-                print(colors.GREEN + colors.TextStyles.ITALIC
-                      + &#34;* ~Sara Shmerti~&#34; + colors.RESET)
-                print(colors.YELLOW + &#34;*************************&#34;
-                      + colors.RESET)
-                print(colors.PINK + colors.TextStyles.BOLD + &#34;Goodbye!&#34;
-                      + colors.RESET)
+                student_credit = piggy.credits_message()
+                print(student_credit)
+
                 break
 
             if user_choice not in [1, 2, 3, 4, 5, 6]:
@@ -249,7 +234,7 @@ if __name__ == &#34;__main__&#34;:
                                        + colors.RESET)
                     if difficulty.lower() not in [&#34;easy&#34;, &#34;medium&#34;, &#34;hard&#34;]:
                         print(colors.RED
-                              + &#34;Invalid input. Please enter &#34;
+                              + &#34;Invalid input. Please try again.&#34;
                               + &#34;easy, medium, or hard.&#34; + colors.RESET)
                         continue
                     else:
@@ -337,24 +322,9 @@ if __name__ == &#34;__main__&#34;:
                 input()
 
             if user_choice == 6:
-                print(colors.PINK + colors.TextStyles.BOLD + &#34;Thank you &#34;
-                      + &#34;for playing Pig!&#34; + colors.RESET)
-                print(colors.YELLOW + &#34;*************************&#34;
-                      + colors.RESET)
-                print(colors.CYAN + colors.TextStyles.ITALIC
-                      + &#34;***CREDITS TO STUDENT DEVELOPERS!***&#34; + colors.RESET)
-                print(colors.YELLOW + &#34;*************************&#34;
-                      + colors.RESET)
-                print(colors.GREEN + colors.TextStyles.ITALIC
-                      + &#34;* ~Frida Johannesson~&#34; + colors.RESET)
-                print(colors.GREEN + colors.TextStyles.ITALIC
-                      + &#34;* ~Merjam Farj-Beibani~&#34; + colors.RESET)
-                print(colors.GREEN + colors.TextStyles.ITALIC
-                      + &#34;* ~Sara Shmerti~&#34; + colors.RESET)
-                print(colors.YELLOW + &#34;*************************&#34;
-                      + colors.RESET)
-                print(colors.PINK + colors.TextStyles.BOLD + &#34;Goodbye!&#34;
-                      + colors.RESET)
+                student_credit = piggy.credits_message()
+                print(student_credit)
+
                 break
 
             if user_choice not in [1, 2, 3, 4, 5, 6]:

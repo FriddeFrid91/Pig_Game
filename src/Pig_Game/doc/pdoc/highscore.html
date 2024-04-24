@@ -32,7 +32,7 @@ import pickle
 from colors import colors
 
 
-class highscore:
+class highscore: #pragma: no cover
     &#34;&#34;&#34;Class for highscore.&#34;&#34;&#34;
 
     def __init__(self):
@@ -41,7 +41,7 @@ class highscore:
         self.losses = {}
         self.wins = {}
 
-    def change_name(self):
+    def change_name(self): #pragma: no cover
         &#34;&#34;&#34;Change the name of the player at the highscore board.&#34;&#34;&#34;
         print(&#34;Change the name of the player. \n&#34;)
         name_loop = True
@@ -77,6 +77,7 @@ class highscore:
                 print(f&#34;{new_name} is the new name.\n&#34;)
                 boolean = False
 
+        # If the old name is in the highcore_dict, replace it with the new name.
         if old_name in self.highscore_dict:
             self.highscore_dict[new_name] = self.highscore_dict.pop(old_name)
         if old_name in self.losses:
@@ -97,7 +98,7 @@ class highscore:
               + &#34;table board updated &lt;&lt;\n&#34;)
         self.show_losses(), self.show_highscore()
 
-    def show_losses(self):
+    def show_losses(self): #pragma: no cover
         &#34;&#34;&#34;Show the losses for all players.&#34;&#34;&#34;
         hall_of_fame = [
             colors.BLUE + &#34;*****************&#34; + colors.RESET + &#34;\n&#34; +
@@ -110,7 +111,7 @@ class highscore:
                                     reverse=True):
             print(f&#34;{sorted_losses:8}: {self.losses[sorted_losses]:&gt;6}&#34;)
 
-    def add_losses(self, loser):
+    def add_losses(self, loser): #pragma: no cover
         &#34;&#34;&#34;Update the losses.&#34;&#34;&#34;
         self.load_losses()
         if loser == &#34;&#34;:
@@ -129,7 +130,7 @@ class highscore:
             loser = &#34;&#34;
         return loser is None
 
-    def load_losses(self):
+    def load_losses(self): #pragma: no cover
         &#34;&#34;&#34;Load the losses.&#34;&#34;&#34;
         try:
             with open(&#34;losses.pkl&#34;, &#34;rb&#34;) as file:
@@ -138,7 +139,7 @@ class highscore:
             self.losses = {}
         return self.losses
 
-    def show_highscore(self):
+    def show_highscore(self): #pragma: no cover 
         &#34;&#34;&#34;Show the highscore.&#34;&#34;&#34;
         hall_of_fame = [
             colors.YELLOW + &#34;****************&#34; + colors.RESET + &#34;\n&#34; +
@@ -156,7 +157,7 @@ class highscore:
             else:
                 return
 
-    def add_highscore(self, winner):
+    def add_highscore(self, winner): #pragma: no cover
         &#34;&#34;&#34;Add the winner to the highscore.&#34;&#34;&#34;
         self.load_highscore()
         if winner == &#34;&#34; or winner is None:
@@ -186,11 +187,11 @@ class highscore:
             self.highscore_dict = {}
         return self.highscore_dict
 
-    def get_highscore(self):
+    def get_highscore(self): #pragma: no cover
         &#34;&#34;&#34;Get the highscore.&#34;&#34;&#34;
         return self.highscore_dict
 
-    def get_losses(self):
+    def get_losses(self): #pragma: no cover
         &#34;&#34;&#34;Get the losses.&#34;&#34;&#34;
         return self.losses</code></pre>
 </details>
@@ -214,7 +215,7 @@ class highscore:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class highscore:
+<pre><code class="python">class highscore: #pragma: no cover
     &#34;&#34;&#34;Class for highscore.&#34;&#34;&#34;
 
     def __init__(self):
@@ -223,7 +224,7 @@ class highscore:
         self.losses = {}
         self.wins = {}
 
-    def change_name(self):
+    def change_name(self): #pragma: no cover
         &#34;&#34;&#34;Change the name of the player at the highscore board.&#34;&#34;&#34;
         print(&#34;Change the name of the player. \n&#34;)
         name_loop = True
@@ -259,6 +260,7 @@ class highscore:
                 print(f&#34;{new_name} is the new name.\n&#34;)
                 boolean = False
 
+        # If the old name is in the highcore_dict, replace it with the new name.
         if old_name in self.highscore_dict:
             self.highscore_dict[new_name] = self.highscore_dict.pop(old_name)
         if old_name in self.losses:
@@ -279,7 +281,7 @@ class highscore:
               + &#34;table board updated &lt;&lt;\n&#34;)
         self.show_losses(), self.show_highscore()
 
-    def show_losses(self):
+    def show_losses(self): #pragma: no cover
         &#34;&#34;&#34;Show the losses for all players.&#34;&#34;&#34;
         hall_of_fame = [
             colors.BLUE + &#34;*****************&#34; + colors.RESET + &#34;\n&#34; +
@@ -292,7 +294,7 @@ class highscore:
                                     reverse=True):
             print(f&#34;{sorted_losses:8}: {self.losses[sorted_losses]:&gt;6}&#34;)
 
-    def add_losses(self, loser):
+    def add_losses(self, loser): #pragma: no cover
         &#34;&#34;&#34;Update the losses.&#34;&#34;&#34;
         self.load_losses()
         if loser == &#34;&#34;:
@@ -311,7 +313,7 @@ class highscore:
             loser = &#34;&#34;
         return loser is None
 
-    def load_losses(self):
+    def load_losses(self): #pragma: no cover
         &#34;&#34;&#34;Load the losses.&#34;&#34;&#34;
         try:
             with open(&#34;losses.pkl&#34;, &#34;rb&#34;) as file:
@@ -320,7 +322,7 @@ class highscore:
             self.losses = {}
         return self.losses
 
-    def show_highscore(self):
+    def show_highscore(self): #pragma: no cover 
         &#34;&#34;&#34;Show the highscore.&#34;&#34;&#34;
         hall_of_fame = [
             colors.YELLOW + &#34;****************&#34; + colors.RESET + &#34;\n&#34; +
@@ -338,7 +340,7 @@ class highscore:
             else:
                 return
 
-    def add_highscore(self, winner):
+    def add_highscore(self, winner): #pragma: no cover
         &#34;&#34;&#34;Add the winner to the highscore.&#34;&#34;&#34;
         self.load_highscore()
         if winner == &#34;&#34; or winner is None:
@@ -368,11 +370,11 @@ class highscore:
             self.highscore_dict = {}
         return self.highscore_dict
 
-    def get_highscore(self):
+    def get_highscore(self): #pragma: no cover
         &#34;&#34;&#34;Get the highscore.&#34;&#34;&#34;
         return self.highscore_dict
 
-    def get_losses(self):
+    def get_losses(self): #pragma: no cover
         &#34;&#34;&#34;Get the losses.&#34;&#34;&#34;
         return self.losses</code></pre>
 </details>
@@ -387,7 +389,7 @@ class highscore:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def add_highscore(self, winner):
+<pre><code class="python">def add_highscore(self, winner): #pragma: no cover
     &#34;&#34;&#34;Add the winner to the highscore.&#34;&#34;&#34;
     self.load_highscore()
     if winner == &#34;&#34; or winner is None:
@@ -416,7 +418,7 @@ class highscore:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def add_losses(self, loser):
+<pre><code class="python">def add_losses(self, loser): #pragma: no cover
     &#34;&#34;&#34;Update the losses.&#34;&#34;&#34;
     self.load_losses()
     if loser == &#34;&#34;:
@@ -445,7 +447,7 @@ class highscore:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def change_name(self):
+<pre><code class="python">def change_name(self): #pragma: no cover
     &#34;&#34;&#34;Change the name of the player at the highscore board.&#34;&#34;&#34;
     print(&#34;Change the name of the player. \n&#34;)
     name_loop = True
@@ -481,6 +483,7 @@ class highscore:
             print(f&#34;{new_name} is the new name.\n&#34;)
             boolean = False
 
+    # If the old name is in the highcore_dict, replace it with the new name.
     if old_name in self.highscore_dict:
         self.highscore_dict[new_name] = self.highscore_dict.pop(old_name)
     if old_name in self.losses:
@@ -511,7 +514,7 @@ class highscore:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_highscore(self):
+<pre><code class="python">def get_highscore(self): #pragma: no cover
     &#34;&#34;&#34;Get the highscore.&#34;&#34;&#34;
     return self.highscore_dict</code></pre>
 </details>
@@ -525,7 +528,7 @@ class highscore:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_losses(self):
+<pre><code class="python">def get_losses(self): #pragma: no cover
     &#34;&#34;&#34;Get the losses.&#34;&#34;&#34;
     return self.losses</code></pre>
 </details>
@@ -560,7 +563,7 @@ class highscore:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def load_losses(self):
+<pre><code class="python">def load_losses(self): #pragma: no cover
     &#34;&#34;&#34;Load the losses.&#34;&#34;&#34;
     try:
         with open(&#34;losses.pkl&#34;, &#34;rb&#34;) as file:
@@ -579,7 +582,7 @@ class highscore:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def show_highscore(self):
+<pre><code class="python">def show_highscore(self): #pragma: no cover 
     &#34;&#34;&#34;Show the highscore.&#34;&#34;&#34;
     hall_of_fame = [
         colors.YELLOW + &#34;****************&#34; + colors.RESET + &#34;\n&#34; +
@@ -607,7 +610,7 @@ class highscore:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def show_losses(self):
+<pre><code class="python">def show_losses(self): #pragma: no cover
     &#34;&#34;&#34;Show the losses for all players.&#34;&#34;&#34;
     hall_of_fame = [
         colors.BLUE + &#34;*****************&#34; + colors.RESET + &#34;\n&#34; +

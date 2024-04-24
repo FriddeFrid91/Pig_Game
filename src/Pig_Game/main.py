@@ -5,6 +5,7 @@ from player_vs_player import player_vs_player
 from player_vs_computer import player_vs_computer
 from highscore import highscore
 from colors import colors
+from checking_name import CheckingName
 
 
 def main():
@@ -45,9 +46,10 @@ def main():
                                        + colors.RESET)
                     if difficulty.lower() not in ["easy", "medium", "hard"]:
                         print(colors.RED
-                              + "Invalid input. Please enter "
+                              + "Invalid input. Please try again. "
                               + "easy, medium, or hard." + colors.RESET)
                         continue
+
                     else:
                         boolean = False
                 game = player_vs_computer()
@@ -56,47 +58,8 @@ def main():
             if user_choice == 2:
                 print(colors.BLUE + colors.TextStyles.BOLD
                       + "Player Vs Player" + colors.RESET)
-                boolean = True
-                while boolean:
-                    player_1 = input(colors.CYAN + "Enter the name "
-                                     + "of player 1: " + colors.RESET)
-                    if len(player_1) < 2 or len(player_1) > 10 or player_1 == "":
-                        print(colors.BLUE + "Please enter a between "
-                              + "2 and 10 characters." + colors.RESET)
-                        continue
-                    else:
-                        confirm_name = input(f"Is {player_1} the correct name (yes/no)? ")
-                        if confirm_name.lower() == "no":
-                            continue
-                        elif confirm_name.lower() == "yes":
-                            boolean = False
-                        else:
-                            print(colors.RED + "Invalid input. Please enter yes or no."
-                                  + colors.RESET)
-                            continue
-                boolean = True
-                while boolean:
-                    player_2 = input(colors.CYAN + "Enter the name "
-                                     + "of player 2: " + colors.RESET)
-                    if len(player_2) < 2 or len(player_2) > 10 or player_2 == "":
-                        print(colors.BLUE + "Please enter a between "
-                              + "2 and 10 characters." + colors.RESET)
-                        continue
-                    elif player_2 == player_1:
-                        print(colors.RED + "The name can't be the same as player 1!"
-                              + colors.RESET)
-                        continue
-                    else:
-                        confirm_name = input(f"Is {player_2} the correct name (yes/no)? ")
-                        if confirm_name.lower() == "no":
-                            continue
-                        elif confirm_name.lower() == "yes":
-                            boolean = False
-                        else:
-                            print(colors.RED + "Invalid input. Please enter yes or no."
-                                  + colors.RESET)
-                            continue
-
+                name = CheckingName()
+                player_1, player_2 = name.checking_name_function()
                 new_game = player_vs_player()
                 winner = new_game.two_player_game(player_1, player_2)
                 loser = new_game.get_loser()
@@ -108,6 +71,7 @@ def main():
                     pass
 
             if user_choice == 3:
+                # Display the rules of the game.
                 the_rules = Rules()
                 print(the_rules)
                 print(colors.BLUE + colors.TextStyles.BOLD + "Press any "
@@ -115,6 +79,7 @@ def main():
                 input()
 
             if user_choice == 4:
+                # Display the highscore board.
                 chart.load_highscore()
                 chart.load_losses()
                 chart.show_highscore()
@@ -124,6 +89,7 @@ def main():
                 input()
 
             if user_choice == 5:
+                # Change the name of the player in the highscore board.
                 print(colors.CYAN + "Change name" + colors.RESET)
                 chart.load_highscore()
                 chart.load_losses()
@@ -133,24 +99,9 @@ def main():
                 input()
 
             if user_choice == 6:
-                print(colors.PINK + colors.TextStyles.BOLD + "Thank you "
-                      + "for playing Pig!" + colors.RESET)
-                print(colors.YELLOW + "*************************"
-                      + colors.RESET)
-                print(colors.CYAN + colors.TextStyles.ITALIC
-                      + "***CREDITS TO STUDENT DEVELOPERS!***" + colors.RESET)
-                print(colors.YELLOW + "*************************"
-                      + colors.RESET)
-                print(colors.GREEN + colors.TextStyles.ITALIC
-                      + "* ~Frida Johannesson~" + colors.RESET)
-                print(colors.GREEN + colors.TextStyles.ITALIC
-                      + "* ~Merjam Farj-Beibani~" + colors.RESET)
-                print(colors.GREEN + colors.TextStyles.ITALIC
-                      + "* ~Sara Shmerti~" + colors.RESET)
-                print(colors.YELLOW + "*************************"
-                      + colors.RESET)
-                print(colors.PINK + colors.TextStyles.BOLD + "Goodbye!"
-                      + colors.RESET)
+                # Display the credits and quit the game.
+                student_credit = piggy.credits_message()
+                print(student_credit)
                 break
 
             if user_choice not in [1, 2, 3, 4, 5, 6]:

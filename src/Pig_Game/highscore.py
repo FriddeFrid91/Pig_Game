@@ -4,7 +4,7 @@ from colors import colors
 
 
 class highscore: #pragma: no cover
-    """Class for highscore."""
+    """Class for the highscore board."""
 
     def __init__(self):
         """Initialize the highscore."""
@@ -110,7 +110,7 @@ class highscore: #pragma: no cover
             self.losses = {}
         return self.losses
 
-    def show_highscore(self): #pragma: no cover 
+    def show_highscore(self): #pragma: no cover
         """Show the highscore."""
         hall_of_fame = [
             colors.YELLOW + "****************" + colors.RESET + "\n" +

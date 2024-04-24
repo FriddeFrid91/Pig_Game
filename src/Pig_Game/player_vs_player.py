@@ -15,6 +15,10 @@ class player_vs_player:
         """Set the loser."""
         self.loser = loser
 
+    def set_winner(self, winner):
+        """Set the winner."""
+        self.winner = winner
+
     def two_player_game(self, name_1, name_2):
         """Simulate a two player game of Pig."""
         print(">> Welcome to a game of Pig! <<\n")
@@ -43,6 +47,9 @@ class player_vs_player:
                         self.loser = player_1.name
                         self.set_loser(player_1.name)
 
+                    self.set_winner(current_player.name)
+                    self.get_winner()
+
                     return current_player.name
 
                 if current_player.get_score() >= 200:
@@ -70,3 +77,7 @@ class player_vs_player:
     def get_loser(self):
         """Get the loser."""
         return self.loser
+
+    def get_winner(self):
+        """Get the winner."""
+        return self.winner

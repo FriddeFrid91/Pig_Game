@@ -2,6 +2,7 @@
 
 from colors import colors
 
+
 class Rules:
     """This class contains the rules of the game."""
 

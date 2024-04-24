@@ -34,6 +34,7 @@ from colors import colors
 
 class Computer:
     &#34;&#34;&#34;Class represennting a computer player.&#34;&#34;&#34;
+
     def __init__(self):
         &#34;&#34;&#34;Initialize the computer player.&#34;&#34;&#34;
         self.name = &#34;Computer&#34;
@@ -98,7 +99,7 @@ class Computer:
         &#34;&#34;&#34;Set the difficulty to medium.&#34;&#34;&#34;
         roll = self.Dice.roll_the_dice()
 
-        counting_round = 0  
+        counting_round = 0
         boolean = True
         while boolean:
             if counting_round == 3:
@@ -128,7 +129,6 @@ class Computer:
                 print(colors.GREEN + f&#34;The computer&#39;s score is {self.score}.\n&#34;
                       + colors.RESET)
                 counting_round += 1
-    
 
     def hard_difficulty(self):
         &#34;&#34;&#34;Set the difficulty to hard.&#34;&#34;&#34;
@@ -146,8 +146,8 @@ class Computer:
                 break
             if roll == 1:
                 print(f&#34;The computer rolled a {roll}.\n&#34;)
-                print(colors.RED + &#34;Oink, oink! The computer lose any points &#34; +
-                      &#34;in this round!\n&#34; + colors.RESET)
+                print(colors.RED + &#34;Oink, oink! The computer lose any points &#34;
+                      + &#34;in this round!\n&#34; + colors.RESET)
                 boolean = True
                 break
             elif roll == 15:
@@ -187,6 +187,7 @@ class Computer:
 </summary>
 <pre><code class="python">class Computer:
     &#34;&#34;&#34;Class represennting a computer player.&#34;&#34;&#34;
+
     def __init__(self):
         &#34;&#34;&#34;Initialize the computer player.&#34;&#34;&#34;
         self.name = &#34;Computer&#34;
@@ -251,7 +252,7 @@ class Computer:
         &#34;&#34;&#34;Set the difficulty to medium.&#34;&#34;&#34;
         roll = self.Dice.roll_the_dice()
 
-        counting_round = 0  
+        counting_round = 0
         boolean = True
         while boolean:
             if counting_round == 3:
@@ -281,7 +282,6 @@ class Computer:
                 print(colors.GREEN + f&#34;The computer&#39;s score is {self.score}.\n&#34;
                       + colors.RESET)
                 counting_round += 1
-    
 
     def hard_difficulty(self):
         &#34;&#34;&#34;Set the difficulty to hard.&#34;&#34;&#34;
@@ -299,8 +299,8 @@ class Computer:
                 break
             if roll == 1:
                 print(f&#34;The computer rolled a {roll}.\n&#34;)
-                print(colors.RED + &#34;Oink, oink! The computer lose any points &#34; +
-                      &#34;in this round!\n&#34; + colors.RESET)
+                print(colors.RED + &#34;Oink, oink! The computer lose any points &#34;
+                      + &#34;in this round!\n&#34; + colors.RESET)
                 boolean = True
                 break
             elif roll == 15:
@@ -424,8 +424,8 @@ class Computer:
             break
         if roll == 1:
             print(f&#34;The computer rolled a {roll}.\n&#34;)
-            print(colors.RED + &#34;Oink, oink! The computer lose any points &#34; +
-                  &#34;in this round!\n&#34; + colors.RESET)
+            print(colors.RED + &#34;Oink, oink! The computer lose any points &#34;
+                  + &#34;in this round!\n&#34; + colors.RESET)
             boolean = True
             break
         elif roll == 15:
@@ -457,7 +457,7 @@ class Computer:
     &#34;&#34;&#34;Set the difficulty to medium.&#34;&#34;&#34;
     roll = self.Dice.roll_the_dice()
 
-    counting_round = 0  
+    counting_round = 0
     boolean = True
     while boolean:
         if counting_round == 3:

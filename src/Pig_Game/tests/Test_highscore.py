@@ -12,9 +12,11 @@ class TestHighscore(unittest.TestCase):
         self.highscore_instance = highscore()
         self.test_highscore_data = {"Player1": 3, "Player2": 2}
 
-    def test_change_name(self):
+    @patch('builtins.input', side_effect=['yes', 'no', 'quit', 'cheat'])
+    def test_change_name(self, mocked_input):
         """Test the change_name function."""
         # Mock the print function
+        mocked_input.side_effect = ['quit', 'Player1', 'Player2', 'Player3']
         with patch('builtins.print') as mock_print:
             self.assertIsNone(self.highscore_instance.change_name())
             mock_print.assert_called()
@@ -111,8 +113,8 @@ class TestHighscore(unittest.TestCase):
         # Mock the pickle.load function to return sample data
         with patch('pickle.load', return_value={"Player1": 3, "Player2": 2}):
             self.highscore_instance.load_losses()
-            self.assertEqual(self.highscore_instance.get_losses(), {"Player1": 3,
-                                                                    "Player2": 2})
+            self.assertEqual(self.highscore_instance.get_losses(),
+                             {"Player1": 3, "Player2": 2})
 
     def test_load_losses_file_not_found(self):
         """Test the load_losses function when the file is not found."""
