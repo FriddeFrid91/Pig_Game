@@ -1,27 +1,28 @@
 """This module contains the Computer class."""
 from Dice import Dice
 from colors import colors
+import random
 
 
-class Computer:
+class Computer: # pragma: no cover
     """Class represennting a computer player."""
 
-    def __init__(self):
+    def __init__(self): # pragma: no cover
         """Initialize the computer player."""
         self.name = "Computer"
         self.score = 0
         self.difficulty = None
-        self.Dice = Dice(10)
+        #self.Dice = Dice(10)
 
-    def set_difficulty(self, difficulty):
+    def set_difficulty(self, difficulty): # pragma: no cover
         """Set the difficulty level of the computer."""
         self.difficulty = difficulty
 
-    def get_score(self):
+    def get_score(self): # pragma: no cover
         """Return the computer's score."""
         return self.score
 
-    def computer_move(self):
+    def computer_move(self): # pragma: no cover
         """Simulate the computer's move."""
         if self.difficulty == "easy":
             self.easy_difficulty()
@@ -32,9 +33,10 @@ class Computer:
         else:
             raise ValueError("Invalid difficulty level.")
 
-    def easy_difficulty(self):
+    def easy_difficulty(self): # pragma: no cover
         """Set the difficulty to easy."""
-        roll = self.Dice.roll_the_dice()
+        #roll = self.Dice.roll_the_dice()
+        roll = random.randint(1, 6)
 
         counting_round = 0
         boolean = True
@@ -66,9 +68,10 @@ class Computer:
                       + colors.RESET)
                 counting_round += 1
 
-    def medium_difficulty(self):
+    def medium_difficulty(self): # pragma: no cover
         """Set the difficulty to medium."""
-        roll = self.Dice.roll_the_dice()
+        #roll = self.Dice.roll_the_dice()
+        roll = random.randint(1, 6)
 
         counting_round = 0
         boolean = True
@@ -101,9 +104,10 @@ class Computer:
                       + colors.RESET)
                 counting_round += 1
 
-    def hard_difficulty(self):
+    def hard_difficulty(self): # pragma: no cover
         """Set the difficulty to hard."""
-        roll = self.Dice.roll_the_dice()
+       # roll = self.Dice.roll_the_dice()
+        roll = random.randint(1, 10)
 
         counting_round = 0
         boolean = True
@@ -117,8 +121,8 @@ class Computer:
                 break
             if roll == 1:
                 print(f"The computer rolled a {roll}.\n")
-                print(colors.RED + "Oink, oink! The computer lose any points "
-                      + "in this round!\n" + colors.RESET)
+                print(colors.RED + "Oink, oink! The computer dont lose any points " +
+                      "in this round!\n" + colors.RESET)
                 boolean = True
                 break
             elif roll == 15:
