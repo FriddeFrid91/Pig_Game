@@ -5,7 +5,7 @@ Pig is a simple dice game where the goal is to be the first player to reach 100 
 ## About this project
 This is a student project for the course Sustainable development course at the university of Kristianstad. If you want to add to the project please contact @FriddeFrid91 at discord.
 ## Gameplay
-Pig offers the option to play with another player or against the computer. When playing against the computer, you can choose the difficulty level. It is possible to cheat on a round by writign "cheat" when asked if you want to roll the dice again.
+Pig offers the option to play with another player or against the computer. When playing against the computer, you can choose the difficulty level. It is possible to cheat on a round by writing "cheat" when asked if you want to roll the dice again.
 
 ## Rules 🎲
 - Each player takes turns rolling a single die.
@@ -52,8 +52,9 @@ Follow these instructions to generate documentation and UML diagrams.
 **- Verify Installed Packages:** To confirm that the required packages are installed, you can run make installed in your terminal. This command checks and lists the installed virtual packages.
 
 ### Install the dot command to create the UML diagrams
-
-- choco install graphviz (Window)
+```
+choco install graphviz (Window)
+```
 - Navigate to the game directory:
 ```
 cd Pig/src/Pig_Game
