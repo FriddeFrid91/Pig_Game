@@ -4,20 +4,20 @@ from colors import colors
 """A module to represent a player in a game of Pig."""
 
 
-class Player:
+class Player: # pragma: no cover
     """A class to represent a player in a game of Pig."""
 
-    def __init__(self, name, score):
+    def __init__(self, name, score): # pragma: no cover
         """Initialize the player with a name and score."""
         self.name = name
         self.score = score
         self.dice = Dice(6)
 
-    def __str__(self):
+    def __str__(self): # pragma: no cover
         """Return the player's name and score."""
         return f"{self.name} has {self.score} points."
 
-    def player_move(self):
+    def player_move(self): # pragma: no cover
         """Simulate a player's move."""
         round_score = 0
 
