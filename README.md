@@ -11,6 +11,8 @@ Pig offers the option to play with another player or against the computer. When 
 - After every roll, the player has a choice: they can either save the total points they have gathered and pass the die to the other player, or they can roll the die again.
 - If a player rolls a 1, they lose all accumulated points from the current round.
 
+## Intelligence 
+
 ## Installation
 - Clone this repository to your local machine:
 ```
