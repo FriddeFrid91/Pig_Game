@@ -3,12 +3,11 @@ from colors import colors
 
 
 class Menu:
-    """Menu class."""
-    def __init__(self):
-        """Menu constructor."""
-        self.menu_options = 0
-
     """This is a class for the menu of the game."""
+
+    def __init__(self):
+        """This class initializes the menu of the game."""
+        pass
 
     def show_pig(self):
         """Show the pig."""
@@ -24,15 +23,31 @@ class Menu:
 
     def show_menu(self):
         """Generate the menu text."""
-        menu_text = ""
-        menu_text += colors.PINK + colors.TextStyles.BOLD + "Welcome to a game of Pig!" + colors.RESET + "\n"
-        menu_text += colors.YELLOW + "*************************" + colors.RESET + "\n"
-        menu_text += colors.BLUE + colors.TextStyles.ITALIC +"* 1. Player Vs Computer *" + colors.RESET + "\n"
-        menu_text += colors.BLUE + colors.TextStyles.ITALIC +"* 2. Player Vs Player   *" + colors.RESET + "\n"
-        menu_text += colors.BLUE + colors.TextStyles.ITALIC +"* 3. Rules              *" + colors.RESET + "\n"
-        menu_text += colors.BLUE + colors.TextStyles.ITALIC +"* 4. Highscore          *" + colors.RESET + "\n"
-        menu_text += colors.BLUE + colors.TextStyles.ITALIC +"* 5. Change name        *" + colors.RESET + "\n"
-        menu_text += colors.YELLOW + colors.TextStyles.ITALIC +"*************************" + colors.RESET + "\n"
-        menu_text += colors.GREEN + colors.TextStyles.ITALIC +"* 6. Exit               *" + colors.RESET + "\n"
-        menu_text += colors.YELLOW + colors.TextStyles.ITALIC +"*************************" + colors.RESET + "\n"
+        menu_text = (
+            f"{colors.PINK}{colors.TextStyles.BOLD}" + "Welcome to a game of Pig!" + colors.RESET + "\n"
+            f"{colors.YELLOW}" + "*************************" + colors.RESET + "\n"
+            f"{colors.BLUE}{colors.TextStyles.ITALIC}" + "* 1. Player Vs Computer *" + colors.RESET + "\n"
+            f"{colors.BLUE}{colors.TextStyles.ITALIC}" + "* 2. Player Vs Player   *" + colors.RESET + "\n"
+            f"{colors.BLUE}{colors.TextStyles.ITALIC}" + "* 3. Rules              *" + colors.RESET + "\n"
+            f"{colors.BLUE}{colors.TextStyles.ITALIC}" + "* 4. Highscore          *" + colors.RESET + "\n"
+            f"{colors.BLUE}{colors.TextStyles.ITALIC}" + "* 5. Change name        *" + colors.RESET + "\n"
+            f"{colors.YELLOW}{colors.TextStyles.ITALIC}" + "*************************" + colors.RESET + "\n"
+            f"{colors.GREEN}{colors.TextStyles.ITALIC}" + "* 6. Exit               *" + colors.RESET + "\n"
+            f"{colors.YELLOW}{colors.TextStyles.ITALIC}" + "*************************" + colors.RESET + "\n"
+        )
         return menu_text
+
+    def show_credits(self):
+        """Generate the credits text."""
+        credits = (
+            f"{colors.PINK}{colors.TextStyles.BOLD}Thank you for playing Pig!{colors.RESET}\n"
+            f"{colors.YELLOW}*************************{colors.RESET}\n"
+            f"{colors.CYAN}{colors.TextStyles.ITALIC}***CREDITS TO STUDENT DEVELOPERS!***{colors.RESET}\n"
+            f"{colors.YELLOW}*************************{colors.RESET}\n"
+            f"{colors.GREEN}{colors.TextStyles.ITALIC}* ~Frida Johannesson~{colors.RESET}\n"
+            f"{colors.GREEN}{colors.TextStyles.ITALIC}* ~Merjam Farj-Beibani~{colors.RESET}\n"
+            f"{colors.GREEN}{colors.TextStyles.ITALIC}* ~Sara Shmerti~{colors.RESET}\n"
+            f"{colors.YELLOW}*************************{colors.RESET}\n"
+            f"{colors.PINK}{colors.TextStyles.BOLD}Goodbye!{colors.RESET}"
+)
+        return credits

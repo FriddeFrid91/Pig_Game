@@ -1,12 +1,12 @@
-"""Unittest for Player.py."""
+"""Unittest for Player class."""
 import unittest
 from Player import Player
 from unittest.mock import patch
-"""unittest for Player.py"""
 
 
 class Test_Player(unittest.TestCase):
     """Test for Player class."""
+
     def test_player_name(self):
         """Test for player_name method."""
         player_1 = Player("TestPlayer1", 0)

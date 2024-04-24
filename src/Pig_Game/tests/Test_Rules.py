@@ -1,8 +1,6 @@
-"""unittest for Rules."""
-
+"""unittest for the Rules class."""
 import unittest
 from Rules import Rules
-"""Testing the Rules class"""
 
 
 class Test_Rules(unittest.TestCase):

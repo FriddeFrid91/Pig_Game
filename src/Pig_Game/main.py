@@ -8,7 +8,7 @@ from colors import colors
 
 
 def main():
-    """Doing what the main function does."""
+    """Run the main method."""
     chart = highscore()
     winner = ""
 
@@ -45,9 +45,10 @@ def main():
                                        + colors.RESET)
                     if difficulty.lower() not in ["easy", "medium", "hard"]:
                         print(colors.RED
-                              + "Invalid input. Please enter "
+                              + "Invalid input. Please try again. "
                               + "easy, medium, or hard." + colors.RESET)
                         continue
+
                     else:
                         boolean = False
                 game = player_vs_computer()
@@ -133,24 +134,9 @@ def main():
                 input()
 
             if user_choice == 6:
-                print(colors.PINK + colors.TextStyles.BOLD + "Thank you "
-                      + "for playing Pig!" + colors.RESET)
-                print(colors.YELLOW + "*************************"
-                      + colors.RESET)
-                print(colors.CYAN + colors.TextStyles.ITALIC
-                      + "***CREDITS TO STUDENT DEVELOPERS!***" + colors.RESET)
-                print(colors.YELLOW + "*************************"
-                      + colors.RESET)
-                print(colors.GREEN + colors.TextStyles.ITALIC
-                      + "* ~Frida Johannesson~" + colors.RESET)
-                print(colors.GREEN + colors.TextStyles.ITALIC
-                      + "* ~Merjam Farj-Beibani~" + colors.RESET)
-                print(colors.GREEN + colors.TextStyles.ITALIC
-                      + "* ~Sara Shmerti~" + colors.RESET)
-                print(colors.YELLOW + "*************************"
-                      + colors.RESET)
-                print(colors.PINK + colors.TextStyles.BOLD + "Goodbye!"
-                      + colors.RESET)
+                student_credit = piggy.show_credits()
+                print(student_credit)
+
                 break
 
             if user_choice not in [1, 2, 3, 4, 5, 6]:
