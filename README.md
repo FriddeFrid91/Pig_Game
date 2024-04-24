@@ -37,6 +37,7 @@ cd Pig
 Run the makefile to install dependencies and setup the environment:
 ```
 make install
+```
 
 ## Generate documentation
 
