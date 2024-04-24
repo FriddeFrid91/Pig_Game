@@ -43,18 +43,19 @@ make install
 
 Follow these instructions to generate documentation and UML diagrams.
 
-# Installing venv
+### Installing venv
 
-- Open Directory in Terminal, write (cd Pig) and press enter
-- Continue to write (python3 -m venv .venv) and (make venv)
-- No you need to activate the venv, write for Windows (. .venv/Scripts/activate)
-- Install the virtual packages in venv. write (make install)
-- Check the installed virtual packages (make installed)
+- Navigate to the Project Directory: Open your terminal and change the directory to the project folder named "Pig" by typing cd Pig and hitting Enter.
+- Create a Virtual Environment: Use the command python3 -m venv .venv to set up a virtual environment named .venv in the current directory. You can alternatively run make venv if you have a Makefile with this command.
+- Activate the Virtual Environment: Activate the virtual environment by running the command . .venv/Scripts/activate in your terminal.
+- Install Required Packages: Install the necessary packages within the virtual environment by executing make install. This command ensures that all dependencies are installed correctly.
+- Verify Installed Packages: To confirm that the required packages are installed, you can run make installed in your terminal. This command checks and lists the installed virtual packages.
 
-# Install the dot command to help generating the UML pictures from source code structure.
+### Install the dot command to help generating the UML pictures from source code structure.
 
 - choco install graphviz (Window)
-# After virtuel enviroment is opened and graphviz is installed open up rpsg map is necessary in Examination2.
+  
+### After virtuel enviroment is opened and graphviz is installed open up rpsg map is necessary in Examination2.
 
 cd Examination2 (if not already opened)
 cd src
