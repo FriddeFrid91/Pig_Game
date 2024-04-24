@@ -60,8 +60,6 @@ cd Pig/src/Pig_Game
 ```
 make pyreverse
 And now UML diagram is installed.
-```
-
 
 Now you're ready to play Pig! Have fun rolling the dice and aiming for that 100-point mark! 🐖
 
