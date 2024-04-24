@@ -53,13 +53,15 @@ Follow these instructions to generate documentation and UML diagrams.
 
 ### Install the dot command to create the UML diagrams
 ```
-choco install graphviz (Window)
+choco install graphviz
 ```
 - Navigate to the game directory:
 ```
 cd Pig/src/Pig_Game
 ```
+```
 make pyreverse
+```
 And now UML diagram is installed.
 
 Now you're ready to play Pig! Have fun rolling the dice and aiming for that 100-point mark! 🐖
