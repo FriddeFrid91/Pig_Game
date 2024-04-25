@@ -33,21 +33,22 @@ from colors import colors
 &#34;&#34;&#34;A module to represent a player in a game of Pig.&#34;&#34;&#34;
 
 
-class Player:
+class Player: # pragma: no cover
     &#34;&#34;&#34;A class to represent a player in a game of Pig.&#34;&#34;&#34;
 
-    def __init__(self, name, score):
+    def __init__(self, name, score): # pragma: no cover
         &#34;&#34;&#34;Initialize the player with a name and score.&#34;&#34;&#34;
         self.name = name
         self.score = score
         self.dice = Dice(6)
 
-    def __str__(self):
+    def __str__(self): # pragma: no cover
         &#34;&#34;&#34;Return the player&#39;s name and score.&#34;&#34;&#34;
         return f&#34;{self.name} has {self.score} points.&#34;
 
-    def player_move(self):
+    def player_move(self): # pragma: no cover
         &#34;&#34;&#34;Simulate a player&#39;s move.&#34;&#34;&#34;
+        # This method simulates a player&#39;s move in a game of Pig.
         round_score = 0
 
         while True:
@@ -59,7 +60,7 @@ class Player:
                 self.add_score(current_score)
                 print(colors.YELLOW + &#34;*******************************&#34;
                       + colors.RESET)
-                print(f&#34;{self.name} wins!\n&#34;)
+                print(f&#34;{self.name} wins\n&#34;)
                 print(colors.YELLOW + &#34;*******************************&#34;
                       + colors.RESET)
                 return self.get_score()
@@ -105,6 +106,7 @@ class Player:
                     return
                 else:
                     print(&#34;Invalid input. Please enter yes or no.\n&#34;)
+                    continue
 
     def get_name(self):
         &#34;&#34;&#34;Get the name of the player.&#34;&#34;&#34;
@@ -124,6 +126,8 @@ class Player:
 
     def deduct_score(self, score):
         &#34;&#34;&#34;Deduct the score of the player.&#34;&#34;&#34;
+        # This method deducts the score of the player. It makes sure that 
+        # if the score is less than 0, it is set to 0.
         self.score = score
         if self.score &lt; 0:
             self.score = 0
@@ -150,21 +154,22 @@ class Player:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class Player:
+<pre><code class="python">class Player: # pragma: no cover
     &#34;&#34;&#34;A class to represent a player in a game of Pig.&#34;&#34;&#34;
 
-    def __init__(self, name, score):
+    def __init__(self, name, score): # pragma: no cover
         &#34;&#34;&#34;Initialize the player with a name and score.&#34;&#34;&#34;
         self.name = name
         self.score = score
         self.dice = Dice(6)
 
-    def __str__(self):
+    def __str__(self): # pragma: no cover
         &#34;&#34;&#34;Return the player&#39;s name and score.&#34;&#34;&#34;
         return f&#34;{self.name} has {self.score} points.&#34;
 
-    def player_move(self):
+    def player_move(self): # pragma: no cover
         &#34;&#34;&#34;Simulate a player&#39;s move.&#34;&#34;&#34;
+        # This method simulates a player&#39;s move in a game of Pig.
         round_score = 0
 
         while True:
@@ -176,7 +181,7 @@ class Player:
                 self.add_score(current_score)
                 print(colors.YELLOW + &#34;*******************************&#34;
                       + colors.RESET)
-                print(f&#34;{self.name} wins!\n&#34;)
+                print(f&#34;{self.name} wins\n&#34;)
                 print(colors.YELLOW + &#34;*******************************&#34;
                       + colors.RESET)
                 return self.get_score()
@@ -222,6 +227,7 @@ class Player:
                     return
                 else:
                     print(&#34;Invalid input. Please enter yes or no.\n&#34;)
+                    continue
 
     def get_name(self):
         &#34;&#34;&#34;Get the name of the player.&#34;&#34;&#34;
@@ -241,6 +247,8 @@ class Player:
 
     def deduct_score(self, score):
         &#34;&#34;&#34;Deduct the score of the player.&#34;&#34;&#34;
+        # This method deducts the score of the player. It makes sure that 
+        # if the score is less than 0, it is set to 0.
         self.score = score
         if self.score &lt; 0:
             self.score = 0
@@ -273,6 +281,8 @@ class Player:
 </summary>
 <pre><code class="python">def deduct_score(self, score):
     &#34;&#34;&#34;Deduct the score of the player.&#34;&#34;&#34;
+    # This method deducts the score of the player. It makes sure that 
+    # if the score is less than 0, it is set to 0.
     self.score = score
     if self.score &lt; 0:
         self.score = 0
@@ -316,8 +326,9 @@ class Player:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def player_move(self):
+<pre><code class="python">def player_move(self): # pragma: no cover
     &#34;&#34;&#34;Simulate a player&#39;s move.&#34;&#34;&#34;
+    # This method simulates a player&#39;s move in a game of Pig.
     round_score = 0
 
     while True:
@@ -329,7 +340,7 @@ class Player:
             self.add_score(current_score)
             print(colors.YELLOW + &#34;*******************************&#34;
                   + colors.RESET)
-            print(f&#34;{self.name} wins!\n&#34;)
+            print(f&#34;{self.name} wins\n&#34;)
             print(colors.YELLOW + &#34;*******************************&#34;
                   + colors.RESET)
             return self.get_score()
@@ -374,7 +385,8 @@ class Player:
                 print(f&#34;{self.name} has quit the game.&#34;)
                 return
             else:
-                print(&#34;Invalid input. Please enter yes or no.\n&#34;)</code></pre>
+                print(&#34;Invalid input. Please enter yes or no.\n&#34;)
+                continue</code></pre>
 </details>
 </dd>
 <dt id="Player.Player.set_score"><code class="name flex">

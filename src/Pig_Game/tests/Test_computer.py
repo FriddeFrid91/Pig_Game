@@ -1,6 +1,5 @@
 """Test case for the computer class."""
 import unittest
-
 from Computer import Computer
 """Test case for the Computer class."""
 

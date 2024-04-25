@@ -5,6 +5,7 @@
     
         classDiagram
           class Computer {
+            Dice
             difficulty : NoneType
             name : str
             score : int
@@ -29,6 +30,7 @@
           }
           class Menu {
             menu_options : int
+            credits_message()
             show_menu()
             show_pig()
           }
@@ -44,53 +46,17 @@
             set_score(score)
           }
           class Rules {
-            rules : str
-            get_rules()
+            rules : list
             show_rules()
           }
-          class TestDice {
-            show_the_dice()
-            test_get_dice()
-            test_roll_the_dice()
-            test_set_dice()
-          }
-          class TestHighscore {
-            highscore_instance
-            test_highscore_data : dict
-            setUp()
-            test_add_highscore()
-            test_add_highscore_eof_error()
-            test_add_highscore_file_not_found()
-            test_add_highscore_no_winner()
-            test_add_losses()
-            test_change_name()
-            test_get_highscore()
-            test_get_losses()
-            test_load_highscore()
-            test_load_highscore_eof_error()
-            test_load_highscore_file_not_found()
-            test_load_losses()
-            test_load_losses_eof_error()
-            test_load_losses_file_not_found()
-            test_show_highscore()
-            test_show_losses()
-          }
-          class TestPlayerVsPlayer {
-            test_get_loser()
-          }
-          class Test_Player {
-            mock_roll
-            player
-            roll_value
-            test_add_score()
-            test_deduct_score()
-            test_get_score()
-            test_player_move()*
-            test_player_name()
-            test_set_score()
-          }
-          class Test_Rules {
-            test_get_rules()
+          class TextStyles {
+            BLINK : str
+            BOLD : str
+            HIDDEN : str
+            ITALIC : str
+            RESET : str
+            REVERSE : str
+            UNDERLINE : str
           }
           class colors {
             BLUE : str
@@ -128,10 +94,6 @@
             get_loser()
             set_loser(loser)
             two_player_game(name_1, name_2)
-          }
-          class test_menu {
-            test_show_menu()
-            test_show_pig()
           }
   
        </div>

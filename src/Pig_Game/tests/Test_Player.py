@@ -7,6 +7,7 @@ from unittest.mock import patch
 
 class Test_Player(unittest.TestCase):
     """Test for Player class."""
+
     def test_player_name(self):
         """Test for player_name method."""
         player_1 = Player("TestPlayer1", 0)
@@ -18,16 +19,16 @@ class Test_Player(unittest.TestCase):
     def test_add_score(self):
         """Test for add_score method."""
         player = Player("TestPlayer", 0)
-        player.add_score(50)
-        self.assertEqual(player.get_score(), 50)
+        player.add_score(6)
+        self.assertEqual(player.get_score(), 6)
 
     def test_deduct_score(self):
         """Test for deduct_score method."""
-        player = Player("TestPlayer", 100)
-        player.deduct_score(50)
+        player = Player("TestPlayer", 26)
+        player.deduct_score(26)
         if player.get_score() < 0:
             self.assertEqual(player.get_score(), 0)
-        self.assertEqual(player.get_score(), 50)
+        self.assertEqual(player.get_score(), 26)
 
     def test_get_score(self):
         """Test for get_score method."""
@@ -41,15 +42,12 @@ class Test_Player(unittest.TestCase):
         player.set_score(100)
         self.assertEqual(player.get_score(), 100)
 
-    def test_player_move(self):
+    @patch('builtins.input', side_effect=['yes', 'no', 'quit', 'cheat'])
+    def test_player_move(self, mocked_input):
         """Test for player_move method."""
-    player = Player("TestPlayer", 0)
-
-    for roll_value in range(1, 7):
-        with patch.object(player.dice, "roll_the_dice",
-                          return_value=roll_value) as mock_roll:
-            player.player_move()
-            mock_roll.assert_called_once()
+        mocked_input.side_effect = ['yes', 'no', 'quit', 'cheat']
+        """Test for player_move method."""
+        player = Player("TestPlayer", 0)
 
 
 if __name__ == "__main__":

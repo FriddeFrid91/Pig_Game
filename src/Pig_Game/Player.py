@@ -19,6 +19,7 @@ class Player: # pragma: no cover
 
     def player_move(self): # pragma: no cover
         """Simulate a player's move."""
+        # This method simulates a player's move in a game of Pig.
         round_score = 0
 
         while True:
@@ -30,7 +31,7 @@ class Player: # pragma: no cover
                 self.add_score(current_score)
                 print(colors.YELLOW + "*******************************"
                       + colors.RESET)
-                print(f"{self.name} wins!\n")
+                print(f"{self.name} wins\n")
                 print(colors.YELLOW + "*******************************"
                       + colors.RESET)
                 return self.get_score()
@@ -76,6 +77,7 @@ class Player: # pragma: no cover
                     return
                 else:
                     print("Invalid input. Please enter yes or no.\n")
+                    continue
 
     def get_name(self):
         """Get the name of the player."""
@@ -95,6 +97,8 @@ class Player: # pragma: no cover
 
     def deduct_score(self, score):
         """Deduct the score of the player."""
+        # This method deducts the score of the player. It makes sure that 
+        # if the score is less than 0, it is set to 0.
         self.score = score
         if self.score < 0:
             self.score = 0

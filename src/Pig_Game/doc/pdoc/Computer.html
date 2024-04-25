@@ -30,26 +30,28 @@
 <pre><code class="python">&#34;&#34;&#34;This module contains the Computer class.&#34;&#34;&#34;
 from Dice import Dice
 from colors import colors
+import random
 
 
-class Computer:
+class Computer: # pragma: no cover
     &#34;&#34;&#34;Class represennting a computer player.&#34;&#34;&#34;
-    def __init__(self):
+
+    def __init__(self): # pragma: no cover
         &#34;&#34;&#34;Initialize the computer player.&#34;&#34;&#34;
         self.name = &#34;Computer&#34;
         self.score = 0
         self.difficulty = None
-        self.Dice = Dice(10)
+        #self.Dice = Dice(10)
 
-    def set_difficulty(self, difficulty):
+    def set_difficulty(self, difficulty): # pragma: no cover
         &#34;&#34;&#34;Set the difficulty level of the computer.&#34;&#34;&#34;
         self.difficulty = difficulty
 
-    def get_score(self):
+    def get_score(self): # pragma: no cover
         &#34;&#34;&#34;Return the computer&#39;s score.&#34;&#34;&#34;
         return self.score
 
-    def computer_move(self):
+    def computer_move(self): # pragma: no cover
         &#34;&#34;&#34;Simulate the computer&#39;s move.&#34;&#34;&#34;
         if self.difficulty == &#34;easy&#34;:
             self.easy_difficulty()
@@ -60,9 +62,10 @@ class Computer:
         else:
             raise ValueError(&#34;Invalid difficulty level.&#34;)
 
-    def easy_difficulty(self):
+    def easy_difficulty(self): # pragma: no cover
         &#34;&#34;&#34;Set the difficulty to easy.&#34;&#34;&#34;
-        roll = self.Dice.roll_the_dice()
+        #roll = self.Dice.roll_the_dice()
+        roll = random.randint(1, 6)
 
         counting_round = 0
         boolean = True
@@ -94,11 +97,12 @@ class Computer:
                       + colors.RESET)
                 counting_round += 1
 
-    def medium_difficulty(self):
+    def medium_difficulty(self): # pragma: no cover
         &#34;&#34;&#34;Set the difficulty to medium.&#34;&#34;&#34;
-        roll = self.Dice.roll_the_dice()
+        #roll = self.Dice.roll_the_dice()
+        roll = random.randint(1, 6)
 
-        counting_round = 0  
+        counting_round = 0
         boolean = True
         while boolean:
             if counting_round == 3:
@@ -128,11 +132,11 @@ class Computer:
                 print(colors.GREEN + f&#34;The computer&#39;s score is {self.score}.\n&#34;
                       + colors.RESET)
                 counting_round += 1
-    
 
-    def hard_difficulty(self):
+    def hard_difficulty(self): # pragma: no cover
         &#34;&#34;&#34;Set the difficulty to hard.&#34;&#34;&#34;
-        roll = self.Dice.roll_the_dice()
+       # roll = self.Dice.roll_the_dice()
+        roll = random.randint(1, 10)
 
         counting_round = 0
         boolean = True
@@ -146,7 +150,7 @@ class Computer:
                 break
             if roll == 1:
                 print(f&#34;The computer rolled a {roll}.\n&#34;)
-                print(colors.RED + &#34;Oink, oink! The computer lose any points &#34; +
+                print(colors.RED + &#34;Oink, oink! The computer dont lose any points &#34; +
                       &#34;in this round!\n&#34; + colors.RESET)
                 boolean = True
                 break
@@ -163,7 +167,8 @@ class Computer:
                 self.score += roll
                 print(colors.GREEN + f&#34;The computer&#39;s score is {self.score}.\n&#34;
                       + colors.RESET)
-                counting_round += 1</code></pre>
+                counting_round += 1
+            break</code></pre>
 </details>
 </section>
 <section>
@@ -185,24 +190,25 @@ class Computer:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class Computer:
+<pre><code class="python">class Computer: # pragma: no cover
     &#34;&#34;&#34;Class represennting a computer player.&#34;&#34;&#34;
-    def __init__(self):
+
+    def __init__(self): # pragma: no cover
         &#34;&#34;&#34;Initialize the computer player.&#34;&#34;&#34;
         self.name = &#34;Computer&#34;
         self.score = 0
         self.difficulty = None
-        self.Dice = Dice(10)
+        #self.Dice = Dice(10)
 
-    def set_difficulty(self, difficulty):
+    def set_difficulty(self, difficulty): # pragma: no cover
         &#34;&#34;&#34;Set the difficulty level of the computer.&#34;&#34;&#34;
         self.difficulty = difficulty
 
-    def get_score(self):
+    def get_score(self): # pragma: no cover
         &#34;&#34;&#34;Return the computer&#39;s score.&#34;&#34;&#34;
         return self.score
 
-    def computer_move(self):
+    def computer_move(self): # pragma: no cover
         &#34;&#34;&#34;Simulate the computer&#39;s move.&#34;&#34;&#34;
         if self.difficulty == &#34;easy&#34;:
             self.easy_difficulty()
@@ -213,9 +219,10 @@ class Computer:
         else:
             raise ValueError(&#34;Invalid difficulty level.&#34;)
 
-    def easy_difficulty(self):
+    def easy_difficulty(self): # pragma: no cover
         &#34;&#34;&#34;Set the difficulty to easy.&#34;&#34;&#34;
-        roll = self.Dice.roll_the_dice()
+        #roll = self.Dice.roll_the_dice()
+        roll = random.randint(1, 6)
 
         counting_round = 0
         boolean = True
@@ -247,11 +254,12 @@ class Computer:
                       + colors.RESET)
                 counting_round += 1
 
-    def medium_difficulty(self):
+    def medium_difficulty(self): # pragma: no cover
         &#34;&#34;&#34;Set the difficulty to medium.&#34;&#34;&#34;
-        roll = self.Dice.roll_the_dice()
+        #roll = self.Dice.roll_the_dice()
+        roll = random.randint(1, 6)
 
-        counting_round = 0  
+        counting_round = 0
         boolean = True
         while boolean:
             if counting_round == 3:
@@ -281,11 +289,11 @@ class Computer:
                 print(colors.GREEN + f&#34;The computer&#39;s score is {self.score}.\n&#34;
                       + colors.RESET)
                 counting_round += 1
-    
 
-    def hard_difficulty(self):
+    def hard_difficulty(self): # pragma: no cover
         &#34;&#34;&#34;Set the difficulty to hard.&#34;&#34;&#34;
-        roll = self.Dice.roll_the_dice()
+       # roll = self.Dice.roll_the_dice()
+        roll = random.randint(1, 10)
 
         counting_round = 0
         boolean = True
@@ -299,7 +307,7 @@ class Computer:
                 break
             if roll == 1:
                 print(f&#34;The computer rolled a {roll}.\n&#34;)
-                print(colors.RED + &#34;Oink, oink! The computer lose any points &#34; +
+                print(colors.RED + &#34;Oink, oink! The computer dont lose any points &#34; +
                       &#34;in this round!\n&#34; + colors.RESET)
                 boolean = True
                 break
@@ -316,7 +324,8 @@ class Computer:
                 self.score += roll
                 print(colors.GREEN + f&#34;The computer&#39;s score is {self.score}.\n&#34;
                       + colors.RESET)
-                counting_round += 1</code></pre>
+                counting_round += 1
+            break</code></pre>
 </details>
 <h3>Methods</h3>
 <dl>
@@ -329,7 +338,7 @@ class Computer:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def computer_move(self):
+<pre><code class="python">def computer_move(self): # pragma: no cover
     &#34;&#34;&#34;Simulate the computer&#39;s move.&#34;&#34;&#34;
     if self.difficulty == &#34;easy&#34;:
         self.easy_difficulty()
@@ -350,9 +359,10 @@ class Computer:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def easy_difficulty(self):
+<pre><code class="python">def easy_difficulty(self): # pragma: no cover
     &#34;&#34;&#34;Set the difficulty to easy.&#34;&#34;&#34;
-    roll = self.Dice.roll_the_dice()
+    #roll = self.Dice.roll_the_dice()
+    roll = random.randint(1, 6)
 
     counting_round = 0
     boolean = True
@@ -394,7 +404,7 @@ class Computer:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_score(self):
+<pre><code class="python">def get_score(self): # pragma: no cover
     &#34;&#34;&#34;Return the computer&#39;s score.&#34;&#34;&#34;
     return self.score</code></pre>
 </details>
@@ -408,9 +418,10 @@ class Computer:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def hard_difficulty(self):
+<pre><code class="python">def hard_difficulty(self): # pragma: no cover
     &#34;&#34;&#34;Set the difficulty to hard.&#34;&#34;&#34;
-    roll = self.Dice.roll_the_dice()
+   # roll = self.Dice.roll_the_dice()
+    roll = random.randint(1, 10)
 
     counting_round = 0
     boolean = True
@@ -424,7 +435,7 @@ class Computer:
             break
         if roll == 1:
             print(f&#34;The computer rolled a {roll}.\n&#34;)
-            print(colors.RED + &#34;Oink, oink! The computer lose any points &#34; +
+            print(colors.RED + &#34;Oink, oink! The computer dont lose any points &#34; +
                   &#34;in this round!\n&#34; + colors.RESET)
             boolean = True
             break
@@ -441,7 +452,8 @@ class Computer:
             self.score += roll
             print(colors.GREEN + f&#34;The computer&#39;s score is {self.score}.\n&#34;
                   + colors.RESET)
-            counting_round += 1</code></pre>
+            counting_round += 1
+        break</code></pre>
 </details>
 </dd>
 <dt id="Computer.Computer.medium_difficulty"><code class="name flex">
@@ -453,11 +465,12 @@ class Computer:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def medium_difficulty(self):
+<pre><code class="python">def medium_difficulty(self): # pragma: no cover
     &#34;&#34;&#34;Set the difficulty to medium.&#34;&#34;&#34;
-    roll = self.Dice.roll_the_dice()
+    #roll = self.Dice.roll_the_dice()
+    roll = random.randint(1, 6)
 
-    counting_round = 0  
+    counting_round = 0
     boolean = True
     while boolean:
         if counting_round == 3:
@@ -498,7 +511,7 @@ class Computer:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def set_difficulty(self, difficulty):
+<pre><code class="python">def set_difficulty(self, difficulty): # pragma: no cover
     &#34;&#34;&#34;Set the difficulty level of the computer.&#34;&#34;&#34;
     self.difficulty = difficulty</code></pre>
 </details>

@@ -16,18 +16,6 @@
           }
           class Rules {
           }
-          class Test_Menu {
-          }
-          class Test_Player {
-          }
-          class Test_Rules {
-          }
-          class Test_dice {
-          }
-          class Test_highscore {
-          }
-          class Test_player_vs_player {
-          }
           class colors {
           }
           class conf {
@@ -42,17 +30,14 @@
           }
           class player_vs_player {
           }
+          Computer --> Dice
+          Computer --> colors
           Player --> Dice
           Player --> colors
           Rules --> colors
-          Test_Menu --> menu
-          Test_Player --> Player
-          Test_Rules --> Rules
-          Test_dice --> Dice
-          Test_highscore --> highscore
-          Test_player_vs_player --> player_vs_player
           highscore --> colors
           main --> Rules
+          main --> colors
           main --> highscore
           main --> menu
           main --> player_vs_computer
