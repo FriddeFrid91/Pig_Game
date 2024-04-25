@@ -68,4 +68,4 @@ class player_vs_computer:
                           + colors.RESET)
                     current_player = self.player
                     break
-            break
+            
