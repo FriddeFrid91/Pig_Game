@@ -5,7 +5,6 @@ from player_vs_player import player_vs_player
 from player_vs_computer import player_vs_computer
 from highscore import highscore
 from colors import colors
-from checking_name import CheckingName
 
 
 def main():
@@ -58,8 +57,47 @@ def main():
             if user_choice == 2:
                 print(colors.BLUE + colors.TextStyles.BOLD
                       + "Player Vs Player" + colors.RESET)
-                name = CheckingName()
-                player_1, player_2 = name.checking_name_function()
+                
+                boolean = True
+                while boolean:
+                    player_1 = input(colors.CYAN + "Enter the name "
+                                     + "of player 1: " + colors.RESET)
+                    if len(player_1) < 2 or len(player_1) > 10 or player_1 == "":
+                        print(colors.BLUE + "Please enter a between "
+                              + "2 and 10 characters." + colors.RESET)
+                        continue
+                    else:
+                        confirm_name = input(f"Is {player_1} the correct name (yes/no)? ")
+                        if confirm_name.lower() == "no":
+                            continue
+                        elif confirm_name.lower() == "yes":
+                            boolean = False
+                        else:
+                            print(colors.RED + "Invalid input. Please write the name again."
+                                  + colors.RESET)
+                            continue
+                boolean = True
+                while boolean:
+                    player_2 = input(colors.CYAN + "Enter the name "
+                                     + "of player 2: " + colors.RESET)
+                    if len(player_2) < 2 or len(player_2) > 10 or player_2 == "":
+                        print(colors.BLUE + "Please enter a between "
+                              + "2 and 10 characters." + colors.RESET)
+                        continue
+                    elif player_2 == player_1:
+                        print(colors.RED + "The name can't be the same as player 1!"
+                              + colors.RESET)
+                        continue
+                    else:
+                        confirm_name = input(f"Is {player_2} the correct name (yes/no)? ")
+                        if confirm_name.lower() == "no":
+                            continue
+                        elif confirm_name.lower() == "yes":
+                            boolean = False
+                        else:
+                            print(colors.RED + "Invalid input. Please write the name again."
+                                  + colors.RESET)
+                            continue
                 new_game = player_vs_player()
                 winner = new_game.two_player_game(player_1, player_2)
                 loser = new_game.get_loser()
@@ -70,6 +108,7 @@ def main():
                 except UnboundLocalError:
                     pass
 
+
             if user_choice == 3:
                 # Display the rules of the game.
                 the_rules = Rules()
@@ -77,6 +116,7 @@ def main():
                 print(colors.BLUE + colors.TextStyles.BOLD + "Press any "
                       + "key to go back to the menu." + colors.RESET)
                 input()
+
 
             if user_choice == 4:
                 # Display the highscore board.

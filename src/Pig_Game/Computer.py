@@ -12,7 +12,7 @@ class Computer:
         self.name = "Computer"
         self.score = 0
         self.difficulty = None
-        #self.Dice = Dice(10)
+       # self.Dice = Dice(10)
 
     def set_difficulty(self, difficulty):
         """Set the difficulty level of the computer."""
@@ -49,6 +49,7 @@ class Computer:
                 boolean = False
                 break
             if roll == 1:
+                print(f"The computer rolled a {roll}.\n")
                 print(colors.RED + "Oink, oink! The computer lost all its " +
                       "points for this round!\n" + colors.RESET)
                 boolean = False
@@ -71,7 +72,7 @@ class Computer:
     def medium_difficulty(self):
         """Set the difficulty to medium."""
         #roll = self.Dice.roll_the_dice()
-        roll = random.randint(1, 6)
+        roll = random.randint(1, 8)
 
         counting_round = 0
         boolean = True
@@ -85,10 +86,11 @@ class Computer:
                 break
             if roll == 1:
                 print(f"The computer rolled a {roll}.\n")
-                print(colors.RED + "Oink, oink! The computer do not lose any " +
-                      "points for this round!\n" + colors.RESET)
+                print(colors.RED + "Oink, oink! The computer lost all its points for this round " +
+                      colors.RESET)
                 boolean = True
                 break
+
             elif roll == 10:
                 print(colors.BLUE + "The computer has decided to hold.\n"
                       + colors.RESET)
@@ -106,8 +108,8 @@ class Computer:
 
     def hard_difficulty(self):
         """Set the difficulty to hard."""
-       # roll = self.Dice.roll_the_dice()
-        roll = random.randint(1, 10)
+        #roll = self.Dice.roll_the_dice()
+        roll = random.randint(1,10)
 
         counting_round = 0
         boolean = True
@@ -121,8 +123,8 @@ class Computer:
                 break
             if roll == 1:
                 print(f"The computer rolled a {roll}.\n")
-                print(colors.RED + "Oink, oink! The computer dont lose any points " +
-                      "in this round!\n" + colors.RESET)
+                print(colors.RED + "Oink, oink! The computer lost all its points " +
+                      "for this round!\n" + colors.RESET)
                 boolean = True
                 break
             elif roll == 15:
