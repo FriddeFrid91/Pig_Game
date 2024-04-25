@@ -40,6 +40,7 @@ class player_vs_computer:
         &#34;&#34;&#34;Initialize the player vs computer game.&#34;&#34;&#34;
         self.player = Player(&#34;&#34;, 0)
         self.computer = Computer()
+        self.loser = None
 
     def set_loser(self, loser):
         &#34;&#34;&#34;Set the loser.&#34;&#34;&#34;
@@ -70,7 +71,7 @@ class player_vs_computer:
                 print(&#34;*********************************&#34;)
                 print(f&#34; &gt;&gt;&gt; {current_player.name}s turn &lt;&lt;&lt;&#34;)
                 print(&#34;*********************************&#34;)
-                
+
                 if current_player == self.player:
                     current_player.player_move()
                 else:
@@ -141,6 +142,7 @@ class player_vs_computer:
         &#34;&#34;&#34;Initialize the player vs computer game.&#34;&#34;&#34;
         self.player = Player(&#34;&#34;, 0)
         self.computer = Computer()
+        self.loser = None
 
     def set_loser(self, loser):
         &#34;&#34;&#34;Set the loser.&#34;&#34;&#34;
@@ -171,7 +173,7 @@ class player_vs_computer:
                 print(&#34;*********************************&#34;)
                 print(f&#34; &gt;&gt;&gt; {current_player.name}s turn &lt;&lt;&lt;&#34;)
                 print(&#34;*********************************&#34;)
-                
+
                 if current_player == self.player:
                     current_player.player_move()
                 else:
@@ -250,7 +252,7 @@ class player_vs_computer:
             print(&#34;*********************************&#34;)
             print(f&#34; &gt;&gt;&gt; {current_player.name}s turn &lt;&lt;&lt;&#34;)
             print(&#34;*********************************&#34;)
-            
+
             if current_player == self.player:
                 current_player.player_move()
             else:

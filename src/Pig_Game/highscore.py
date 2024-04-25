@@ -3,7 +3,7 @@ import pickle
 from colors import colors
 
 
-class highscore: #pragma: no cover
+class highscore: 
     """Class for the highscore board."""
 
     def __init__(self):

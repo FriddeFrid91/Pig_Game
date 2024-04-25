@@ -5,7 +5,6 @@
     
         classDiagram
           class Computer {
-            Dice
             difficulty : NoneType
             name : str
             score : int
@@ -22,11 +21,6 @@
             roll_the_dice()
             set_dice(numbers)
             show_the_dice(result)
-          }
-          class Difficulty {
-            difficulty : int
-            get_difficulty()
-            set_difficulty(difficulty)
           }
           class Menu {
             menu_options : int
@@ -48,6 +42,9 @@
           class Rules {
             rules : list
             show_rules()
+          }
+          class TestComputer {
+            test_computer_move()
           }
           class TextStyles {
             BLINK : str
@@ -83,8 +80,12 @@
           }
           class player_vs_computer {
             computer
+            loser : NoneType
+            name : str
             player
+            score : int
             player_vs_computer_game(difficulty)
+            set_loser(loser)
           }
           class player_vs_player {
             loser : str
@@ -92,7 +93,9 @@
             score : int
             winner : str
             get_loser()
+            get_winner()
             set_loser(loser)
+            set_winner(winner)
             two_player_game(name_1, name_2)
           }
   
