@@ -28,16 +28,16 @@ class Menu:
         menu_text = ""
         menu_text += colors.PINK + colors.TextStyles.BOLD + "Welcome to a game of Pig!" + colors.RESET + "\n"
         menu_text += colors.YELLOW + "*************************" + colors.RESET + "\n"
-        menu_text += colors.BLUE + colors.TextStyles.ITALIC +"* 1. Player Vs Computer *" + colors.RESET + "\n"
-        menu_text += colors.BLUE + colors.TextStyles.ITALIC +"* 2. Player Vs Player   *" + colors.RESET + "\n"
-        menu_text += colors.BLUE + colors.TextStyles.ITALIC +"* 3. Rules              *" + colors.RESET + "\n"
-        menu_text += colors.BLUE + colors.TextStyles.ITALIC +"* 4. Highscore          *" + colors.RESET + "\n"
-        menu_text += colors.BLUE + colors.TextStyles.ITALIC +"* 5. Change name        *" + colors.RESET + "\n"
-        menu_text += colors.YELLOW + colors.TextStyles.ITALIC +"*************************" + colors.RESET + "\n"
-        menu_text += colors.GREEN + colors.TextStyles.ITALIC +"* 6. Exit               *" + colors.RESET + "\n"
-        menu_text += colors.YELLOW + colors.TextStyles.ITALIC +"*************************" + colors.RESET + "\n"
+        menu_text += colors.BLUE + colors.TextStyles.ITALIC + "* 1. Player Vs Computer *" + colors.RESET + "\n"
+        menu_text += colors.BLUE + colors.TextStyles.ITALIC + "* 2. Player Vs Player   *" + colors.RESET + "\n"
+        menu_text += colors.BLUE + colors.TextStyles.ITALIC + "* 3. Rules              *" + colors.RESET + "\n"
+        menu_text += colors.BLUE + colors.TextStyles.ITALIC + "* 4. Highscore          *" + colors.RESET + "\n"
+        menu_text += colors.BLUE + colors.TextStyles.ITALIC + "* 5. Change name        *" + colors.RESET + "\n"
+        menu_text += colors.YELLOW + colors.TextStyles.ITALIC + "*************************" + colors.RESET + "\n"
+        menu_text += colors.GREEN + colors.TextStyles.ITALIC + "* 6. Exit               *" + colors.RESET + "\n"
+        menu_text += colors.YELLOW + colors.TextStyles.ITALIC + "*************************" + colors.RESET + "\n"
         return menu_text
-  
+
     def credits_message(self):
         """Return the credits message."""
         message = (

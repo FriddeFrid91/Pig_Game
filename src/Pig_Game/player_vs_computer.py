@@ -11,6 +11,7 @@ class player_vs_computer:
         """Initialize the player vs computer game."""
         self.player = Player("", 0)
         self.computer = Computer()
+        self.loser = None
 
     def set_loser(self, loser):
         """Set the loser."""
@@ -41,7 +42,7 @@ class player_vs_computer:
                 print("*********************************")
                 print(f" >>> {current_player.name}s turn <<<")
                 print("*********************************")
-                
+
                 if current_player == self.player:
                     current_player.player_move()
                 else:

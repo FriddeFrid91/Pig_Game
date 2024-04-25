@@ -1,6 +1,6 @@
+"""Unittesting for the Menu class."""
 import unittest
 from menu import Menu
-"""Testing the Menu class"""    
 
 
 class test_menu(unittest.TestCase):
