@@ -26,7 +26,7 @@ class player_vs_computer:
         with open("player.txt", "w") as f:
             f.write(self.player.name)
 
-        while True:
+       # while True:
             print(colors.BLUE + f">>>> {self.player.name} vs computer <<<<\n" + colors.RESET)
 
             current_player = self.player
