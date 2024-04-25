@@ -57,9 +57,7 @@ def main():
             if user_choice == 2:
                 print(colors.BLUE + colors.TextStyles.BOLD
                       + "Player Vs Player" + colors.RESET)
-                if user_choice == 2:
-                    print(colors.BLUE + colors.TextStyles.BOLD
-                          + "Player Vs Player" + colors.RESET)
+                
                 boolean = True
                 while boolean:
                     player_1 = input(colors.CYAN + "Enter the name "
@@ -100,7 +98,6 @@ def main():
                             print(colors.RED + "Invalid input. Please write the name again."
                                   + colors.RESET)
                             continue
-
                 new_game = player_vs_player()
                 winner = new_game.two_player_game(player_1, player_2)
                 loser = new_game.get_loser()

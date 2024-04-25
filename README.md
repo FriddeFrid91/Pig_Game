@@ -18,8 +18,8 @@ Pig offers the option to play with another player or against the computer. When 
 - We have implemented and initilazed the computer player.
 - There is a difficulty function, and three functions for each difficulty (easy, medium, hard)
 - The easy level, rolls the dice with a round of three times. If the computer gets a 1 it loses all points for that round. When the computer has rolled three times, the computer holds and it is the players turn.
-- The medium level, takes a dice of (1, 6) exactly as the easy level, but it doesnt lose any points if the roll is 1.
-- The hard level has a Dice of (1, 10) so that it rolls higher numbers, and doesnt lose any pointa if the roll is 1.
+- The medium level, takes a dice of (1, 8) but it loses all its points if the roll is 1 exactly as the easy level.
+- The hard level has a Dice of (1, 10) so that it rolls higher numbers, and loses all its points if the roll is 1. 
 
 ## Installation
 - Clone this repository to your local machine:
