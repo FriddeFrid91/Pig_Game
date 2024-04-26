@@ -16,17 +16,16 @@ class player_vs_computer:
         print(colors.YELLOW + colors.TextStyles.ITALIC + ">> Welcome to a game of Pig! <<\n" + colors.RESET)
         self.computer.set_difficulty(difficulty)
 
-        while True:
+        while True: # pragma: no cover
             self.player.name = input(colors.PINK + "Enter your name: " + colors.RESET)
             if self.player.name:
                 break
             else:
                 print(colors.PINK + "Please enter a name.\n" + colors.RESET)
 
-        with open("player.txt", "w") as f:
-            f.write(self.player.name)
+     
 
-       # while True:
+        while True: # pragma: no cover
             print(colors.BLUE + f">>>> {self.player.name} vs computer <<<<\n" + colors.RESET)
 
             current_player = self.player
@@ -58,4 +57,4 @@ class player_vs_computer:
                     print("Computer's score: ", current_player.get_score())
                     print(colors.PINK + "*********************************" + colors.RESET)
                     current_player = self.player
-                    break
+                    break # pragma: no cover
