@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>Dice API documentation</title>
-<meta name="description" content="" />
+<meta name="description" content="Module for the dice." />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,18 +22,20 @@
 <h1 class="title">Module <code>Dice</code></h1>
 </header>
 <section id="section-intro">
+<p>Module for the dice.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">import random
-&#34;&#34;&#34;Module for the dice.&#34;&#34;&#34;
+<pre><code class="python">&#34;&#34;&#34;Module for the dice.&#34;&#34;&#34;
+import random
 
 
 class Dice:
-
     &#34;&#34;&#34;Class for the dice.&#34;&#34;&#34;
+
     def __init__(self, numbers):  # Constructor
+        &#34;&#34;&#34;Initialize the dice.&#34;&#34;&#34;
         # roll_the_dice = 0  # Variable to store the result of the dice roll
         self.numbers = numbers  # Number of sides of the dice
 
@@ -45,7 +47,8 @@ class Dice:
     def show_the_dice(self, result):  # Method to show the dice
         &#34;&#34;&#34;Show the dice.&#34;&#34;&#34;
         if result == 1:
-            # If the result is 1, the player loses all the points and their turn is over
+            # If the result is 1, the player loses all the
+            # points and their turn is over
             return 0
         else:
             # If the result is not 1, the player gets
@@ -85,15 +88,17 @@ class Dice:
 <span>(</span><span>numbers)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Class for the dice.</p></div>
+<div class="desc"><p>Class for the dice.</p>
+<p>Initialize the dice.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class Dice:
-
     &#34;&#34;&#34;Class for the dice.&#34;&#34;&#34;
+
     def __init__(self, numbers):  # Constructor
+        &#34;&#34;&#34;Initialize the dice.&#34;&#34;&#34;
         # roll_the_dice = 0  # Variable to store the result of the dice roll
         self.numbers = numbers  # Number of sides of the dice
 
@@ -105,7 +110,8 @@ class Dice:
     def show_the_dice(self, result):  # Method to show the dice
         &#34;&#34;&#34;Show the dice.&#34;&#34;&#34;
         if result == 1:
-            # If the result is 1, the player loses all the points and their turn is over
+            # If the result is 1, the player loses all the
+            # points and their turn is over
             return 0
         else:
             # If the result is not 1, the player gets
@@ -189,7 +195,8 @@ class Dice:
 <pre><code class="python">def show_the_dice(self, result):  # Method to show the dice
     &#34;&#34;&#34;Show the dice.&#34;&#34;&#34;
     if result == 1:
-        # If the result is 1, the player loses all the points and their turn is over
+        # If the result is 1, the player loses all the
+        # points and their turn is over
         return 0
     else:
         # If the result is not 1, the player gets

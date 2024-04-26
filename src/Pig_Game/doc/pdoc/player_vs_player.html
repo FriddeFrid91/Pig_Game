@@ -39,6 +39,8 @@ class player_vs_player:
         &#34;&#34;&#34;Initialize the player vs player game.&#34;&#34;&#34;
         self.loser = &#34;&#34;
         self.winner = &#34;&#34;
+        self.score = 0
+        self.name = &#34;&#34;
 
     def set_loser(self, loser):
         &#34;&#34;&#34;Set the loser.&#34;&#34;&#34;
@@ -66,7 +68,7 @@ class player_vs_player:
                 print(&#34;*********************************&#34;)
 
                 current_player.player_move()
-
+                # If the current player gets a 100 points, they win.
                 if current_player.get_score() &gt;= 100 and current_player.get_score() != 200:
                     if current_player == player_1:
                         self.loser = player_2.name
@@ -80,7 +82,11 @@ class player_vs_player:
                     self.get_winner()
 
                     return current_player.name
-
+                # Not an elegant solution, but it works. If the current player
+                # wants to quit the game, they can type &#34;quit&#34;
+                # and the game will end.
+                # But they get 200 points so this if statements works.
+                # And returns no one as the winner.
                 if current_player.get_score() &gt;= 200:
                     self.score = 0
                     self.name = &#34;&#34;
@@ -138,6 +144,8 @@ class player_vs_player:
         &#34;&#34;&#34;Initialize the player vs player game.&#34;&#34;&#34;
         self.loser = &#34;&#34;
         self.winner = &#34;&#34;
+        self.score = 0
+        self.name = &#34;&#34;
 
     def set_loser(self, loser):
         &#34;&#34;&#34;Set the loser.&#34;&#34;&#34;
@@ -165,7 +173,7 @@ class player_vs_player:
                 print(&#34;*********************************&#34;)
 
                 current_player.player_move()
-
+                # If the current player gets a 100 points, they win.
                 if current_player.get_score() &gt;= 100 and current_player.get_score() != 200:
                     if current_player == player_1:
                         self.loser = player_2.name
@@ -179,7 +187,11 @@ class player_vs_player:
                     self.get_winner()
 
                     return current_player.name
-
+                # Not an elegant solution, but it works. If the current player
+                # wants to quit the game, they can type &#34;quit&#34;
+                # and the game will end.
+                # But they get 200 points so this if statements works.
+                # And returns no one as the winner.
                 if current_player.get_score() &gt;= 200:
                     self.score = 0
                     self.name = &#34;&#34;
@@ -295,7 +307,7 @@ class player_vs_player:
             print(&#34;*********************************&#34;)
 
             current_player.player_move()
-
+            # If the current player gets a 100 points, they win.
             if current_player.get_score() &gt;= 100 and current_player.get_score() != 200:
                 if current_player == player_1:
                     self.loser = player_2.name
@@ -309,7 +321,11 @@ class player_vs_player:
                 self.get_winner()
 
                 return current_player.name
-
+            # Not an elegant solution, but it works. If the current player
+            # wants to quit the game, they can type &#34;quit&#34;
+            # and the game will end.
+            # But they get 200 points so this if statements works.
+            # And returns no one as the winner.
             if current_player.get_score() &gt;= 200:
                 self.score = 0
                 self.name = &#34;&#34;

@@ -108,7 +108,6 @@ def main():
                 except UnboundLocalError:
                     pass
 
-
             if user_choice == 3:
                 # Display the rules of the game.
                 the_rules = Rules()
@@ -116,7 +115,6 @@ def main():
                 print(colors.BLUE + colors.TextStyles.BOLD + "Press any "
                       + "key to go back to the menu." + colors.RESET)
                 input()
-
 
             if user_choice == 4:
                 # Display the highscore board.
