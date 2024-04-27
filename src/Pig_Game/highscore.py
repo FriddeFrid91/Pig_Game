@@ -12,7 +12,7 @@ class highscore:
         self.losses = {}
         self.wins = {}
 
-    def change_name(self): #pragma: no cover
+    def change_name(self): 
         """Change the name of the player at the highscore board."""
         print("Change the name of the player. \n")
         name_loop = True
@@ -53,7 +53,7 @@ class highscore:
             self.highscore_dict[new_name] = self.highscore_dict.pop(old_name)
         if old_name in self.losses:
             self.losses[new_name] = self.losses.pop(old_name)
-        # pragma: no cover
+        
         try:
             with open("highscore.pkl", "wb") as file:
                 pickle.dump(self.highscore_dict, file)
@@ -69,7 +69,7 @@ class highscore:
               + "table board updated <<\n")
         self.show_losses(), self.show_highscore()
 
-    def show_losses(self): #pragma: no cover
+    def show_losses(self): 
         """Show the losses for all players."""
         hall_of_fame = [
             colors.BLUE + "*****************" + colors.RESET + "\n" +
@@ -82,7 +82,7 @@ class highscore:
                                     reverse=True):
             print(f"{sorted_losses:8}: {self.losses[sorted_losses]:>6}")
 
-    def add_losses(self, loser): #pragma: no cover
+    def add_losses(self, loser): 
         """Update the losses."""
         self.load_losses()
         if loser == "":
@@ -101,7 +101,7 @@ class highscore:
             loser = ""
         return loser is None
 
-    def load_losses(self): #pragma: no cover
+    def load_losses(self):
         """Load the losses."""
         try:
             with open("losses.pkl", "rb") as file:
@@ -110,7 +110,7 @@ class highscore:
             self.losses = {}
         return self.losses
 
-    def show_highscore(self): #pragma: no cover
+    def show_highscore(self):
         """Show the highscore."""
         hall_of_fame = [
             colors.YELLOW + "****************" + colors.RESET + "\n" +
@@ -128,7 +128,7 @@ class highscore:
             else:
                 return
 
-    def add_highscore(self, winner): #pragma: no cover
+    def add_highscore(self, winner): 
         """Add the winner to the highscore."""
         self.load_highscore()
         if winner == "" or winner is None:
@@ -158,10 +158,10 @@ class highscore:
             self.highscore_dict = {}
         return self.highscore_dict
 
-    def get_highscore(self): #pragma: no cover
+    def get_highscore(self): 
         """Get the highscore."""
         return self.highscore_dict
 
-    def get_losses(self): #pragma: no cover
+    def get_losses(self):
         """Get the losses."""
         return self.losses
