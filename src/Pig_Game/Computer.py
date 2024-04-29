@@ -141,4 +141,4 @@ class Computer:
                 print(colors.GREEN + f"The computer's score is {self.score}.\n"
                       + colors.RESET)
                 counting_round += 1
-            break
+                break 

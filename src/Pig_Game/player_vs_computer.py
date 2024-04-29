@@ -17,15 +17,18 @@ class player_vs_computer:
         print(colors.YELLOW + colors.TextStyles.ITALIC + ">> Welcome to a game of Pig! <<\n" + colors.RESET)
         self.computer.set_difficulty(difficulty)
 
-        while True:
+        while True: 
             self.player.name = input(colors.PINK + "Enter your name: " + colors.RESET)
             if self.player.name:
                 break
             else:
                 print(colors.PINK + "Please enter a name.\n" + colors.RESET)
 
-        while True:
+     
+
+        while True: 
             print(colors.BLUE + f">>>> {self.player.name} vs computer <<<<\n" + colors.RESET)
+
 
             current_player = self.player
 

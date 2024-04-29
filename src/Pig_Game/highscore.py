@@ -53,7 +53,7 @@ class highscore:
             self.highscore_dict[new_name] = self.highscore_dict.pop(old_name)
         if old_name in self.losses:
             self.losses[new_name] = self.losses.pop(old_name)
-
+        
         try:
             with open("highscore.pkl", "wb") as file:
                 pickle.dump(self.highscore_dict, file)
@@ -69,7 +69,7 @@ class highscore:
               + "table board updated <<\n")
         self.show_losses(), self.show_highscore()
 
-    def show_losses(self):
+    def show_losses(self): 
         """Show the losses for all players."""
         hall_of_fame = [
             colors.BLUE + "*****************" + colors.RESET + "\n" +
@@ -82,7 +82,7 @@ class highscore:
                                     reverse=True):
             print(f"{sorted_losses:8}: {self.losses[sorted_losses]:>6}")
 
-    def add_losses(self, loser):
+    def add_losses(self, loser): 
         """Update the losses."""
         self.load_losses()
         if loser == "":
@@ -158,10 +158,10 @@ class highscore:
             self.highscore_dict = {}
         return self.highscore_dict
 
-    def get_highscore(self):
+    def get_highscore(self): 
         """Get the highscore."""
         return self.highscore_dict
 
-    def get_losses(self): 
+    def get_losses(self):
         """Get the losses."""
         return self.losses
