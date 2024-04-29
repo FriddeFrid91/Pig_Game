@@ -6,6 +6,7 @@ from colors import colors
 
 class player_vs_computer:
     """This is a class for a player vs computer game."""
+
     def __init__(self):
         """Initialize the player vs computer game."""
         self.player = Player("", 0)
@@ -23,10 +24,7 @@ class player_vs_computer:
             else:
                 print(colors.PINK + "Please enter a name.\n" + colors.RESET)
 
-        with open("player.txt", "w") as f:
-            f.write(self.player.name)
-
-       # while True:
+        while True:
             print(colors.BLUE + f">>>> {self.player.name} vs computer <<<<\n" + colors.RESET)
 
             current_player = self.player
@@ -53,9 +51,11 @@ class player_vs_computer:
                     print(f"{current_player.name} got {current_player.get_score()}")
                     print(colors.PINK + "*********************************" + colors.RESET)
                     current_player = self.computer
+                    continue
                 else:
                     print(colors.PINK + "*********************************" + colors.RESET)
                     print("Computer's score: ", current_player.get_score())
                     print(colors.PINK + "*********************************" + colors.RESET)
                     current_player = self.player
-                    break
+                    continue
+            break

@@ -15,7 +15,7 @@ class TestHighscore(unittest.TestCase):
     @patch('builtins.input', side_effect=['yes', 'no', 'quit', 'cheat'])
     def test_change_name(self, mocked_input):
         """Test the change_name function."""
-        # Mock the print function
+        # Checking if the inputs works with mocked inputs.
         mocked_input.side_effect = ['quit', 'Player1', 'Player2', 'Player3']
         with patch('builtins.print') as mock_print:
             self.assertIsNone(self.highscore_instance.change_name())
@@ -51,19 +51,18 @@ class TestHighscore(unittest.TestCase):
 
     def test_show_highscore(self):
         """Test the show_highscore function."""
-        # Mock the print function
         self.assertIsNone(self.highscore_instance.show_highscore())
 
     def test_add_highscore(self):
         """Test the add_highscore function."""
-        # Mock the pickle.dump function
+        # Mock the pickle.dump function to make sure it works
         with patch('pickle.dump') as mock_dump:
             self.highscore_instance.add_highscore("Player1")
             mock_dump.assert_called_once()
 
     def test_add_highscore_no_winner(self):
         """Test the add_highscore function when there is no winner."""
-        # Mock the pickle.dump function
+         # Mock the pickle.dump function to make sure it works
         with patch('pickle.dump') as mock_dump:
             self.highscore_instance.add_highscore("")
             mock_dump.assert_not_called()
@@ -110,7 +109,6 @@ class TestHighscore(unittest.TestCase):
 
     def test_load_losses(self):
         """Test the load_losses function."""
-        # Mock the pickle.load function to return sample data
         with patch('pickle.load', return_value={"Player1": 3, "Player2": 2}):
             self.highscore_instance.load_losses()
             self.assertEqual(self.highscore_instance.get_losses(),
@@ -131,10 +129,12 @@ class TestHighscore(unittest.TestCase):
             self.assertEqual(self.highscore_instance.get_losses(), {})
 
     def test_get_highscore(self):
+        # Test the get_highscore function.
         """Test the get_highscore function."""
         self.assertEqual(self.highscore_instance.get_highscore(), {})
 
     def test_get_losses(self):
+        # Test the get_losses function.
         """Test the get_losses function."""
         self.assertEqual(self.highscore_instance.get_losses(), {})
 

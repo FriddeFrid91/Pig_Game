@@ -17,5 +17,4 @@ class TestComputer(unittest.TestCase):
         computer.set_difficulty("hard")
         computer.computer_move()
         self.assertIsNotNone(computer)
-        self.assertIsInstance(computer, Computer)
-        # pragma: no cover
+        self.assertIsInstance(computer, Computer) #pragma: no cover

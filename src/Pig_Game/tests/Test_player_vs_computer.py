@@ -16,4 +16,3 @@ class TestPlayerVsComputer(unittest.TestCase):
         game.player_vs_computer_game("hard")
         self.assertIsNotNone(game)
         self.assertIsInstance(game, player_vs_computer)
-        # pragma: no cover
